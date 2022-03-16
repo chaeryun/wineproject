@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <Navbar></Navbar>
+    <navbar v-if="$route.name !== 'Intro'" />
+
     <v-main>
       <router-view />
     </v-main>
@@ -8,12 +9,10 @@
 </template>
 
 <script>
-import Navbar from './views/Navbar';
+import Navbar from "./components/layout/Navbar.vue";
 export default {
   name: "App",
-  components: {
-    Navbar,
-  },
+  components: { Navbar },
 
   data: () => ({
     //

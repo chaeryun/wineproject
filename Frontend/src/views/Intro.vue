@@ -86,8 +86,7 @@ export default {
 
   methods: {
     gomain() {
-      console.log("click");
-      this.$router.push("/main");
+      this.$router.push("/home");
     },
   },
 };

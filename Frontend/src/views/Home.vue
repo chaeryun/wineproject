@@ -1,11 +1,16 @@
 <template>
   <div class="home">
-    <Header></Header>
+    <Navbar />
     <h1>Main Home</h1>
   </div>
 </template>
 <script>
+import Navbar from "@/components/layout/Navbar";
+
 export default {
   name: "Home",
+  components: {
+    Navbar,
+  },
 };
 </script>
