@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # project apps
     'wine',
-    'accounts',
+    'accounts.apps.AccountsConfig',
 
     # Django nature apps
     'django.contrib.admin',
@@ -86,8 +86,13 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'CLIENT': {
+            "host":"mongodb+srv://ssafyC102:ssafyC102@c102.avmfr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+            "name":"c102testdb",
+            "authMechanism":"SCRAM-SHA-1" #for atlas cloud db
+
+        }
     }
 }
 
@@ -132,7 +137,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'accounts.User'
 
 #JWT 토큰관련 설정
 REST_FRAMEWORK = { 
