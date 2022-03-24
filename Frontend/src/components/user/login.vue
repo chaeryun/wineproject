@@ -8,7 +8,7 @@
 
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
-              v-model="id"
+              v-model="user.id"
               :counter="16"
               :rules="idRules"
               label="ID"
@@ -16,7 +16,7 @@
             ></v-text-field>
 
             <v-text-field
-              v-model="password"
+              v-model="user.password"
               :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
               :rules="[rules.required, rules.min]"
               :type="show1 ? 'text' : 'password'"
@@ -45,36 +45,60 @@
 </template>
 
 <script>
+import rest from "../../api/index.js";
+
 export default {
   name: "Userlogin",
   data: () => ({
     valid: false,
     // name rule
-    id: "",
     idRules: [
       (v) => !!v || "ID is required",
       (v) => (v && v.length <= 16) || "ID must be less than 16 characters",
     ],
     // password rule
     show1: false,
-    password: "",
     rules: {
       required: (value) => !!value || "Password is Required.",
       min: (v) => 4 <= v.length <= 12 || "Max 12 characters",
       emailMatch: () => `The email and password you entered don't match`,
     },
+
+    user: {
+      id: "",
+      password: "",
+    },
   }),
+
+  computed: {},
+
   methods: {
     validate() {
-      console.log("id : ", this.id);
-      console.log("password : ", this.password);
+      console.log("id : ", this.user.id);
+      console.log("password : ", this.user.password);
       this.$refs.form.validate();
 
       if (this.$refs.form.validate() == true) {
-        alert("로그인 성공");
-        this.$router.push({ name: "Home" });
+        this.login();
       }
     },
+
+    async login() {
+      await rest
+        .axios({
+          method: "get",
+          url: "/members/login/" + this.user.id,
+        })
+        .then((res) => {
+          alert("회원가입 성공");
+          this.$router.push({ name: "Home" });
+          console.log(res);
+        })
+        .then((err) => {
+          console.log(err);
+        });
+    },
+
     signup() {
       this.$router.push({ name: "Signup" });
     },
