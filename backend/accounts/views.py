@@ -11,7 +11,6 @@ from .serializers import UserSerializer
 # Create your views here.
 
 class AccountManagement(APIView):
-
     #전체 유저 데이터 조회
     @api_view(["GET"])
     @permission_classes([AllowAny])
@@ -49,14 +48,15 @@ class AccountManagement(APIView):
     @api_view(["PUT"])
     #@authentication_classes([JSONWebTokenAuthentication]) #전부 마무리되면 권한설정 on
     #@permission_classes([IsAuthenticated]) #전부 마무리되면 권한설정 on
+    @permission_classes([AllowAny])
     def user_modify(request):
+        print(request.data)
         user = User.objects.get(username = request.data["username"])
-
-        if user:
-            user_serializer = UserSerializer(user, data=request.data)
-            if user_serializer.is_valid():
-                user_serializer.save()
-                return JsonResponse(user_serializer.data, safe=False)
+        user.username = request.data['username']
+        user.password = request.data['password']
+        user.nickname = request.data['nickname']
+        user_serializer=UserSerializer(user)
+        if user_serializer.is_valid():
+            user_serializer.save()
+            return JsonResponse(user_serializer.data, safe=False)
         return Response({'error': '회원정보가 저장되지 않았습니다'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
-
-        
