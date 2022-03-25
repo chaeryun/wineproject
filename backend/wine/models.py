@@ -17,6 +17,3 @@ class Wine(models.Model):
     Food = models.TextField(null=True) #리스트 처리 X - 텍스트로 받아온 뒤 디코딩
     Grapes = models.TextField(null=True) #리스트 처리 X - 텍스트로 받아온 뒤 디코딩
     Alcohol = models.FloatField()
-
-    
-    
