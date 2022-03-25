@@ -13,6 +13,7 @@ from .serializers import UserSerializer
 
 class AccountManagement(APIView):
 
+    #전체 유저 데이터 조회
     @api_view(["GET"])
     @permission_classes([AllowAny])
     def get_user_list(request):
@@ -21,6 +22,20 @@ class AccountManagement(APIView):
         print(user_list_serializer)
         return JsonResponse(user_list_serializer.data, safe=False)
 
+
+    #중복확인 및 프로필 검색을 위한 단일 유저 데이터 조회
+    @api_view(["GET"])
+    @permission_classes([AllowAny])
+    def get_user(request):
+        try: 
+            user = User.objects.get(username = request.data["username"])
+            user_serializer = UserSerializer(user)
+            return Response(user_serializer.data, status=status.HTTP_200_OK)
+        except:
+            return Response({'유저가 없습니다.'}, status=status.HTTP_200_OK)
+        
+
+    #회원정보 저장(회원가입)
     @api_view(["POST"])
     def signup(request):
         serializer = UserSerializer(data=request.data)
@@ -31,11 +46,11 @@ class AccountManagement(APIView):
 
         return Response({'error': '회원정보가 저장되지 않았습니다'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
 
+    #회원정보 수정
     @api_view(["PUT"])
-    @authentication_classes([JSONWebTokenAuthentication])
-    @permission_classes([IsAuthenticated])
+    #@authentication_classes([JSONWebTokenAuthentication]) #전부 마무리되면 권한설정 on
+    #@permission_classes([IsAuthenticated]) #전부 마무리되면 권한설정 on
     def user_modify(request):
-        
         user = User.objects.get(username = request.data["username"])
 
         if user:
