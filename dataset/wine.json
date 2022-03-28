@@ -8174,29 +8174,6 @@
     "alcohol": -1
   },
   {
-    "winery": "Château Haut-Brion",
-    "wine": " ",
-    "location": "France\n·\nPessac-Léognan",
-    "image": "https://images.vivino.com/thumbs/EvtJOugzTx-HZXZfdZvTsA_pb_x300.png",
-    "color": "white",
-    "price": 1270000,
-    "light": 8.1,
-    "smooth": "",
-    "dry": 3.5,
-    "soft": 4.9,
-    "gentle": "",
-    "taste": ["citrus", "honey", "apricot"],
-    "food": [
-      "pork",
-      "vegetarian",
-      "poultry",
-      "appetizers and snacks",
-      "lean fish"
-    ],
-    "grapes": ["Sémillon"],
-    "alcohol": -1
-  },
-  {
     "winery": "Aubert",
     "wine": "Chardonnay Lauren 2012",
     "location": "United States\n·\nSonoma Coast",

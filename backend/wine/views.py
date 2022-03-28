@@ -1,3 +1,4 @@
+from ntpath import join
 from django.shortcuts import render
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny
@@ -8,7 +9,7 @@ from .serializers import WineSerializer
 
 from rest_framework.response import Response
 from rest_framework import status
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 import json
 # Create your views here.
 
@@ -23,6 +24,7 @@ def get_wine_data(request):
         return Response(wine_serializer.data, status=status.HTTP_200_OK)
     except:
         return Response({'와인이 없습니다'}, status=status.HTTP_200_OK)
+        
 #전체 와인 리스트 반환
 @api_view(["GET"])
 @permission_classes([AllowAny])
@@ -41,10 +43,15 @@ def update_wine_data(request):
         new_wine_data = Wine()
 
         new_wine_data.wine = wine["wine"]
-        new_wine_data.winery = wine["winery"]
-        new_wine_data.location = wine["location"]
         new_wine_data.color = wine["color"]
         new_wine_data.alcohol = wine["alcohol"]
+        new_wine_data.image = wine["image"]
+
+        if wine["winery"] == "": new_wine_data.winery = "Unknown Winery"
+        else: new_wine_data.winery = wine["winery"]
+
+        try: new_wine_data.location = wine["location"]
+        except: new_wine_data.location = "Unknown Location"
 
         if wine["price"] == "": new_wine_data.price = "-1"
         else: new_wine_data.price = wine["price"]
@@ -64,11 +71,13 @@ def update_wine_data(request):
         if wine["gentle"] == "": new_wine_data.gentle = -1
         else: new_wine_data.gentle = wine["gentle"]                
 
-        new_wine_data.taste = wine["taste"]
-        new_wine_data.food = wine["food"]
-        new_wine_data.grapes = wine["grapes"]
+        new_wine_data.taste = ", ".join(wine["taste"])
+        new_wine_data.food = ", ".join(wine["food"])
+        new_wine_data.grapes = ", ".join(wine["grapes"])
         
-        print(new_wine_data)
+        new_wine_data.save()
+    
+    return Response({"DB저장완료"}, status=status.HTTP_200_OK)
 
     
     
