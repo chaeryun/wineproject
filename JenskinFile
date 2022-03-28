@@ -1,0 +1,9 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("docker-compose restart"){
+            sh "sudo docker-compose restart"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  fe:
+    image: ssafyc102/wine_service:fe
+    ports: 
+      - "5500:5500"    
+    
+  be:
+    image: ssafyc102/wine_service:be 
+    ports:
+      - "8081:8000"
+  nginx:
+    image: ssafyc102/wine_service:nginx
+    ports:
+      - "80:80"
+  jenkins:
+      image: jenkins/jenkins:lts
+      volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+          - /jenkins:/var/jenkins_home
+      ports:
+          - "9000:8080"
+      privileged: true
+      user: root
