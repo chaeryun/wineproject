@@ -3,7 +3,7 @@
     <v-container>
       <v-layout row wrap align-center>
         <v-flex xs8 sm4 offset-sm2 align-center justify-center>
-          <h1>로그인</h1>
+          <h1>마이페이지</h1>
           <br />
 
           <v-form ref="form" v-model="valid" lazy-validation>

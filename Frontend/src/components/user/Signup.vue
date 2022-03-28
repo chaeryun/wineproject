@@ -139,7 +139,7 @@ export default {
       await rest
         .axios({
           method: "post",
-          url: "/members/regist",
+          url: "/signup/",
           data: {
             id: this.user.id,
             password: this.user.password,
