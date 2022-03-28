@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 
 import Intro from "@/views/Intro.vue";
 import Home from "@/views/Home.vue";
-import Wine from "@/views/Wine.vue";
 
 import User from "@/views/User.vue";
 import Signup from "@/components/user/Signup.vue";
@@ -22,12 +21,7 @@ const routes = [
     name: "Home",
     component: Home,
   },
-  {
-    path: "/wine",
-    name: "Wine",
-    component: Wine,
-  },
-
+ 
   {
     path: "/user",
     name: "User",
