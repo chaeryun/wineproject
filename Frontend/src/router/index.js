@@ -7,6 +7,7 @@ import Home from "@/views/Home.vue";
 import User from "@/views/User.vue";
 import Signup from "@/components/user/Signup.vue";
 import Userlogin from "@/components/user/login.vue";
+import Mypage from "@/components/user/Mypage.vue";
 
 Vue.use(VueRouter);
 
@@ -36,6 +37,11 @@ const routes = [
         path: "login",
         name: "login",
         component: Userlogin,
+      },
+      {
+        path: "mypage",
+        name: "Mypage",
+        component: Mypage,
       },
     ],
   },
