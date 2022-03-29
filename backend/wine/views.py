@@ -1,18 +1,20 @@
 from ntpath import join
-from django.shortcuts import render
+from urllib import response
+from django.shortcuts import get_object_or_404, render
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view
 
-from .models import Wine
+from .models import Userlikewine, Wine
 from .serializers import WineSerializer
 
 from rest_framework.response import Response
 from rest_framework import status
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
 import json
 # Create your views here.
 
+#-------------------와인 기본 API---------------------------------
 @api_view(['GET'])
 @permission_classes([AllowAny]) 
 #단일 와인 정보 페이지를 위한 개별와인정보 검색 API
@@ -24,7 +26,7 @@ def get_wine_data(request):
         return Response(wine_serializer.data, status=status.HTTP_200_OK)
     except:
         return Response({'와인이 없습니다'}, status=status.HTTP_200_OK)
-        
+
 #전체 와인 리스트 반환
 @api_view(["GET"])
 @permission_classes([AllowAny])
@@ -79,5 +81,20 @@ def update_wine_data(request):
     
     return Response({"DB저장완료"}, status=status.HTTP_200_OK)
 
-    
-    
+@api_view(["POST"])
+@permission_classes([AllowAny])
+def add_wine_wishlist(request, wine_name):
+    if Userlikewine.objects.filter(wine = wine_name).filter(user = request.user).exists():
+        like = get_object_or_404(Userlikewine, wine = wine_name, user=request.user), 
+        like.delete()
+        return Response({"좋아요 취소 완료"}, status=status.HTTP_202_ACCEPTED)
+
+    else:
+        wine = get_object_or_404(Wine, wine=wine_name)
+        instance = Userlikewine()
+        instance.wine = wine
+        instance.user = request.user
+        instance.save()
+        return Response({"좋아요 완료"}, status=status.HTTP_202_ACCEPTED)
+
+#------------------------------날씨 관련----------------------------------

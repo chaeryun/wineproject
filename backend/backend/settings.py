@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # project apps
-    'wine',
+    'wine.apps.WineConfig',
     'accounts.apps.AccountsConfig',
 
     # Django nature apps
@@ -163,6 +163,7 @@ AUTH_USER_MODEL = 'accounts.User'
 # CORS관련 설정 추가, Middleware의 동작 구성
 
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
 """
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:8080",

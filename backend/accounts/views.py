@@ -6,8 +6,9 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from .models import User
-from .serializers import UserSerializer
+from .serializers import UserBodySerializer, UserSerializer
 
+from drf_yasg.utils import swagger_auto_schema
 # Create your views here.
 
 class AccountManagement(APIView):
@@ -36,6 +37,7 @@ class AccountManagement(APIView):
     #회원정보 저장(회원가입)
     @api_view(["POST"])
     @permission_classes([AllowAny])
+    #@swagger_auto_schema(query_serializer=UserBodySerializer)
     def signup(request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
@@ -58,4 +60,4 @@ class AccountManagement(APIView):
             return JsonResponse(user_serializer.data, safe=False)
         return Response({'error': '회원정보가 저장되지 않았습니다'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
 
-
+        
