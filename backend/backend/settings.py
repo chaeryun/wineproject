@@ -174,4 +174,5 @@ CORS_ALLOW_METHODS = (
     'GET',
     'PUT',
     'DELETE',
+    'OPTIONS'
 ) #실제 요청에 허용되는 HTTP동사 리스트

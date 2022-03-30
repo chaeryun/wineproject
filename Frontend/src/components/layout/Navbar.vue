@@ -147,8 +147,10 @@ export default {
       // 임시로그아웃(API 연동시 user정보 초기화 및 세션스토리지 토큰 초기화 해줘야함)
       if (name === "Logout") {
         this.$store.commit("userstate", false);
-        this.$router.push({ name: "Home" });
-        console.log("logout");
+        sessionStorage.clear();
+        location.reload();
+        // this.$router.push({ name: "Home" });
+        alert("로그아웃");
       }
     },
   },

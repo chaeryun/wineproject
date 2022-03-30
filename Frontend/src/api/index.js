@@ -1,15 +1,15 @@
 import axios from "axios";
+import { API_BASE_URL } from "@/config";
 
-export default {
-  axios: axios.create({
-    baseURL: "http://127.0.0.1:8000/accounts/",
+// axios 객체 생성
+function apiInstance() {
+  const instance = axios.create({
+    baseURL: API_BASE_URL,
     headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTION",
-      "Access-Control-Allow-Headers":
-        "Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization",
-      "Access-Control-Expose-Headers": "Content-Length,Content-Range",
+      "Content-type": "application/json",
     },
-  }),
-};
+  });
+  return instance;
+}
+
+export { apiInstance };
