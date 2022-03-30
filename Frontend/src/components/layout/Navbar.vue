@@ -6,8 +6,8 @@
         class="hidden-md-and-up"
       ></v-app-bar-nav-icon>
       <v-app-bar-title class="headline text-uppercase white--text">
-        <span>My </span>
-        <span class="font-weight-light" style="margin-right: 200px">Wine</span>
+        <span>와인 </span>
+        <span style="margin-right: 200px">어때?</span>
       </v-app-bar-title>
       <v-autocomplete
         v-model="model"
