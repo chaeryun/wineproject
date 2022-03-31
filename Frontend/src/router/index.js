@@ -22,7 +22,7 @@ const routes = [
     name: "Home",
     component: Home,
   },
-
+ 
   {
     path: "/user",
     name: "User",

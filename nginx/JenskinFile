@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+   
+    stages {
+
+        stage('docker image push') {
+            script{
+                docker.withRegistry('https://hub.docker.com/', 'ssafyc102') {
+                    def customImage = docker.build("ssafyc102/wine_service:nginx")
+                    customImage.push()
+                }
+            }
+        }
+    }
+}
