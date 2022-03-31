@@ -6,16 +6,11 @@
     >
       <v-theme-provider dark>
         <v-container fill-height>
-          <v-row align="center" class="white--text mx-auto" justify="center">
-            <v-alert
-              border="top"
-              color="#F15F5F"
-              shaped
-              type="info"
-              elevation="15"
+          <v-row align="center" class="white--text mx-auto" justify="center" id="alert-card">
+            <div
               class="text-center"
             >
-              <v-col class="white--text text-center" cols="12" tag="h1">
+              <div class="white--text text-center" cols="12" tag="h1">
                 <span
                   :class="[
                     $vuetify.breakpoint.smAndDown ? 'display-2' : 'display-3',
@@ -70,8 +65,8 @@
                     No
                   </span>
                 </v-btn>
-              </v-col>
-            </v-alert>
+              </div>
+            </div>
           </v-row>
         </v-container>
       </v-theme-provider></v-img
@@ -92,4 +87,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#alert-card{
+   height: 400px;
+   max-width: 600px;
+   background-color: #050000;
+   background-color: rgba(3, 0, 0, 0.397);
+   border-radius: 30px;
+}
+</style>
