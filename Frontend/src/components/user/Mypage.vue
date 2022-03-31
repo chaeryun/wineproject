@@ -3,7 +3,7 @@
     <v-container>
       <v-layout row wrap align-center>
         <v-flex xs8 sm4 offset-sm2 align-center justify-center>
-          <h1>로그인</h1>
+          <h1>마이페이지</h1>
           <br />
 
           <v-form ref="form" v-model="valid" lazy-validation>
@@ -45,9 +45,8 @@
 </template>
 
 <script>
-import http from "@/util/http-common";
-import jwt_decode from "jwt-decode";
-// import { mapActions } from "vuex";
+// import rest from "../../api/index.js";
+// import { mapState } from "vuex";
 
 export default {
   name: "Userlogin",
@@ -80,8 +79,6 @@ export default {
   },
 
   methods: {
-    // ...mapActions(["getUserInfo"]),
-
     validate() {
       console.log("id : ", this.user.id);
       console.log("password : ", this.user.password);
@@ -92,56 +89,27 @@ export default {
       }
     },
 
-    async login() {
-      await http({
-        method: "post",
-        url: "/accounts/login/",
-        data: {
-          username: this.user.id,
-          password: this.user.password,
-        },
-      })
-        .then((res) => {
-          //sessionStore token저장
-          let token = res.data.token;
-          sessionStorage.setItem("access-token", token);
+    // async login() {
+    //   await rest
+    //     .axios({
+    //       method: "get",
+    //       url: "/members/login/" + this.user.id,
+    //     })
+    //     .then((res) => {
+    //       alert("회원가입 성공");
+    //       this.$router.push({ name: "Home" });
+    //       console.log(res);
+    //     })
+    //     .then((err) => {
+    //       console.log(err);
+    //     });
+    // },
 
-          //store에 저장
-          this.$store.commit("userstate", true);
-          if (this.userstate.islogin) {
-            alert("로그인 성공");
-            this.saveuser(token);
-            this.$router.push({ name: "Home" });
-          } else {
-            alert("아이디나 비밀번호 확인");
-          }
-
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-
-    async saveuser(token) {
-      let decode_token = jwt_decode(token);
-      console.log("decode_token", decode_token);
-
-      await http({
-        method: "get",
-        url: "accounts/get_user/",
-        params: {
-          username: decode_token.username,
-        },
-      })
-        .then((res) => {
-          console.log("save ", res);
-          // console.log("decode user : ", decode_token.username);
-          // console.log("decode user : ", decode_token);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    login() {
+      console.log("Login", this.userstate.islogin);
+      this.$store.commit("userstate", true);
+      console.log("after Login", this.userstate.islogin);
+      this.$router.push({ name: "Home" });
     },
 
     signup() {
