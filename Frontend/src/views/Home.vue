@@ -20,11 +20,11 @@
     <br />
 
     <v-row class="text-h7" justify="center">
-      <h1>올해의 와인</h1>
+      <h1 class="mt-5 mb-5">올해의 와인</h1>
     </v-row>
     <v-row justify="center">
       <v-col cols="3">
-        <v-card class="mx-auto" max-width="350" tile>
+        <v-card class="mx-auto" max-width="350" tile hover outlined>
           <v-img
             :src="require('@/assets/sample/sample1.png')"
             height="400"
@@ -32,6 +32,13 @@
           /><v-img />
           <v-card-title class="justify-center">wine name</v-card-title>
           <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn icon>
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
 
@@ -44,6 +51,13 @@
           /><v-img />
           <v-card-title class="justify-center">wine name</v-card-title>
           <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn icon>
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
 
@@ -56,12 +70,19 @@
           /><v-img />
           <v-card-title class="justify-center">wine name</v-card-title>
           <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn icon>
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
 
     <v-row class="pa-5-mt-1 text-h7" justify="center" height="200">
-      <h1>이달의 와인</h1>
+      <h1 class="mt-5 mb-5">이달의 와인</h1>
     </v-row>
     <v-row justify="center">
       <v-col cols="3">
@@ -73,6 +94,13 @@
           /><v-img />
           <v-card-title class="justify-center">wine name</v-card-title>
           <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn icon>
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
 
@@ -85,6 +113,13 @@
           /><v-img />
           <v-card-title class="justify-center">wine name</v-card-title>
           <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn icon>
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
 
@@ -97,6 +132,13 @@
           /><v-img />
           <v-card-title class="justify-center">wine name</v-card-title>
           <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn icon>
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
