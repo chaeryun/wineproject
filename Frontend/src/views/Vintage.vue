@@ -82,6 +82,15 @@
     <v-row justify="center">
       <v-col cols="3">
         <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-btn
+        class="ma-2"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
           <v-img
             :src="require('@/assets/sample/sample1.png')"
             height="400"
@@ -91,16 +100,21 @@
           <v-card-text class="text-center">wine text</v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-
-            <v-btn icon>
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
 
       <v-col cols="3">
         <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-btn
+        class="ma-2"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
           <v-img
             :src="require('@/assets/sample/sample2.png')"
             height="400"
@@ -110,16 +124,21 @@
           <v-card-text class="text-center">wine text</v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-
-            <v-btn icon>
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
 
       <v-col cols="3">
         <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-btn
+        class="ma-2"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
           <v-img
             :src="require('@/assets/sample/sample3.png')"
             height="400"
@@ -129,10 +148,6 @@
           <v-card-text class="text-center">wine text</v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-
-            <v-btn icon>
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
