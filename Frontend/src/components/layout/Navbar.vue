@@ -73,14 +73,19 @@
         <v-btn text to="/signup">SignUp</v-btn>
       </v-app-bar> -->
 
-      <v-tabs dark slider-size:1 right v-if="user == true">
+      <v-tabs dark slider-size:1 right v-if="userstate.islogin == false">
         <v-tab v-for="link in beforelogin" :key="link.name" :to="link.route">
           {{ link.title }}
         </v-tab>
       </v-tabs>
 
-      <v-tabs dark slider-size:1 right v-if="user == false">
-        <v-tab v-for="link in afterlogin" :key="link.name" :to="link.route">
+      <v-tabs dark slider-size:1 right v-if="userstate.islogin == true">
+        <v-tab
+          v-for="link in afterlogin"
+          :key="link.name"
+          :to="link.route"
+          @click="logout(link.name)"
+        >
           {{ link.title }}
         </v-tab>
       </v-tabs>
@@ -115,7 +120,7 @@ export default {
         { title: "Vintage", name: "Vintage", route: `/vintage` },
         { title: "Lounge", name: "Lounge", route: `/lounge` },
         { title: "Mypage", name: "Mypage", route: `/user/mypage` },
-        { title: "Logout", name: "Logout", route: `/user/logout` },
+        { title: "Logout", name: "Logout" },
       ],
 
       isLoading: false,
@@ -127,9 +132,26 @@ export default {
     };
   },
 
+  computed: {
+    userstate() {
+      return this.$store.state.userstate;
+    },
+  },
+
   methods: {
     signup() {
       this.$router.push({ name: "Signup" });
+    },
+
+    logout(name) {
+      // 임시로그아웃(API 연동시 user정보 초기화 및 세션스토리지 토큰 초기화 해줘야함)
+      if (name === "Logout") {
+        this.$store.commit("userstate", false);
+        sessionStorage.clear();
+        location.reload();
+        // this.$router.push({ name: "Home" });
+        alert("로그아웃");
+      }
     },
   },
 };

@@ -74,7 +74,8 @@
   </v-main>
 </template>
 <script>
-import rest from "../../api/index.js";
+import http from "@/util/http-common";
+// import axios from "axios";
 
 export default {
   name: "Signup",
@@ -136,22 +137,22 @@ export default {
     },
 
     async regist() {
-      await rest
-        .axios({
-          method: "post",
-          url: "/members/regist",
-          data: {
-            id: this.user.id,
-            password: this.user.password,
-            nickname: this.user.nickname,
-            email: this.user.email,
-          },
-        })
+      await http({
+        method: "POST",
+        url: "accounts/signup/",
+        data: {
+          username: this.user.id,
+          password: this.user.password,
+          nickname: this.user.nickname,
+          email: this.user.email,
+        },
+      })
         .then((res) => {
           alert("회원가입 성공");
           console.log(res);
+          this.$router.push({ name: "Home" });
         })
-        .then((err) => {
+        .catch((err) => {
           console.log(err);
         });
     },
