@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Navbar />
+    <h5 class="text-center">- 임시로 navbar에 detail 페이지 연결 - </h5>
     <h1 class="text-center mb-10 fw-bold">Detail</h1>
     <main class="mt-3">
     <div class="container">
