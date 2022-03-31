@@ -3,6 +3,10 @@ import VueRouter from "vue-router";
 
 import Intro from "@/views/Intro.vue";
 import Home from "@/views/Home.vue";
+import Detail from "@/views/Detail.vue";
+import Wine from "@/views/Wine.vue";
+import Vintage from "@/views/Vintage.vue";
+import Recommend from "@/views/Recommend.vue";
 
 import User from "@/views/User.vue";
 import Signup from "@/components/user/Signup.vue";
@@ -21,6 +25,26 @@ const routes = [
     path: "/home",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/detail",
+    name: "Detail",
+    component: Detail,
+  },
+  {
+    path: "/wine",
+    name: "Wine",
+    component: Wine,
+  },
+  {
+    path: "/recommend",
+    name: "Recommend",
+    component: Recommend,
+  },
+  {
+    path: "/vintage",
+    name: "Vintage",
+    component: Vintage,
   },
  
   {
