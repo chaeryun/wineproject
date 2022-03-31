@@ -58,7 +58,7 @@
       <option value="20">Touriga Francesa</option>
     </select>
     <select class="form-control secondary" id="productCategory" ref="productCategory">
-      <option value="1">Price</option>
+      <option value="1">가격</option>
       <option value="2">1만원 이하</option>      
       <option value="3">1만원 ~ 3만원</option>
       <option value="4">3만원 ~ 5만원</option>
@@ -157,335 +157,127 @@
 </form>
 <hr />
 
-<v-container id="wine-card">
-    <v-row justify="space-around">
-      <v-card width="400">
-        <v-img
-          height="200px"
-          src="https://www.keumyang.com/mall/shop_image_new/202102/1613698451_FreixenetCordonNegro.png"
-          contain
-        >
-        </v-img>
-
-        <v-card-text>
-
-          <v-timeline
-            align-top
-            dense
-          >
-            <v-timeline-item
-              v-for="info in infos"
-              :key="info.name"
-              :color="info.color"
-              small
-            >
-              <div>
-                <div>{{ info.winery }}</div>
-              </div>
-                <div class="font-weight-normal">
-                  <strong>{{ info.name }}</strong>
-                </div>
-                <div>
-                <div>{{ info.hashtag }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-        <v-card-actions>
+<v-container>
+    <v-row class="pa-5-mt-1 text-h7 pt-10 pb-5" justify="center" height="200">
+    </v-row>
+    <v-row justify="center">
+      <v-col cols="3">
+        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-img
+            :src="require('@/assets/sample/sample1.png')"
+            height="400"
+            contain
+          /><v-img />
+          <v-card-title class="justify-center">wine name</v-card-title>
+          <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
             <v-spacer></v-spacer>
 
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
             </v-btn>
           </v-card-actions>
-      </v-card>
+        </v-card>
+      </v-col>
 
-      <v-card width="400">
-        <v-img
-          height="200px"
-          src="https://www.keumyang.com/mall/shop_image_new/202102/1613698451_FreixenetCordonNegro.png"
-          contain
-        >
-        </v-img>
-
-        <v-card-text>
-
-          <v-timeline
-            align-top
-            dense
-          >
-            <v-timeline-item
-              v-for="info in infos"
-              :key="info.name"
-              :color="info.color"
-              small
-            >
-              <div>
-                <div>{{ info.winery }}</div>
-              </div>
-                <div class="font-weight-normal">
-                  <strong>{{ info.name }}</strong>
-                </div>
-                <div>
-                <div>{{ info.hashtag }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-        <v-card-actions>
+      <v-col cols="3">
+        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-img
+            :src="require('@/assets/sample/sample2.png')"
+            height="400"
+            contain
+          /><v-img />
+          <v-card-title class="justify-center">wine name</v-card-title>
+          <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
             <v-spacer></v-spacer>
 
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
             </v-btn>
           </v-card-actions>
-      </v-card>
+        </v-card>
+      </v-col>
 
-      <v-card width="400">
-        <v-img
-          height="200px"
-          src="https://www.keumyang.com/mall/shop_image_new/202102/1613698451_FreixenetCordonNegro.png"
-          contain
-        >
-        </v-img>
-
-        <v-card-text>
-
-          <v-timeline
-            align-top
-            dense
-          >
-            <v-timeline-item
-              v-for="info in infos"
-              :key="info.name"
-              :color="info.color"
-              small
-            >
-              <div>
-                <div>{{ info.winery }}</div>
-              </div>
-                <div class="font-weight-normal">
-                  <strong>{{ info.name }}</strong>
-                </div>
-                <div>
-                <div>{{ info.hashtag }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-        <v-card-actions>
+      <v-col cols="3">
+        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-img
+            :src="require('@/assets/sample/sample3.png')"
+            height="400"
+            contain
+          /><v-img />
+          <v-card-title class="justify-center">wine name</v-card-title>
+          <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
             <v-spacer></v-spacer>
 
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
             </v-btn>
           </v-card-actions>
-      </v-card>
-
-      <v-card width="400">
-        <v-img
-          height="200px"
-          src="https://www.keumyang.com/mall/shop_image_new/202102/1613698451_FreixenetCordonNegro.png"
-          contain
-        >
-        </v-img>
-
-        <v-card-text>
-
-          <v-timeline
-            align-top
-            dense
-          >
-            <v-timeline-item
-              v-for="info in infos"
-              :key="info.name"
-              :color="info.color"
-              small
-            >
-              <div>
-                <div>{{ info.winery }}</div>
-              </div>
-                <div class="font-weight-normal">
-                  <strong>{{ info.name }}</strong>
-                </div>
-                <div>
-                <div>{{ info.hashtag }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-        <v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+    
+    <v-row class="pa-5-mt-1 text-h7 pt-10 pb-5" justify="center" height="200">
+    </v-row>
+    <v-row justify="center">
+      <v-col cols="3">
+        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-img
+            :src="require('@/assets/sample/sample1.png')"
+            height="400"
+            contain
+          /><v-img />
+          <v-card-title class="justify-center">wine name</v-card-title>
+          <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
             <v-spacer></v-spacer>
 
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
             </v-btn>
           </v-card-actions>
-      </v-card>
+        </v-card>
+      </v-col>
 
-      <v-card width="400">
-        <v-img
-          height="200px"
-          src="https://www.keumyang.com/mall/shop_image_new/202102/1613698451_FreixenetCordonNegro.png"
-          contain
-        >
-        </v-img>
-
-        <v-card-text>
-
-          <v-timeline
-            align-top
-            dense
-          >
-            <v-timeline-item
-              v-for="info in infos"
-              :key="info.name"
-              :color="info.color"
-              small
-            >
-              <div>
-                <div>{{ info.winery }}</div>
-              </div>
-                <div class="font-weight-normal">
-                  <strong>{{ info.name }}</strong>
-                </div>
-                <div>
-                <div>{{ info.hashtag }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-        <v-card-actions>
+      <v-col cols="3">
+        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-img
+            :src="require('@/assets/sample/sample2.png')"
+            height="400"
+            contain
+          /><v-img />
+          <v-card-title class="justify-center">wine name</v-card-title>
+          <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
             <v-spacer></v-spacer>
 
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
             </v-btn>
           </v-card-actions>
-      </v-card>
+        </v-card>
+      </v-col>
 
-      <v-card width="400">
-        <v-img
-          height="200px"
-          src="https://www.keumyang.com/mall/shop_image_new/202102/1613698451_FreixenetCordonNegro.png"
-          contain
-        >
-        </v-img>
-
-        <v-card-text>
-
-          <v-timeline
-            align-top
-            dense
-          >
-            <v-timeline-item
-              v-for="info in infos"
-              :key="info.name"
-              :color="info.color"
-              small
-            >
-              <div>
-                <div>{{ info.winery }}</div>
-              </div>
-                <div class="font-weight-normal">
-                  <strong>{{ info.name }}</strong>
-                </div>
-                <div>
-                <div>{{ info.hashtag }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-        <v-card-actions>
+      <v-col cols="3">
+        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-img
+            :src="require('@/assets/sample/sample3.png')"
+            height="400"
+            contain
+          /><v-img />
+          <v-card-title class="justify-center">wine name</v-card-title>
+          <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
             <v-spacer></v-spacer>
 
             <v-btn icon>
               <v-icon>mdi-heart</v-icon>
             </v-btn>
           </v-card-actions>
-      </v-card>
-
-      <v-card width="400">
-        <v-img
-          height="200px"
-          src="https://www.keumyang.com/mall/shop_image_new/202102/1613698451_FreixenetCordonNegro.png"
-          contain
-        >
-        </v-img>
-
-        <v-card-text>
-
-          <v-timeline
-            align-top
-            dense
-          >
-            <v-timeline-item
-              v-for="info in infos"
-              :key="info.name"
-              :color="info.color"
-              small
-            >
-              <div>
-                <div>{{ info.winery }}</div>
-              </div>
-                <div class="font-weight-normal">
-                  <strong>{{ info.name }}</strong>
-                </div>
-                <div>
-                <div>{{ info.hashtag }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-        <v-card-actions>
-            <v-spacer></v-spacer>
-
-            <v-btn icon>
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
-          </v-card-actions>
-      </v-card>
-
-      <v-card width="400">
-        <v-img
-          height="200px"
-          src="https://www.keumyang.com/mall/shop_image_new/202102/1613698451_FreixenetCordonNegro.png"
-          contain
-        >
-        </v-img>
-
-        <v-card-text>
-
-          <v-timeline
-            align-top
-            dense
-          >
-            <v-timeline-item
-              v-for="info in infos"
-              :key="info.name"
-              :color="info.color"
-              small
-            >
-              <div>
-                <div>{{ info.winery }}</div>
-              </div>
-                <div class="font-weight-normal">
-                  <strong>{{ info.name }}</strong>
-                </div>
-                <div>
-                <div>{{ info.hashtag }}</div>
-              </div>
-            </v-timeline-item>
-          </v-timeline>
-        </v-card-text>
-        <v-card-actions>
-            <v-spacer></v-spacer>
-
-            <v-btn icon>
-              <v-icon>mdi-heart</v-icon>
-            </v-btn>
-          </v-card-actions>
-      </v-card>
+        </v-card>
+      </v-col>
     </v-row>
 
   </v-container>
@@ -500,16 +292,6 @@ export default {
   components: {
     Navbar,
   },
-   data: () => ({
-      infos: [
-        {
-          winery: `Dom Pérignon`,
-          name: ' P2 Plénitude Brut Champagne 1995',
-          hashtag: '#France #Sparkling',
-          color: 'deep-purple lighten-1',
-        },
-      ],
-    }),
     };
 </script>
 
@@ -570,10 +352,6 @@ hr{
   border-style: dashed;
   border-color: green;
   margin : 30px;
-}
-
-#wine-card{
-  display: flex;
 }
 
 v-card{
