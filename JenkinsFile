@@ -1,0 +1,77 @@
+pipeline {
+    agent{
+                docker {
+                    image  'node:lts'
+                }
+    }
+
+    stages {
+        stage("git clone"){
+            steps{
+              git url : "https://lab.ssafy.com/s06-bigdata-rec-sub2/S06P22C102.git",
+                    branch: "develop",
+                    credentialsId:"ssafygitlab"
+
+            }
+        }
+
+
+        stage('build& image push') {
+            failFast true
+             parallel {
+                stage("fe build"){
+                    steps{
+                        dir("./Frontend"){
+                            sh 'npm install && npm run build'
+                            script{
+                                docker.withRegistry('https://registry.hub.docker.com/', 'ssafyc102') {
+                                    def customImage = docker.build("ssafyc102/wine_service:fe")
+                                    customImage.push()
+                                }
+                            }
+                        }
+                    }
+                }
+                stage("be build"){
+                    steps{
+                        dir("./backend"){
+                            script{
+                                docker.withRegistry('https://registry.hub.docker.com/', 'ssafyc102') {
+                                    def customImage = docker.build("ssafyc102/wine_service:be")
+                                    customImage.push()
+                                }
+                            }
+                        }
+                    }
+                }
+               stage("webserver build"){
+                steps{
+                    dir("./nginx"){
+                        script{
+                            docker.withRegistry('https://registry.hub.docker.com/', 'ssafyc102') {
+                                def customImage = docker.build("ssafyc102/wine_service:nginx")
+                                customImage.push()
+                            }
+                        }
+                    }
+                }
+            } 
+            
+        }     
+        }
+
+        stage("restart"){
+            steps{
+                sh "ls -a"
+                sh "docker pull ssafyc102/wine_service:fe"
+                sh "docker pull ssafyc102/wine_service:be"
+                sh "docker pull ssafyc102/wine_service:nginx"
+                sh "docker ps"
+                sh "docker images"
+                
+
+            }
+        }
+
+    }
+}
