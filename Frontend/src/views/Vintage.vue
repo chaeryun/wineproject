@@ -360,7 +360,7 @@ export default {
 .hero-area {
     position: relative;
     color: white;
-    background-image: url('../assets/wine5.jpg');
+    background-image: url('../assets/hero-area.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
