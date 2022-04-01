@@ -15,11 +15,19 @@ export default new Vuex.Store({
     },
 
     // 유저정보 저장
-    userInfo: null,
+    userInfo: {
+      username: null,
+      nickname: null,
+      email: null,
+    },
   },
   mutations: {
     userstate(state, data) {
       state.userstate.islogin = data;
+    },
+
+    user(state, data) {
+      state.userInfo = data;
     },
 
     SET_USER_INFO: (state, userInfo) => {

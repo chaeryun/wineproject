@@ -1,3 +1,4 @@
+from distutils.log import error
 from django.http import JsonResponse
 
 from rest_framework import status
@@ -25,9 +26,9 @@ class AccountManagement(APIView):
     #중복확인 및 프로필 검색을 위한 단일 유저 데이터 조회
     @api_view(["GET"])
     @permission_classes([AllowAny])
-    def get_user(request):
+    def get_user(request, user_name):
         try: 
-            user = User.objects.get(username = request.data["username"])
+            user = User.objects.get(username = user_name)
             user_serializer = UserSerializer(user)
             return Response(user_serializer.data, status=status.HTTP_200_OK)
         except:
