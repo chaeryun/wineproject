@@ -43,7 +43,7 @@
       <option value="5">Touriga Franca</option>
       <option value="6">Tinta Roriz</option>
       <option value="7">Cabernet Sauvignon</option>
-      <option value="8">mTinta Barroca</option>
+      <option value="8">Tinta Barroca</option>
       <option value="9">Grenache</option>
       <option value="10">Tinto Cao</option>
       <option value="11">Shiraz/Syrah</option>

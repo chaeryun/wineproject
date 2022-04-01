@@ -16,11 +16,12 @@
         <div class="col-md-6">
           <div class="card shadow-sm" id="info-card">
             <div class="card-body">
-              <h5 class="card-title mx-3 pt-1 pb-1">Dom Pérignon P2 Plénitude Brut Champagne 1995</h5>
-                <h5 class="pt-5 pb-3 border-top"><div class="badge bg-secondary mx-3" id="my-badge">WINE TYPE</div>Sparkling</h5>
-              <div class="card-text border-top pt-3 pb-3">
-                <h5 class="pt-3 pb-3"><div class="badge bg-secondary mx-3" id="my-badge">WINERY</div>Dom Pérignon</h5>
-                <h5 class="pt-3 pb-3"><div class="badge bg-secondary mx-3" id="my-badge">WINE</div>P2 Plénitude Brut Champagne 1995</h5>
+              <h5 class="card-title mx-3 pt-1">Dom Pérignon P2 Plénitude Brut Champagne 1995</h5>
+              <div class="card-text pt-3 pb-3">
+                <h5 class="pt-5 pb-3 border-top"><div class="badge bg-secondary mx-3" id="my-badge">WINERY</div>Dom Pérignon</h5>
+                <h5 class="pt-3 pb-3"><div class="badge bg-secondary mx-3" id="my-badge">WINE NAME</div>P2 Plénitude Brut Champagne 1995</h5>
+                <h5 class="pt-3 pb-3"><div class="badge bg-secondary mx-3" id="my-badge">WINE TYPE</div>Sparkling</h5>
+                <h5 class="pt-3 pb-3"><div class="badge bg-secondary mx-3" id="my-badge">COUNTRY</div>France</h5>
                 <h5 class="pt-3 pb-3"><div class="badge bg-secondary mx-3" id="my-badge">GRAPES</div>Chardonnay, Pinot Noir</h5>
                 <h5 class="pt-3 pb-3"><div class="badge bg-secondary mx-3" id="my-badge">ALCOHOL</div>12.5</h5>
               <h5 class="card-title pt-5 border-top"> <div class="badge bg-danger mx-3" id="my-badge">PRICE</div> ￦ 355,917 </h5>

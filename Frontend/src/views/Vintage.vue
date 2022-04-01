@@ -98,7 +98,7 @@
 									<p class="fs-5 fw-bold text-center">Grapes / <span class="fs-6 fw-normal">Chardonnay, Pinot Noir</span></p>
 									<p class="fs-5 fw-bold text-center">Country / <span class="fs-6 fw-normal">France</span></p>  
 									<p class="fs-5 fw-bold text-center">Price / <span class="fs-6 fw-normal">￦ 355,917</span></p>  
-                <button class="btn btn-warning" id="go-to-detail"> 상세보기 </button>     
+                <button class="btn btn-warning" id="go-to-detail"> Details.. </button>     
 								<br> 
 							</div>
 						</div>
@@ -122,7 +122,7 @@
 									<p class="fs-5 fw-bold text-center">Grapes / <span class="fs-6 fw-normal">Chardonnay, Pinot Noir</span></p>
 									<p class="fs-5 fw-bold text-center">Country / <span class="fs-6 fw-normal">France</span></p>  
 									<p class="fs-5 fw-bold text-center">Price / <span class="fs-6 fw-normal">￦ 355,917</span></p>
-                  <button class="btn btn-warning justify-center" id="go-to-detail"> 상세보기 </button>        
+                  <button class="btn btn-warning justify-center" id="go-to-detail"> Details.. </button>        
 									<br>
 							</div>
 						</div>
@@ -144,7 +144,7 @@
 									<p class="fs-5 fw-bold text-center">Grapes / <span class="fs-6 fw-normal">Chardonnay, Pinot Noir</span></p>
 									<p class="fs-5 fw-bold text-center">Country / <span class="fs-6 fw-normal">France</span></p>  
 									<p class="fs-5 fw-bold text-center">Price / <span class="fs-6 fw-normal">￦ 355,917</span></p>
-                  <button class="btn btn-warning" id="go-to-detail"> 상세보기 </button>  
+                  <button class="btn btn-warning" id="go-to-detail"> Details.. </button>  
 									<br>
 							</div>
 						</div>
@@ -368,7 +368,7 @@ export default {
 }
 .hero-area-slide {
     background: #13151f;
-    margin: 220px 15px 50px !important; 
+    margin: 70px 15px 50px !important; 
     padding-top: 52px;
     box-shadow: 0 0 20px #000000;
     max-width: 650px;
