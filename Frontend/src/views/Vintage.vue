@@ -77,7 +77,159 @@
   </div>
   </div>
 
-  <v-row class="pa-5-mt-1 text-h7 pt-10 pb-5" justify="center" height="200">
+  	<!-- hero area start -->
+			<!-- 인기1위 -->
+		<section class="hero-area" id="home">
+			<div class="container">
+				<div class="hero-area-slider">
+					<div class="row hero-area-slide">
+						<div class="col-lg-6 col-md-5">
+							<div class="hero-area-content">
+								<img src="@/assets/sample/sample1.png" />
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-7">
+							<div class="hero-area-content pr-50">
+                <h5 class="text-center">👑 인기 1위 </h5>
+								<h3 class="text-center">P2 Plénitude Brut Champagne 1995</h3>
+                <hr>
+									<p class="fs-5 fw-bold text-center">Wine Type / <span class="fs-6 fw-normal">Sparkling</span></p> 
+									<p class="fs-5 fw-bold text-center">Winery / <span class="fs-6 fw-normal">Dom Pérignon</span></p> 
+									<p class="fs-5 fw-bold text-center">Grapes / <span class="fs-6 fw-normal">Chardonnay, Pinot Noir</span></p>
+									<p class="fs-5 fw-bold text-center">Country / <span class="fs-6 fw-normal">France</span></p>  
+									<p class="fs-5 fw-bold text-center">Price / <span class="fs-6 fw-normal">￦ 355,917</span></p>  
+                <button class="btn btn-warning" id="go-to-detail"> 상세보기 </button>     
+								<br> 
+							</div>
+						</div>
+					</div>
+          </div>
+          <div class="hero-area-slider2">
+					<!-- 인기 2위 -->
+					<div class="row hero-area-slide" id="second-vintage">
+						<div class="col-lg-6 col-md-5">
+							<div class="hero-area-content">
+								<img src="@/assets/sample/sample2.png" alt="poster" />
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-7">
+							<div class="hero-area-content pr-50">
+								<h5 class="text-center">👑 인기 2위 </h5>
+								<h3 class="text-center">P2 Plénitude Brut Champagne 1995</h3>
+                <hr>
+									<p class="fs-5 fw-bold text-center">Wine Type / <span class="fs-6 fw-normal">Sparkling</span></p> 
+									<p class="fs-5 fw-bold text-center">Winery / <span class="fs-6 fw-normal">Dom Pérignon</span></p> 
+									<p class="fs-5 fw-bold text-center">Grapes / <span class="fs-6 fw-normal">Chardonnay, Pinot Noir</span></p>
+									<p class="fs-5 fw-bold text-center">Country / <span class="fs-6 fw-normal">France</span></p>  
+									<p class="fs-5 fw-bold text-center">Price / <span class="fs-6 fw-normal">￦ 355,917</span></p>
+                  <button class="btn btn-warning justify-center" id="go-to-detail"> 상세보기 </button>        
+									<br>
+							</div>
+						</div>
+					</div>
+					<!-- 인기3위 -->
+					<div class="row hero-area-slide" id="third-vintage">
+						<div class="col-lg-6 col-md-5">
+							<div class="hero-area-content">
+								<img src="@/assets/sample/sample3.png" alt="_poster" />
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-7">
+							<div class="hero-area-content pr-50">
+								<h5 class="text-center">👑 인기 3위 </h5>
+								<h3 class="text-center">P2 Plénitude Brut Champagne 1995</h3>
+                <hr>
+									<p class="fs-5 fw-bold text-center">Wine Type / <span class="fs-6 fw-normal">Sparkling</span></p> 
+									<p class="fs-5 fw-bold text-center">Winery / <span class="fs-6 fw-normal">Dom Pérignon</span></p> 
+									<p class="fs-5 fw-bold text-center">Grapes / <span class="fs-6 fw-normal">Chardonnay, Pinot Noir</span></p>
+									<p class="fs-5 fw-bold text-center">Country / <span class="fs-6 fw-normal">France</span></p>  
+									<p class="fs-5 fw-bold text-center">Price / <span class="fs-6 fw-normal">￦ 355,917</span></p>
+                  <button class="btn btn-warning" id="go-to-detail"> 상세보기 </button>  
+									<br>
+							</div>
+						</div>
+					</div>
+				</div>	
+      </div>
+		</section><!-- hero area end -->
+
+     <v-row class="pa-5-mt-1 text-h7 pt-10 pb-5" justify="center" height="200">
+    </v-row>
+    <v-row justify="center">
+      <v-col cols="3">
+        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-btn
+        class="ma-2"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+          <v-img
+            :src="require('@/assets/sample/sample1.png')"
+            height="400"
+            contain
+          /><v-img />
+          <v-card-title class="justify-center">wine name</v-card-title>
+          <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+
+      <v-col cols="3">
+        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-btn
+        class="ma-2"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+          <v-img
+            :src="require('@/assets/sample/sample2.png')"
+            height="400"
+            contain
+          /><v-img />
+          <v-card-title class="justify-center">wine name</v-card-title>
+          <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+
+      <v-col cols="3">
+        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-btn
+        class="ma-2"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+          <v-img
+            :src="require('@/assets/sample/sample3.png')"
+            height="400"
+            contain
+          /><v-img />
+          <v-card-title class="justify-center">wine name</v-card-title>
+          <v-card-text class="text-center">wine text</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+
+     <v-row class="pa-5-mt-1 text-h7 pt-10 pb-5" justify="center" height="200">
     </v-row>
     <v-row justify="center">
       <v-col cols="3">
@@ -164,8 +316,9 @@ export default {
   components: {
     Navbar,
   },
-};
+}
 </script>
+
 <style>
 #productCategory2{
   align-content: center;
@@ -177,6 +330,12 @@ export default {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
+#go-to-detail{
+  height: 40px;
+  margin:auto;
+  display:block;
+  width: 100px;
+}
 .select-wine{
   margin-top: 14px;
 }
@@ -184,6 +343,54 @@ export default {
 #find-icon{
   width: 45px;
   height: 45px;
+}
+
+#second-vintage{
+  float: left;
+  max-width: 550px;
+}
+
+#third-vintage{
+  float: right;
+  max-width: 550px;
+}
+
+/* hero-area */
+
+.hero-area {
+    position: relative;
+    color: white;
+    background-image: url('../assets/wine5.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.hero-area-slide {
+    background: #13151f;
+    margin: 220px 15px 50px;
+    padding-top: 52px;
+    box-shadow: 0 0 20px #000000;
+    max-width: 650px;
+}
+
+.hero-area-content > img {
+    position: relative;
+    margin-top: -120px;
+}
+.hero-area-slider {
+	margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.hero-area-slider2 {
+	margin: auto;
+  text-align: center;
+}
+
+.hero-area-content h3 {
+    margin-top: 35px;
 }
 
 </style>
