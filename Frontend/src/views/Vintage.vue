@@ -104,8 +104,8 @@
 						</div>
 					</div>
           </div>
-          <div class="hero-area-slider2">
 					<!-- 인기 2위 -->
+          <div class="hero-area-slider2">
 					<div class="row hero-area-slide" id="second-vintage">
 						<div class="col-lg-6 col-md-5">
 							<div class="hero-area-content">
@@ -368,7 +368,7 @@ export default {
 }
 .hero-area-slide {
     background: #13151f;
-    margin: 220px 15px 50px;
+    margin: 220px 15px 50px !important; 
     padding-top: 52px;
     box-shadow: 0 0 20px #000000;
     max-width: 650px;
