@@ -180,7 +180,6 @@ export default {
       wines: [
         { name: "wine2", picture: require("@/assets/wine2.jpg") },
         { name: "wine5", picture: require("@/assets/wine5.jpg") },
-        { name: "wine6", picture: require("@/assets/wine6.jpg") },
       ],
     };
   },

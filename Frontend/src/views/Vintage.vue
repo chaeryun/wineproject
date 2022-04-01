@@ -1,5 +1,5 @@
 <template>
-  <div class="vintage">
+  <div class="vintage pt-5">
     <Navbar />
     <h1 class="fw-bold mb-5">Vintage</h1>
     <h6 class="text-center"> 원하는 지역 / 연도 / 포도품종을 골라 날씨 빅데이터를 기반으로 VINTAGE한 와인을 추천 받아주세요!</h6>
@@ -90,7 +90,8 @@
 						</div>
 						<div class="col-lg-6 col-md-7">
 							<div class="hero-area-content pr-50">
-                <h5 class="text-center">👑 인기 1위 </h5>
+                <h1 class="text-center">👑 인기 1위 </h1>
+                <hr />
 								<h3 class="text-center">P2 Plénitude Brut Champagne 1995</h3>
                 <hr>
 									<p class="fs-5 fw-bold text-center">Wine Type / <span class="fs-6 fw-normal">Sparkling</span></p> 
@@ -114,7 +115,8 @@
 						</div>
 						<div class="col-lg-6 col-md-7">
 							<div class="hero-area-content pr-50">
-								<h5 class="text-center">👑 인기 2위 </h5>
+								<h1 class="text-center">👑 인기 2위 </h1>
+                <hr />
 								<h3 class="text-center">P2 Plénitude Brut Champagne 1995</h3>
                 <hr>
 									<p class="fs-5 fw-bold text-center">Wine Type / <span class="fs-6 fw-normal">Sparkling</span></p> 
@@ -136,7 +138,8 @@
 						</div>
 						<div class="col-lg-6 col-md-7">
 							<div class="hero-area-content pr-50">
-								<h5 class="text-center">👑 인기 3위 </h5>
+								<h1 class="text-center">👑 인기 3위 </h1>
+                <hr />
 								<h3 class="text-center">P2 Plénitude Brut Champagne 1995</h3>
                 <hr>
 									<p class="fs-5 fw-bold text-center">Wine Type / <span class="fs-6 fw-normal">Sparkling</span></p> 
@@ -367,7 +370,7 @@ export default {
     overflow: hidden;
 }
 .hero-area-slide {
-    background: #13151f;
+    background: #1b1d29a6;
     margin: 70px 15px 50px !important; 
     padding-top: 52px;
     box-shadow: 0 0 20px #000000;
@@ -385,7 +388,6 @@ export default {
   justify-content: center;
 }
 .hero-area-slider2 {
-	margin: auto;
   text-align: center;
 }
 

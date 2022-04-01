@@ -2,14 +2,14 @@
   <v-main>
     <v-container>
       <v-layout row wrap align-center>
-        <v-flex xs12 sm8 offset-sm2 align-center justify-center>
+        <v-flex xs8 sm4 offset-sm2 align-center justify-center>
           <h1>회원가입</h1>
           <br />
 
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
               v-model="user.id"
-              :counter="12"
+              :counter="16"
               :rules="idRules"
               label="ID"
               required
@@ -22,7 +22,7 @@
               :type="show1 ? 'text' : 'password'"
               name="input-10-1"
               label="Password"
-              hint="At least 8 characters"
+              hint="At least 4 characters ~ 12 characters"
               counter
               @click:append="show1 = !show1"
             ></v-text-field>
