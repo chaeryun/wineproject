@@ -18,10 +18,9 @@ import json
 @api_view(['GET'])
 @permission_classes([AllowAny]) 
 #단일 와인 정보 페이지를 위한 개별와인정보 검색 API
-def get_wine_data(request):
-    print(request.data['wine'])
+def get_wine_data(request, wine_id):
     try: 
-        wine = Wine.objects.get(wine = request.data["wine"])
+        wine = Wine.objects.get(wine_id = wine_id)
         wine_serializer = WineSerializer(wine)
         return Response(wine_serializer.data, status=status.HTTP_200_OK)
     except:
@@ -41,60 +40,61 @@ def get_wine_list(request):
 def update_wine_data(request):
     f = open('../dataset/wine.json', 'r', encoding='UTF-8')
     data = json.load(f)
-    for wine in data:
-        new_wine_data = Wine()
 
-        new_wine_data.wine = wine["wine"]
-        new_wine_data.color = wine["color"]
-        new_wine_data.alcohol = wine["alcohol"]
-        new_wine_data.image = wine["image"]
+    #검색해야 하는 데이터들
+    # wine_id / wine  / winery / country / location 
+    # image   / color / price  / light   / smooth
+    # dry     / soft  / gentle / taste   / food 
+    # grapes  / alcohol / likes /
+    for index in range(2850):
+        wine = Wine()
+        index_str = str(index)
 
-        if wine["winery"] == "": new_wine_data.winery = "Unknown Winery"
-        else: new_wine_data.winery = wine["winery"]
+        wine.wine_id = data["wine_id"][index_str]
+        wine.wine = data["wine"][index_str]
+        wine.winery = data["winery"][index_str]
+        wine.country = data["country"][index_str]
+        wine.location = data["location"][index_str]
+        wine.color = data["color"][index_str]
 
-        try: new_wine_data.location = wine["location"]
-        except: new_wine_data.location = "Unknown Location"
+        wine.image = data["image"][index_str]
+        wine.price = data["price"][index_str]
+        wine.light = data["light"][index_str]
+        wine.smooth = data["smooth"][index_str]
+        wine.dry = data["dry"][index_str]
+        wine.soft = data["soft"][index_str]
 
-        if wine["price"] == "": new_wine_data.price = "-1"
-        else: new_wine_data.price = wine["price"]
+        wine.gentle = data["gentle"][index_str]
+        wine.taste = data["taste"][index_str]
+        wine.food = ", ".join(data["food"][index_str])
+        wine.grapes = ", ".join(data["grapes"][index_str])
+        wine.alcohol = data["alcohol"][index_str]
 
-        if wine["light"] == "":new_wine_data.light = -1
-        else: new_wine_data.light = wine["light"]
-
-        if wine["smooth"] == "": new_wine_data.smooth = -1
-        else: new_wine_data.smooth = wine["smooth"]
-        
-        if wine["dry"] == "": new_wine_data.dry = -1
-        else: new_wine_data.dry = wine["dry"]
-
-        if wine["soft"] == "": new_wine_data.soft = -1
-        else: new_wine_data.soft = wine["soft"]        
-        
-        if wine["gentle"] == "": new_wine_data.gentle = -1
-        else: new_wine_data.gentle = wine["gentle"]                
-
-        new_wine_data.taste = ", ".join(wine["taste"])
-        new_wine_data.food = ", ".join(wine["food"])
-        new_wine_data.grapes = ", ".join(wine["grapes"])
-        
-        new_wine_data.save()
+        wine.save()
     
     return Response({"DB저장완료"}, status=status.HTTP_200_OK)
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def add_wine_wishlist(request, wine_name):
-    if Userlikewine.objects.filter(wine = wine_name).filter(user = request.user).exists():
-        like = get_object_or_404(Userlikewine, wine = wine_name, user=request.user), 
+def add_wine_wishlist(request, wine_id):
+    if Userlikewine.objects.filter(wine_id = wine_id).filter(user = request.user).exists():
+        wine = get_object_or_404(Wine, wine_id=wine_id)
+        wine.likes -= 1
+        wine.save()
+        like = get_object_or_404(Userlikewine, wine_id = wine_id, user=request.user),
         like.delete()
+        
         return Response({"좋아요 취소 완료"}, status=status.HTTP_202_ACCEPTED)
 
     else:
-        wine = get_object_or_404(Wine, wine=wine_name)
+        wine = get_object_or_404(Wine, wine_id=wine_id)
+
         instance = Userlikewine()
         instance.wine = wine
         instance.user = request.user
         instance.save()
-        return Response({"좋아요 완료"}, status=status.HTTP_202_ACCEPTED)
 
-#------------------------------날씨 관련----------------------------------
+        wine.likes += 1
+        wine.save()
+
+        return Response({"좋아요 완료"}, status=status.HTTP_202_ACCEPTED)
