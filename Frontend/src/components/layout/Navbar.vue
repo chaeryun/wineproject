@@ -6,8 +6,7 @@
         class="hidden-md-and-up"
       ></v-app-bar-nav-icon>
       <v-app-bar-title class="headline text-uppercase white--text">
-        <span>My </span>
-        <span class="font-weight-light" style="margin-right: 200px">Wine</span>
+        <a style="text-decoration: none;" href="/home"><h1 class="font-weight-light mt-3" style="margin-right: 200px; color:white;">와인어때?</h1></a>
       </v-app-bar-title>
       <v-autocomplete
         v-model="model"
@@ -137,7 +136,6 @@ export default {
       return this.$store.state.userstate;
     },
   },
-
   methods: {
     signup() {
       this.$router.push({ name: "Signup" });
