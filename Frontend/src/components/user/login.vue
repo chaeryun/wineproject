@@ -83,8 +83,6 @@ export default {
     // ...mapActions(["getUserInfo"]),
 
     validate() {
-      console.log("id : ", this.user.id);
-      console.log("password : ", this.user.password);
       this.$refs.form.validate();
 
       if (this.$refs.form.validate() == true) {
@@ -129,15 +127,15 @@ export default {
 
       await http({
         method: "get",
-        url: "accounts/get_user/",
-        params: {
-          username: decode_token.username,
-        },
+        url: "accounts/get_user/" + decode_token.username,
+        // params: {
+        //   username: decode_token.username,
+        // },
       })
         .then((res) => {
-          console.log("save ", res);
-          // console.log("decode user : ", decode_token.username);
-          // console.log("decode user : ", decode_token);
+          // store에 user정보 저장
+          const userdata = res.data;
+          this.$store.commit("user", userdata);
         })
         .catch((err) => {
           console.log(err);
