@@ -214,13 +214,13 @@
           :key="i"
           v-for="(wine, i) in calData"
         >
-          <v-card>
+          <v-card tile hover>
             <v-img
               :src="wine.image"
               height="400"
               alt="No image"
               contain
-              @click="winedetail(wine.wine)"
+              @click="winedetail(wine.wine_id)"
             /><v-img />
 
             <v-card-text>{{ wine.wine }}</v-card-text>
@@ -297,14 +297,15 @@ export default {
         .then((res) => {
           //   console.log("wine list :", res);
           this.winelist = res.data;
+          console.log("winelist", this.winelist);
         })
         .catch((err) => {
           console.log(err);
         });
     },
 
-    winedetail(wine) {
-      this.$router.push({ path: "/detail", qeury: { wine: wine } });
+    winedetail(wine_id) {
+      this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
     },
   },
 };

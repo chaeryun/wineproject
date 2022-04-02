@@ -6,8 +6,12 @@
         class="hidden-md-and-up"
       ></v-app-bar-nav-icon>
       <v-app-bar-title class="headline text-uppercase white--text">
-        <span>My </span>
-        <span class="font-weight-light" style="margin-right: 200px">Wine</span>
+        <div @click="banner">
+          <span>My </span>
+          <span class="font-weight-light" style="margin-right: 200px"
+            >Wine</span
+          >
+        </div>
       </v-app-bar-title>
       <v-autocomplete
         v-model="model"
@@ -108,7 +112,6 @@ export default {
         { title: "Wine", name: "Wine", route: `/wine` },
         { title: "Recommend", name: "Recommend", route: `/recommend` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
-        { title: "Detail", name: "Detail", route: `/detail` },
         { title: "Login", name: "Login", route: `/user/login` },
         { title: "Signup", name: "Singup", route: `/user/signup` },
       ],
@@ -118,7 +121,6 @@ export default {
         { title: "Wine", name: "Wine", route: `/wine` },
         { title: "Recommend", name: "Recommend", route: `/recommend` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
-        { title: "Detail", name: "Detail", route: `/detail` },
         { title: "Mypage", name: "Mypage", route: `/user/mypage` },
         { title: "Logout", name: "Logout" },
       ],
@@ -153,7 +155,10 @@ export default {
         alert("로그아웃");
       }
     },
+
+    banner() {
+      this.$router.push({ name: "Home" }).catch((err) => err);
+    },
   },
 };
-
 </script>
