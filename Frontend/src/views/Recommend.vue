@@ -1,15 +1,15 @@
 <template>
   <div class="recommend">
     <Navbar />
-    <h1 class="text-center mb-10">Recommend</h1>
+    <h1>Recommend</h1>
     <v-row class="text-h7" justify="center">
       <h2 class="ml-10 pb-5"> | 최근 찜한 목록</h2>
     </v-row>
-    <v-row justify="center">
-      <v-col cols="3">
-        <v-card class="mx-2 ml-10" max-width="270" tile hover outlined id="wish-card">
+    <v-row justify="center" class="mb-5">
+      <v-col cols="2">
+          <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; background-color: #FFEAEA;" hover outlined>
           <v-btn
-        class="ma-2"
+        class="mt-10 ml-10"
         text
         icon
         large
@@ -17,23 +17,21 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
+      <a href="/detail" style="color: black">
           <v-img
             :src="require('@/assets/sample/sample1.png')"
-            height="180"
+            height="200"
             contain
+            style="margin-bottom: 50px;"
           /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
+          </a>
         </v-card>
       </v-col>
 
-      <v-col cols="3">
-        <v-card class="mx-2" max-width="270" tile hover outlined id="wish-card">
+       <v-col cols="2">
+          <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; background-color: #FFEAEA;" hover outlined>
           <v-btn
-        class="ma-2"
+        class="mt-10 ml-10"
         text
         icon
         large
@@ -41,23 +39,21 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
+      <a href="/detail" style="color: black">
           <v-img
-            :src="require('@/assets/sample/sample1.png')"
-            height="180"
+            :src="require('@/assets/sample/sample2.png')"
+            height="200"
             contain
+            style="margin-bottom: 50px;"
           /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
+          </a>
         </v-card>
       </v-col>
 
-      <v-col cols="3">
-        <v-card class="mx-2" max-width="270" tile hover outlined id="wish-card">
+      <v-col cols="2">
+          <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; background-color: #FFEAEA;" hover outlined>
           <v-btn
-        class="ma-2"
+        class="mt-10 ml-10"
         text
         icon
         large
@@ -65,52 +61,70 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-          <v-img
-            :src="require('@/assets/sample/sample1.png')"
-            height="180"
-            contain
-          /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-
-      <v-col cols="3">
-        <v-card class="mx-2" max-width="270" hover outlined>
-          <v-btn
-        class="ma-2"
-        text
-        icon
-        large
-        color="red lighten-2"
-      >
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
+      <a href="/detail" style="color: black">
           <v-img
             :src="require('@/assets/sample/sample3.png')"
-            height="180"
+            height="200"
             contain
+            style="margin-bottom: 50px;"
           /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
+          </a>
         </v-card>
       </v-col>
+
+      <v-col cols="2">
+          <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample1.png')"
+            height="200"
+            contain
+            style="margin-bottom: 50px;"
+          /><v-img />
+          </a>
+        </v-card>
+      </v-col>
+    <v-col cols="2">
+          <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample2.png')"
+            height="200"
+            contain
+            style="margin-bottom: 50px;"
+          /><v-img />
+          </a>
+        </v-card>
+      </v-col>
+
     </v-row>
 
     <v-row class="pa-5-mt-1 text-h7 pt-10 pb-5 border-top mt-10" justify="center" height="200">
       <h2 class="ml-10">| OO님과 유사한 취향의 와인</h2>
     </v-row>
-    <v-row justify="center">
+     <v-row justify="center" class="mb-5">
       <v-col cols="3">
-        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
           <v-btn
-        class="ma-2"
+        class="mt-10 ml-10"
         text
         icon
         large
@@ -118,23 +132,49 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
+      <a href="/detail" style="color: black">
           <v-img
             :src="require('@/assets/sample/sample1.png')"
-            height="350"
+            height="300"
             contain
           /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+
+       <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample2.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
         </v-card>
       </v-col>
 
       <v-col cols="3">
-        <v-card class="mx-auto" max-width="350" hover outlined>
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
           <v-btn
-        class="ma-2"
+        class="mt-10 ml-10"
         text
         icon
         large
@@ -142,160 +182,143 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-          <v-img
-            :src="require('@/assets/sample/sample2.png')"
-            height="350"
-            contain
-          /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-
-      <v-col cols="3">
-        <v-card class="mx-auto" max-width="350" hover outlined>
-          <v-btn
-        class="ma-2"
-        text
-        icon
-        large
-        color="red lighten-2"
-      >
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-          <v-img
-            :src="require('@/assets/sample/sample2.png')"
-            height="350"
-            contain
-          /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-
-      <v-col cols="3">
-        <v-card class="mx-auto" max-width="350" hover outlined>
-          <v-btn
-        class="ma-2"
-        text
-        icon
-        large
-        color="red lighten-2"
-      >
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-          <v-img
-            :src="require('@/assets/sample/sample2.png')"
-            height="350"
-            contain
-          /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-
-      <v-col cols="3">
-        <v-card class="mx-auto" max-width="350" hover outlined>
-          <v-btn
-        class="ma-2"
-        text
-        icon
-        large
-        color="red lighten-2"
-      >
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-          <v-img
-            :src="require('@/assets/sample/sample2.png')"
-            height="350"
-            contain
-          /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-      
-      <v-col cols="3">
-        <v-card class="mx-auto" max-width="350" hover outlined>
-          <v-btn
-        class="ma-2"
-        text
-        icon
-        large
-        color="red lighten-2"
-      >
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-          <v-img
-            :src="require('@/assets/sample/sample2.png')"
-            height="350"
-            contain
-          /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-
-      <v-col cols="3">
-        <v-card class="mx-auto" max-width="350" hover outlined>
-          <v-btn
-        class="ma-2"
-        text
-        icon
-        large
-        color="red lighten-2"
-      >
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-          <v-img
-            :src="require('@/assets/sample/sample2.png')"
-            height="350"
-            contain
-          /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-
-      <v-col cols="3">
-        <v-card class="mx-auto" max-width="350" hover outlined>
-          <v-btn
-        class="ma-2"
-        text
-        icon
-        large
-        color="red lighten-2"
-      >
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
+      <a href="/detail" style="color: black">
           <v-img
             :src="require('@/assets/sample/sample3.png')"
-            height="350"
+            height="300"
             contain
           /><v-img />
-          <v-card-title class="justify-center">wine name</v-card-title>
-          <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+
+      <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample3.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+    </v-row>
+     <v-row justify="center" class="mb-5">
+      <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample1.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+
+       <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample2.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+
+      <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample3.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+
+      <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample3.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
         </v-card>
       </v-col>
     </v-row>

@@ -1,18 +1,19 @@
 <template>
   <div class="detail">
     <Navbar />
-    <h1 class="text-center mb-10 fw-bold">Detail</h1>
+    <h1 class="text-center mb-10">Detail</h1>
     <main class="mt-3">
     <div class="container">
       <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-4 pt-10 text-center">
-              <div class="pt-7 pb-7 my-border">
+        <div class="col-md-3 pt-10 text-center">
+              <div class="pt-7 pb-7 my-border" style="background-color: #FFFFE9; border-color:wheat;">
                 <img id="wine-img" src="https://images.vivino.com/thumbs/n5By4_iWSS2Zmf7anQtL_Q_pb_x300.png" alt="...">
               </div>
           </div>
-        <div class="col-md-7">
-          <div class="card shadow-sm" id="info-card">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <div class="shadow-sm" id="info-card">
             <div class="card-body">
               <h5 class="card-title mx-3 pt-1">Dom Pérignon P2 Plénitude Brut Champagne 1995</h5>
               <div class="card-text pt-3 pb-3">
@@ -28,10 +29,8 @@
         
           </div>
         </div>
-        <div  class="row">
-          <div class="col-md-1"></div>
           <div class="col-md-3" id= "my-detail-card" >
-            <div class="fs-4 fw-bold pb-10 align-right border-top pt-3 pl-10" > | TASTE </div>
+            <div class="fs-4 fw-bold pb-5 pt-3 pl-10" > | 맛 </div>
         <span class="pl-10">당도<badge class="badge bg-secondary" id="taste-badge">1</badge><badge class="badge bg-secondary" id="taste-badge">2</badge>
         <badge class="badge bg-secondary" id="taste-badge">3</badge><badge class="badge bg-danger" id="taste-badge">4</badge>
         <badge class="badge bg-secondary" id="taste-badge">5</badge></span><br />
@@ -44,10 +43,124 @@
         <span class="pl-10">타닌<badge class="badge bg-secondary" id="taste-badge">1</badge><badge class="badge bg-secondary" id="taste-badge">2</badge>
         <badge class="badge bg-secondary" id="taste-badge">3</badge><badge class="badge bg-secondary" id="taste-badge">4</badge>
         <badge class="badge bg-secondary" id="taste-badge">5</badge></span>
+        <div class="fs-4 fw-bold pb-5 pl-10" > | 향 </div>
+        <div style="display:flex;" class="row">
+        <span class="col-3 badge bg-white ml-11 pt-3 fs-6 text-center" style="color:purple; border-radius:100px;">brioche</span>
+        <span class="col-3 badge bg-white ml-3 pt-3 fs-6 text-center" style="color:purple; border-radius:100px;">honey</span>
+        <span class="col-3 badge bg-white ml-3 pt-3 mb-3 fs-6 text-center" style="color:purple; border-radius:100px;">apple</span>
         </div>
-          <div class="col-md-4" id= "my-detail-card" > | 음식추천 </div>
-          </div>
-    
+        <div class="fs-4 fw-bold pb-5 align-right pt-3 pl-10" > | 어울리는 음식 추천 </div>
+        <div class="row" style="display:flex;">
+        <span class="col-4 badge bg-white ml-11 mb-5 fs-6 text-center" style="color:purple; border-radius:100px;">Pork</span>
+        <span class="col-4 badge bg-white ml-11 mb-5 fs-6 text-center" style="color:purple; border-radius:100px;">Richfish</span>
+        <span class="col-4 badge bg-white ml-11 mb-5 fs-6 text-center" style="color:purple; border-radius:100px;">Shellfish</span>
+        <span class="col-4 badge bg-white ml-11 mb-5 fs-6 text-center" style="color:purple; border-radius:100px;">Mild and Cheese</span>
+        </div>
+        </div>
+
+          <h1 style="margin-top: 100px; margin-bottom: 20px;"> - 해당 와인과 유사한 와인 추천 - </h1>
+           <v-row justify="center" class="mb-5">
+      <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample1.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+
+       <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample2.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+
+      <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample3.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+
+      <v-col cols="3">
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-btn
+        class="mt-10 ml-10"
+        text
+        icon
+        large
+        color="red lighten-2"
+      >
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      <a href="/detail" style="color: black">
+          <v-img
+            :src="require('@/assets/sample/sample3.png')"
+            height="300"
+            contain
+          /><v-img />
+          <hr style="border-width: 2px; border-color: pink;"/>
+          <v-card-title class="justify-center" style="padding-top: 1px;"><div>Dom Pérignon</div> 
+          P2 Plénitude Brut Champagne 1995</v-card-title>
+          <v-card-text class="text-center fs-5">#France #Sparkling</v-card-text>
+          </a>
+        </v-card>
+      </v-col>
+    </v-row>
+      </div>
       </div>
     </main>
   </div>
@@ -107,11 +220,11 @@ export default {
 }
 
 #my-detail-card{
-  border-radius: 20px;
+  border-radius: 30px;
   border-style: dashed;
-  border-width: 5px ;
+  border-width: 5px thick;
   border-color: thistle;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .my-border{

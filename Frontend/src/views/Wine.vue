@@ -347,10 +347,6 @@ select{
   margin: 1em;
 }
 
-h1{
-  text-align: center;
-}
-
 #productCategory{
   color : white;
   border-radius: 2em;

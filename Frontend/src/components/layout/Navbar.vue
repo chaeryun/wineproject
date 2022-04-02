@@ -6,7 +6,8 @@
         class="hidden-md-and-up"
       ></v-app-bar-nav-icon>
       <v-app-bar-title class="headline text-uppercase white--text">
-        <a style="text-decoration: none;" href="/home"><h1 class="font-weight-light mt-3" style="margin-right: 200px; color:white;">와인어때?</h1></a>
+        <a style="text-decoration: none;" href="/home">
+        <h1 class="font-weight-light mt-5" style="margin-right: 200px; color:pink;">와인어때?</h1></a>
       </v-app-bar-title>
       <v-autocomplete
         v-model="model"
@@ -107,6 +108,7 @@ export default {
         { title: "Wine", name: "Wine", route: `/wine` },
         { title: "Recommend", name: "Recommend", route: `/recommend` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
+        { title: "Food Compatibility", name: "Food", route: `/food` },
         { title: "About Wine", name: "About", route: `/about` },
         { title: "Detail", name: "Detail", route: `/detail` },
         { title: "Login", name: "Login", route: `/user/login` },
@@ -117,6 +119,7 @@ export default {
         { title: "Wine", name: "Wine", route: `/wine` },
         { title: "Recommend", name: "Recommend", route: `/recommend` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
+        { title: "Food Compatibility", name: "Food", route: `/food` },
         { title: "About Wine", name: "About", route: `/about` },
         { title: "Mypage", name: "Mypage", route: `/user/mypage` },
         { title: "Logout", name: "Logout" },

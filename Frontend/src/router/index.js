@@ -8,6 +8,7 @@ import Wine2 from "@/views/Wine2.vue";
 import Vintage from "@/views/Vintage.vue";
 import Recommend from "@/views/Recommend.vue";
 import About from "@/views/About.vue";
+import Food from "@/views/Food.vue";
 
 import User from "@/views/User.vue";
 import Signup from "@/components/user/Signup.vue";
@@ -36,6 +37,11 @@ const routes = [
     path: "/wine",
     name: "Wine2",
     component: Wine2,
+  },
+  {
+    path: "/food",
+    name: "Food",
+    component: Food,
   },
   {
     path: "/recommend",
