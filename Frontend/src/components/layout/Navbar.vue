@@ -107,9 +107,9 @@ export default {
         { title: "Wine", name: "Wine", route: `/wine` },
         { title: "Recommend", name: "Recommend", route: `/recommend` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
+        { title: "About Wine", name: "About", route: `/about` },
         { title: "Detail", name: "Detail", route: `/detail` },
         { title: "Login", name: "Login", route: `/user/login` },
-        { title: "Signup", name: "Singup", route: `/user/signup` },
       ],
 
       afterlogin: [
@@ -117,7 +117,7 @@ export default {
         { title: "Wine", name: "Wine", route: `/wine` },
         { title: "Recommend", name: "Recommend", route: `/recommend` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
-        { title: "Detail", name: "Detail", route: `/detail` },
+        { title: "About Wine", name: "About", route: `/about` },
         { title: "Mypage", name: "Mypage", route: `/user/mypage` },
         { title: "Logout", name: "Logout" },
       ],

@@ -35,6 +35,7 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
+      <a href="/detail" style="color: black">
           <v-img
             :src="require('@/assets/sample/sample1.png')"
             height="400"
@@ -42,9 +43,7 @@
           /><v-img />
           <v-card-title class="justify-center">wine name</v-card-title>
           <v-card-text class="text-center">wine text</v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-          </v-card-actions>
+          </a>
         </v-card>
       </v-col>
 

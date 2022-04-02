@@ -7,6 +7,7 @@ import Detail from "@/views/Detail.vue";
 import Wine2 from "@/views/Wine2.vue";
 import Vintage from "@/views/Vintage.vue";
 import Recommend from "@/views/Recommend.vue";
+import About from "@/views/About.vue";
 
 import User from "@/views/User.vue";
 import Signup from "@/components/user/Signup.vue";
@@ -45,6 +46,11 @@ const routes = [
     path: "/vintage",
     name: "Vintage",
     component: Vintage,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
   },
 
   {
