@@ -26,9 +26,9 @@
     </v-row>
     <v-row justify="center">
       <v-col cols="3">
-          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-10 ml-10"
+        class="mt-7 ml-10"
         text
         icon
         large
@@ -36,7 +36,7 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-      <a href="/detail" style="color: black">
+      <a href="/detail" style="color: gainsboro;">
           <v-img
             :src="require('@/assets/sample/sample1.png')"
             height="300"
@@ -51,9 +51,9 @@
       </v-col>
 
        <v-col cols="3">
-          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-10 ml-10"
+        class="mt-7 ml-10"
         text
         icon
         large
@@ -61,7 +61,7 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-      <a href="/detail" style="color: black">
+      <a href="/detail" style="color: gainsboro;">
           <v-img
             :src="require('@/assets/sample/sample2.png')"
             height="300"
@@ -76,9 +76,9 @@
       </v-col>
 
       <v-col cols="3">
-          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+          <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-10 ml-10"
+        class="mt-7 ml-10"
         text
         icon
         large
@@ -86,7 +86,7 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-      <a href="/detail" style="color: black">
+      <a href="/detail" style="color: gainsboro;">
           <v-img
             :src="require('@/assets/sample/sample3.png')"
             height="300"
@@ -101,14 +101,14 @@
       </v-col>
     </v-row>
 
-    <v-row class="pa-2 text-h7" justify="center">
+    <v-row class="pa-2 mt-15 text-h7" justify="center">
       <h1 class="mt-10 mb-10">이달의 와인</h1>
     </v-row>
     <v-row justify="center">
       <v-col cols="3">
-        <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+        <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-10 ml-10"
+        class="mt-7 ml-10"
         text
         icon
         large
@@ -116,7 +116,7 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-      <a href="/detail" style="color: black">
+      <a href="/detail" style="color: gainsboro;">
           <v-img
             :src="require('@/assets/sample/sample1.png')"
             height="300"
@@ -131,9 +131,9 @@
       </v-col>
 
       <v-col cols="3">
-        <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+        <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-10 ml-10"
+        class="mt-7 ml-10"
         text
         icon
         large
@@ -141,7 +141,7 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-      <a href="/detail" style="color: black">
+      <a href="/detail" style="color: gainsboro;">
           <v-img
             :src="require('@/assets/sample/sample2.png')"
             height="300"
@@ -156,9 +156,9 @@
       </v-col>
 
       <v-col cols="3">
-       <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #FFEAEA;" hover outlined>
+       <v-card class="mx-auto" max-width="380"  style="border-radius: 100px; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-10 ml-10"
+        class="mt-7 ml-10"
         text
         icon
         large
@@ -166,7 +166,7 @@
       >
         <v-icon>mdi-heart</v-icon>
       </v-btn>
-      <a href="/detail" style="color: black">
+      <a href="/detail" style="color: gainsboro;">
           <v-img
             :src="require('@/assets/sample/sample3.png')"
             height="300"
@@ -180,6 +180,7 @@
         </v-card>
       </v-col>
     </v-row>
+  <br />
   </v-app>
 </template>
 
@@ -199,5 +200,4 @@ export default {
 
 </script>
 <style>
-
 </style>
