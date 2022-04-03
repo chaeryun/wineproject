@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-3 pt-10 text-center">
-              <div class="pt-7 pb-7 my-border" style="background-color: #FFFFE9; border-color:wheat;">
+              <div class="pt-7 pb-7 my-border" style="background-color: #232320; border-width: 0.1px;">
                 <img id="wine-img" src="https://images.vivino.com/thumbs/n5By4_iWSS2Zmf7anQtL_Q_pb_x300.png" alt="...">
               </div>
           </div>
@@ -51,10 +51,10 @@
         </div>
         <div class="fs-4 fw-bold pb-5 align-right pt-5 pl-10" > | 어울리는 음식 추천 </div>
         <div class="row" style="display:flex;">
-        <span class="col-4 badge ml-11 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">Pork</span>
-        <span class="col-4 badge ml-11 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">Richfish</span>
-        <span class="col-4 badge ml-11 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">Shellfish</span>
-        <span class="col-4 badge ml-11 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">Mild and Cheese</span>
+        <span class="col-4 badge ml-11 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><img src="../assets/food/pork.png" style="width:40px; height:40px;" /> Pork </span>
+        <span class="col-4 badge ml-11 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><img src="../assets/food/richfish.png" style="width:40px; height:40px;" /> Richfish</span>
+        <span class="col-4 badge ml-11 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><img src="../assets/food/shellfish.png" style="width:40px; height:40px;" /> Shellfish</span>
+        <span class="col-4 badge ml-11 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><img src="../assets/food/soft_cheese.png" style="width:40px; height:40px;" /> Soft Cheese</span>
         </div>
         </div>
 

@@ -9,13 +9,13 @@
       <v-col cols="2">
           <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; color:gainsboro; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-5 ml-10"
+        class="mt-7 ml-15"
         text
         icon
         large
-        color="red lighten-2"
+        color="red"
       >
-        <v-icon>mdi-heart</v-icon>
+        <v-icon>mdi-circle</v-icon> RED
       </v-btn>
       <a href="/detail" style="color: gainsboro">
           <v-img
@@ -31,13 +31,13 @@
        <v-col cols="2">
           <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; color:gainsboro; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-5 ml-10"
+        class="mt-7 ml-15"
         text
         icon
         large
-        color="red lighten-2"
+        color="white"
       >
-        <v-icon>mdi-heart</v-icon>
+        <v-icon>mdi-circle</v-icon>WHITE
       </v-btn>
       <a href="/detail" style="color: gainsboro">
           <v-img
@@ -53,13 +53,13 @@
       <v-col cols="2">
           <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; color:gainsboro; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-5 ml-10"
+        class="mt-7 ml-15"
         text
         icon
         large
-        color="red lighten-2"
+        color="red lighten-3"
       >
-        <v-icon>mdi-heart</v-icon>
+        <v-icon>mdi-circle</v-icon>ROSE
       </v-btn>
       <a href="/detail" style="color: gainsboro">
           <v-img
@@ -75,13 +75,13 @@
       <v-col cols="2">
           <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; color:gainsboro; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-5 ml-10"
+        class="mt-7 ml-15"
         text
         icon
         large
-        color="red lighten-2"
+        color="blue"
       >
-        <v-icon>mdi-heart</v-icon>
+        <v-icon>mdi-circle</v-icon>PORT
       </v-btn>
       <a href="/detail" style="color: gainsboro">
           <v-img
@@ -96,13 +96,13 @@
     <v-col cols="2">
           <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; color:gainsboro; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-5 ml-10"
+        class="mt-7 ml-15"
         text
         icon
         large
-        color="red lighten-2"
+        color="purple lighten-2"
       >
-        <v-icon>mdi-heart</v-icon>
+        <v-icon>mdi-circle</v-icon>SPARKLING
       </v-btn>
       <a href="/detail" style="color: gainsboro">
           <v-img

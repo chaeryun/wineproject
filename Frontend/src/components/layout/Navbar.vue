@@ -7,7 +7,7 @@
       ></v-app-bar-nav-icon>
       <v-app-bar-title class="headline text-uppercase white--text">
         <a style="text-decoration: none;" href="/home">
-        <h1 class="font-weight-light mt-5" style="margin-right: 200px; color:pink;">와인어때?</h1></a>
+        <h1 class="font-weight-light mt-5" style="margin-right: 200px; color:wheat;">와인어때?</h1></a>
       </v-app-bar-title>
       <v-autocomplete
         v-model="model"
