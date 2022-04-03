@@ -1,9 +1,10 @@
 <template>
   <v-main>
-    <v-container>
-      <v-layout row wrap align-center>
-        <v-flex xs8 sm4 offset-sm2 align-center justify-center>
-          <h1>회원가입</h1>
+    <v-container class="signup-page">
+      <v-layout row wrap>
+        <v-flex col-7></v-flex>
+        <v-flex col-5 >
+          <h1 style="color: tomato">회원가입</h1>
           <br />
 
           <v-form ref="form" v-model="valid" lazy-validation>
@@ -56,7 +57,7 @@
               label="개인정보 수집 및 이용에 동의합니다."
               required
             ></v-checkbox>
-
+            <div class="text-center">
             <v-btn
               :disabled="!valid"
               color="success"
@@ -67,6 +68,7 @@
             </v-btn>
 
             <v-btn color="error" class="mr-4" @click="reset"> Cancel </v-btn>
+            </div>
           </v-form>
         </v-flex>
       </v-layout>
@@ -168,5 +170,16 @@ export default {
 .v-text-field {
   width: 600px;
   height: 90px;
+}
+
+.signup-page{
+  background-image: url("../../assets/wine_background2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 160px;
+  margin: auto !important;
+  opacity: 0.9;
 }
 </style>
