@@ -224,15 +224,8 @@
             hover
             outlined
           >
-            <v-btn
-              right
-              class="mt-5 ml-10"
-              text
-              icon
-              large
-              color="red lighten-2"
-            >
-              <v-icon>mdi-heart</v-icon>
+            <v-btn class="mt-7 ml-15" text icon large color="green lighten-3">
+              <v-icon>mdi-circle</v-icon> {{ wine.color }}
             </v-btn>
             <v-img
               :src="wine.image"
@@ -276,15 +269,6 @@ import http from "@/util/http-common";
 export default {
   name: "Wine",
   data: () => ({
-    infos: [
-      {
-        winery: `Dom Pérignon`,
-        name: " P2 Plénitude Brut Champagne 1995",
-        hashtag: "#France #Sparkling",
-        color: "deep-purple lighten-1",
-      },
-    ],
-
     // winelist 저장
     winelist: [],
 
@@ -338,23 +322,6 @@ export default {
     // 와인 상세페이지 이동
     winedetail(wine_id) {
       this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
-    },
-
-    // wishlist 담기
-    async wishlist(wine_id) {
-      await http({
-        method: "post",
-        url: "wine/add_wine_wishlist/" + wine_id + "/",
-        // data: {
-        //   user: this.userinfo.username,
-        // },
-      })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
     },
   },
 };

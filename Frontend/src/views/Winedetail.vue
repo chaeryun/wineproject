@@ -8,6 +8,7 @@
             <div class="col-2 text-center">
               <img id="wine-img" :src="this.winedetail.image" alt="..." />
               <div>
+<<<<<<< HEAD
               <br />
               <v-btn 
               right
@@ -25,6 +26,9 @@
               <div class="fs-4 fw-bold pb-6 pt-6 pl-3">
                 | INFORAMTION
               </div>
+            </div>
+            <div class="col-4 shadow-sm">
+              <div class="fs-4 fw-bold pb-6 pt-6 pl-3">| INFORAMTION</div>
               <div class="card-body">
                 <h5 class="card-title pb-1 fs-3 ml-2">
                   {{ this.winedetail.wine }}
@@ -32,7 +36,6 @@
                 </h5>
                 <h5 class="pt-5 pb-3 border-top">
                   <span class="badge outlined" id="my-badge">Wine Type</span>
-                  
                   {{ this.winedetail.color }}
                 </h5>
                 <div class="card-text border-top pt-3 pb-3">
@@ -57,10 +60,10 @@
                     {{ this.winedetail.price }}원
                   </h5>
                 </div>
-          </div>
+              </div>
             </div>
             <div class="col-3">
-             <div class="fs-4 fw-bold pb-10 ml-10 align-right pt-6">
+              <div class="fs-4 fw-bold pb-10 ml-10 align-right pt-6">
                 | TASTE
               </div>
               <span class="pl-3 fs-5 ml-10">
@@ -71,6 +74,7 @@
                     :key="chips"
                     :bind="sweet"
                     :color="sweet === chips ? 'red' : ' gray'"
+                    disabled
                   >
                     {{ chips }}
                   </v-chip>
@@ -85,6 +89,7 @@
                     :key="chips"
                     :bind="acidic"
                     :color="acidic === chips ? 'red' : ' gray'"
+                    disabled
                   >
                     {{ chips }}
                   </v-chip>
@@ -99,6 +104,7 @@
                     :key="chips"
                     :bind="bold"
                     :color="bold === chips ? 'red' : ' gray'"
+                    disabled
                   >
                     {{ chips }}
                   </v-chip>
@@ -113,33 +119,57 @@
                     :key="chips"
                     :bind="tannic"
                     :color="tannic === chips ? 'red' : ' gray'"
+                    disabled
                   >
                     {{ chips }}
                   </v-chip>
                 </v-chip-group>
               </span>
+            </div>
+            <div class="col-3">
+              <div class="fs-4 fw-bold pb-10 align-right pt-6">| BOUQUET</div>
+              <div
+                style="display: flex"
+                class="row"
+                :key="taste"
+                v-for="taste in tastes"
+              >
+                <span
+                  class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center"
+                  style="
+                    border-radius: 100px;
+                    background-color: rgb(180, 139, 85);
+                    color: white;
+                  "
+                  >{{ taste }}</span
+                >
               </div>
-              <div class="col-3">
-                <div class="fs-4 fw-bold pb-10 align-right pt-6">
-                  | BOUQUET
-                </div>
-                <div style="display:flex;" class="row">
-          <span class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">{{ this.winedetail.taste[0] }}</span>
-        <span class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">{{ this.winedetail.taste[1] }}</span>
-        <span class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">{{ this.winedetail.taste[2] }}</span>
-        </div>
-        <br />
-                <div class="fs-4 fw-bold pb-10 align-right pt-10">
-                  | FOOD
-                </div>
-                <div class="row" style="display:flex;">
-        <span class="col-5 badge ml-4 mb-10 fs-5 text-center" style="height: 55px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div class="mb-2"><img src="../assets/food/pork.png" style="width:50px; height:50px;" /></div> {{ this.winedetail.food[0] }}</span>
-        <span class="col-5 badge ml-4 mb-10 fs-5 text-center" style="height: 55px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div class="mb-2"><img src="../assets/food/richfish.png" style="width:50px; height:50px;" /></div> {{ this.winedetail.food[1] }} </span>
-        <span class="col-5 badge ml-4 mb-10 fs-5 text-center" style="height: 55px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div class="mb-2"><img src="../assets/food/shellfish.png" style="width:50px; height:50px;" /></div> {{ this.winedetail.food[2] }} </span>
-        <span class="col-5 badge ml-4 mb-10 fs-5 text-center" style="height: 55px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div class="mb-2"><img src="../assets/food/soft_cheese.png" style="width:50px; height:50px;" /></div> {{ this.winedetail.food[3] }} </span>
-        </div>
-
+              <br />
+              <div class="fs-4 fw-bold pb-10 align-right pt-10">| FOOD</div>
+              <div
+                style="display: flex"
+                class="row"
+                :key="food"
+                v-for="food in temp"
+              >
+                <span class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center"
+                  ><img
+                    :src="require(`../assets/food/${food}.png`)"
+                    style="width: 50px; height: 50px"
+                /></span>
+                <span
+                  class="col-5 badge ml-4 mb-10 fs-5 text-center"
+                  style="
+                    height: 55px;
+                    border-radius: 100px;
+                    background-color: rgb(180, 139, 85);
+                    color: white;
+                    padding: 0px;
+                  "
+                >
+                </span>
               </div>
+            </div>
           </div>
         </div>
       </div>
@@ -165,6 +195,13 @@ export default {
       acidic: "",
       bold: "",
       tannic: "",
+
+      slicefood: "",
+      foods: [],
+      temp: [],
+
+      slicetaste: "",
+      tastes: "",
     };
   },
 
@@ -172,6 +209,13 @@ export default {
     // wineID값 가져오기
     this.wineid = this.$route.query.wine_id;
     this.getWineDetail();
+  },
+
+  computed: {
+    // user 정보 가져오기
+    userInfo() {
+      return this.$store.state.userInfo;
+    },
   },
 
   methods: {
@@ -186,7 +230,28 @@ export default {
         .then((res) => {
           this.winedetail = res.data;
           console.log(this.winedetail);
+
+          // wine 값 설정
           this.winevalue(this.winedetail);
+
+          // food 배열로 변환
+          var reg = /[`~!@#$%^&*()_|+\-=?;:'".<>\{\}\[\]\\\/ ]/gim;
+
+          this.slicefood = this.winedetail.food.split(",");
+          for (let i = 0; i < this.slicefood.length; i++) {
+            this.foods[i] = this.slicefood[i].trim();
+            this.temp[i] = this.foods[i].replace(reg, "");
+          }
+
+          console.log("slicefood", this.foods);
+          console.log("temp: ", this.temp);
+
+          // taste 배열로 변환
+          console.log("taste", this.winedetail.taste);
+
+          this.slicetaste = this.winedetail.taste.replace(reg, "");
+          this.tastes = this.slicetaste.split(",");
+          console.log("taste : ", this.tastes);
         })
         .catch((err) => {
           console.log(err);
@@ -246,18 +311,32 @@ export default {
       } else if (wine.smooth >= 8 && wine.smooth < 10) {
         this.tannic = 5;
       }
+    },
 
-      console.log("당도 :", this.sweet);
-      console.log("산도 :", this.acidic);
-      console.log("바디 :", this.bold);
-      console.log("타닌 :", this.tannic);
+    // wishlist 담기
+    async wishlist() {
+      await http({
+        method: "post",
+        url:
+          "wine/add_wine_wishlist/" +
+          this.winedetail.wine_id +
+          "/" +
+          this.userInfo.username +
+          "/",
+      })
+        .then((res) => {
+          alert("추가완료!");
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
 </script>
 
 <style>
-
 #wine-img {
   width: 170px;
   height: 650px;
@@ -278,10 +357,15 @@ export default {
   display: inline;
   padding-bottom: 11px;
   text-align: center;
+<<<<<<< HEAD
   background-color: #F29661;
   margin-right: 11px;
 }
 .chip-group-box{
+=======
+} */
+.chip-group-box {
+>>>>>>> d2614698142b08dbade017a1a837354fb866fa08
   margin-left: 40px;
 }
 
@@ -295,7 +379,7 @@ export default {
   margin-left: 1em;
   padding-left: 1em;
 }
-#my-detail-card{
+#my-detail-card {
   border-radius: 30px;
   border-style: dashed;
   border-width: 5px thick;
@@ -304,8 +388,8 @@ export default {
   color: gainsboro;
 }
 
-.my-border{
-  background-color:rgb(56, 54, 54);
+.my-border {
+  background-color: rgb(56, 54, 54);
   width: 100%;
   margin-top: 50px;
   display: flex;
@@ -315,5 +399,4 @@ export default {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-
 </style>
