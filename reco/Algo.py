@@ -24,8 +24,20 @@ def reco_color_average(color= "red", n=5):
     df1 = df1.sort_values(by="average", ascending=False).groupby("color").head(n)
     df2 = df1.sort_values(by=["color", "average"], ascending=[True, False])
     return df2.wine_id.tolist()
-#print(reco_color_average('port',10))
-# reco_color_average('red',10)
+# print(reco_color_average('port',10))
+# print(reco_color_average('red',10))
+# reco_color_average('white',10)
+# reco_color_average('',10)
+# reco_color_average('white',10)
+
+def re_reco_color_average(color= "red", n=5):
+    df1 = df.copy()
+    df1[df1['color'] == '${color}}']
+    df1 = df1.sort_values(by="average", ascending=False).groupby("color").head(n)
+    df2 = df1.sort_values(by=["color", "average"], ascending=[True, False])
+    return df2.wine_id.tolist()
+# print(re_reco_color_average('port',10))
+# print(re_reco_color_average('red',10))
 # reco_color_average('white',10)
 # reco_color_average('',10)
 # reco_color_average('white',10)
@@ -39,7 +51,7 @@ def reco_color_reviews(color= "red", n=5):
     df1 = df1.sort_values(by="reviews", ascending=False).groupby("color").head(n)
     df2 = df1.sort_values(by=["color", "reviews"], ascending=[True, False])
     return df2.wine_id.tolist()
-#print(reco_color_reviews('rose',5))
+# print(reco_color_reviews('rose',5))
 
 
 

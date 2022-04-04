@@ -14,17 +14,6 @@
             id="productCategory"
             ref="productCategory"
           >
-            <option value="1">와인 타입</option>
-            <option value="2">Red</option>
-            <option value="3">White</option>
-            <option value="4">Sparkling</option>
-            <option value="5">Rose</option>
-          </select>
-          <select
-            class="form-control secondary"
-            id="productCategory"
-            ref="productCategory"
-          >
             <option value="1">국가</option>
             <option value="2">France</option>
             <option value="3">United States</option>
@@ -165,32 +154,6 @@
             <option value="5">4</option>
             <option value="6">5</option>
           </select>
-          <select
-            class="form-control secondary"
-            id="productCategory"
-            ref="productCategory"
-          >
-            <option value="1">음식궁합</option>
-            <option value="2">Shellfish</option>
-            <option value="3">Pork</option>
-            <option value="4">Beef</option>
-            <option value="5">Mild and Soft Cheese</option>
-            <option value="6">Poultry</option>
-            <option value="7">Richfish</option>
-            <option value="8">Lamb</option>
-            <option value="9">Pasta</option>
-            <option value="10">Mature and Hard Cheese</option>
-            <option value="11">Salmon</option>
-            <option value="12">Cured Meat</option>
-            <option value="13">Tuna</option>
-            <option value="14">Vegetarian</option>
-            <option value="15">Aperitif</option>
-            <option value="16">Veal</option>
-            <option value="17">Appetizers and Snacks</option>
-            <option value="18">Blue Cheese</option>
-            <option value="19">Spicy Food</option>
-            <option value="20">Sweet Dessert</option>
-          </select>
         </div>
         <div class="select-input">
           <input
@@ -206,6 +169,41 @@
         </div>
       </form>
       <hr />
+      <!-- 와인타입 선택바 -->
+      <v-bottom-navigation
+    :value="value"
+    color="warning"
+    width="450px"
+  >
+    <v-btn>
+      <span>Red</span>
+
+      <v-icon>mdi-pig</v-icon>
+    </v-btn>
+
+    <v-btn>
+      <span>White</span>
+
+      <v-icon>mdi-alien-outline</v-icon>
+    </v-btn>
+
+    <v-btn>
+      <span>Rose</span>
+
+      <v-icon>mdi-halloween</v-icon>
+    </v-btn>
+    <v-btn>
+      <span>Sparkling</span>
+
+      <v-icon>mdi-owl</v-icon>
+    </v-btn>
+    <v-btn>
+      <span>Port</span>
+
+      <v-icon>mdi-pirate</v-icon>
+    </v-btn>
+  </v-bottom-navigation>
+
       <v-row>
         <div
           class="col-xl-3 col-lg-4 col-md-6"
@@ -217,6 +215,7 @@
             max-width="380"
             style="
               border-radius: 100px;
+              height: 530px;
               color: gainsboro;
               background-color: #232320;
               box-shadow: 0 0 10px grey;

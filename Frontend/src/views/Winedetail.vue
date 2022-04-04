@@ -77,7 +77,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="sweet"
-                    :color="sweet === chips ? '#FF9999' : 'pink lighten-5'"
+                    :color="sweet === chips ? 'pink lighten-2' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}
@@ -92,7 +92,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="acidic"
-                    :color="acidic === chips ? '#FF9999' : 'pink lighten-5'"
+                    :color="acidic === chips ? 'pink lighten-2' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}
@@ -107,7 +107,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="bold"
-                    :color="bold === chips ? '#FF9999' : 'pink lighten-5'"
+                    :color="bold === chips ? 'pink lighten-2' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}
@@ -122,7 +122,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="tannic"
-                    :color="tannic === chips ? '#FF9999' : 'pink lighten-5'"
+                    :color="tannic === chips ? 'pink lighten-2' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}
@@ -137,7 +137,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="gentle"
-                    :color="gentle === chips ? '#FF9999' : 'pink lighten-5'"
+                    :color="gentle === chips ? 'pink lighten-2' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}

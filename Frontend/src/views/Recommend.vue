@@ -3,15 +3,17 @@
     <v-container>
       <h1>Recommend</h1>
       <v-row class="text-h7" justify="center">
-        <h2 class="ml-10 pb-5">| 최근 찜한 목록</h2>
+        <h2 class="ml-10 mt-10 pb-5">| OO님이 최근 찜한 와인</h2>
+        <h5 class="ml-12 pb-5">oo님이 찜한 와인 목록을 기반으로 유사한 취향의 와인을 추천해드립니다.</h5>
       </v-row>
       <v-row justify="center" class="mb-5">
         <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
           <v-card
             class="mx-auto"
-            max-width="260"
             style="
-              border-radius: 200px;
+              height: 450px;
+              margin: auto;
+              border-radius: 50px;
               color: gainsboro;
               background-color: #232320;
               box-shadow: 0 0 10px grey;
@@ -41,24 +43,23 @@
 
             <v-img
               :src="wine.image"
-              height="200"
+              height="250"
               contain
-              style="margin-bottom: 50px"
               @click="winedetail(wine.wine_id)"
             /><v-img />
             <hr
-              style="border-width: 2px; border-color: pink; margin-bottom: -5px"
+              style="border-width: 2px; border-color: pink; margin-bottom: 5px"
             />
             <v-card-text
               class="text-center fs-5"
-              style="margin-top: -12px; color: gainsboro"
+              style="color: gainsboro"
               >{{ wine.wine }}<br />
               <br />
             </v-card-text>
           </v-card>
         </v-col>
       </v-row>
-
+      
       <v-row
         class="pa-5-mt-1 text-h7 pt-10 pb-5 mt-10"
         justify="center"

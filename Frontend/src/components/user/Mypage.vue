@@ -8,10 +8,11 @@
       <v-row justify="center" class="mb-5">
         <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
           <v-card
-            class="mx-auto mt-10"
-            max-width="380"
+            class="mt-10"
             style="
-              border-radius: 100px;
+              height: 450px;
+              margin: auto;
+              border-radius: 50px;
               color: gainsboro;
               background-color: #232320;
               box-shadow: 0 0 10px grey;
@@ -41,17 +42,16 @@
 
             <v-img
               :src="wine.image"
-              height="200"
+              height="250"
               contain
-              style="margin-bottom: 50px"
               @click="winedetail(wine.wine_id)"
             /><v-img />
             <hr
-              style="border-width: 2px; border-color: pink; margin-bottom: -5px"
+              style="border-width: 2px; border-color: pink; margin-bottom: 5px;"
             />
             <v-card-text
               class="text-center fs-5"
-              style="margin-top: -12px; color: gainsboro"
+              style="color: gainsboro"
               >{{ wine.wine }}<br />
               <br />
             </v-card-text>
