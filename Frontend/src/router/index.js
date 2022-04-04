@@ -9,8 +9,11 @@ import Winedetail from "@/views/Winedetail.vue";
 import Wine2 from "@/views/Wine2.vue";
 import Vintage from "@/views/Vintage.vue";
 import Recommend from "@/views/Recommend.vue";
-import About from "@/views/About.vue";
 import Food from "@/views/Food.vue";
+
+import About from "@/views/About.vue";
+import Winesense from "@/components/wine/Winesense";
+import Wineword from "@/components/wine/Wineword";
 
 import User from "@/views/User.vue";
 import Signup from "@/components/user/Signup.vue";
@@ -64,6 +67,20 @@ const routes = [
     path: "/about",
     name: "About",
     component: About,
+    redirect: "/about/word",
+
+    children: [
+      {
+        path: "word",
+        name: "Wineword",
+        component: Wineword,
+      },
+      {
+        path: "sense",
+        name: "Winesense",
+        component: Winesense,
+      },
+    ],
   },
 
   {

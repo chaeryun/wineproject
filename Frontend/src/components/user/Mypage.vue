@@ -1,127 +1,183 @@
 <template>
-  <v-main>
+  <div class="wine mt-13">
     <v-container>
-      <v-layout row wrap align-center>
-        <v-flex xs8 sm4 offset-sm2 align-center justify-center>
-          <h1>마이페이지</h1>
-          <br />
-
-          <v-form ref="form" v-model="valid" lazy-validation>
-            <v-text-field
-              v-model="user.id"
-              :counter="16"
-              :rules="idRules"
-              label="ID"
-              required
-            ></v-text-field>
-
-            <v-text-field
-              v-model="user.password"
-              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-              :rules="[rules.required, rules.min]"
-              :type="show1 ? 'text' : 'password'"
-              name="input-10-1"
-              label="Password"
-              hint="At least 4 characters ~ 12 characters"
-              counter
-              @click:append="show1 = !show1"
-            ></v-text-field>
-
-            <v-btn
-              :disabled="!valid"
-              color="success"
-              class="mr-4"
-              @click="validate"
-            >
-              Login
+      <h1>My page</h1>
+      <v-row class="text-h7" justify="center">
+        <h2 class="ml-10 pb-5">| 내가 찜한 목록</h2>
+      </v-row>
+      <v-row justify="center" class="mb-5">
+        <v-col cols="2">
+          <v-card
+            class="mx-auto"
+            max-width="260"
+            style="
+              border-radius: 200px;
+              color: gainsboro;
+              background-color: #232320;
+              box-shadow: 0 0 10px grey;
+            "
+            hover
+            outlined
+          >
+            <v-btn class="mt-7 ml-15" text icon large color="red">
+              <v-icon>mdi-circle</v-icon> RED
             </v-btn>
+            <a href="/detail" style="color: gainsboro">
+              <v-img
+                :src="require('@/assets/sample/sample1.png')"
+                height="200"
+                contain
+                style="margin-bottom: 50px"
+              /><v-img />
+            </a>
+          </v-card>
+        </v-col>
 
-            <v-btn color="error" class="mr-4" @click="signup"> Signup </v-btn>
-          </v-form>
-        </v-flex>
-      </v-layout>
+        <v-col cols="2">
+          <v-card
+            class="mx-auto"
+            max-width="260"
+            style="
+              border-radius: 200px;
+              color: gainsboro;
+              background-color: #232320;
+              box-shadow: 0 0 10px grey;
+            "
+            hover
+            outlined
+          >
+            <v-btn class="mt-7 ml-15" text icon large color="green">
+              <v-icon>mdi-circle</v-icon>WHITE
+            </v-btn>
+            <a href="/detail" style="color: gainsboro">
+              <v-img
+                :src="require('@/assets/sample/sample2.png')"
+                height="200"
+                contain
+                style="margin-bottom: 50px"
+              /><v-img />
+            </a>
+          </v-card>
+        </v-col>
+
+        <v-col cols="2">
+          <v-card
+            class="mx-auto"
+            max-width="260"
+            style="
+              border-radius: 200px;
+              color: gainsboro;
+              background-color: #232320;
+              box-shadow: 0 0 10px grey;
+            "
+            hover
+            outlined
+          >
+            <v-btn class="mt-7 ml-15" text icon large color="red lighten-3">
+              <v-icon>mdi-circle</v-icon>ROSE
+            </v-btn>
+            <a href="/detail" style="color: gainsboro">
+              <v-img
+                :src="require('@/assets/sample/sample3.png')"
+                height="200"
+                contain
+                style="margin-bottom: 50px"
+              /><v-img />
+            </a>
+          </v-card>
+        </v-col>
+
+        <v-col cols="2">
+          <v-card
+            class="mx-auto"
+            max-width="260"
+            style="
+              border-radius: 200px;
+              color: gainsboro;
+              background-color: #232320;
+              box-shadow: 0 0 10px grey;
+            "
+            hover
+            outlined
+          >
+            <v-btn class="mt-7 ml-15" text icon large color="blue">
+              <v-icon>mdi-circle</v-icon>PORT
+            </v-btn>
+            <a href="/detail" style="color: gainsboro">
+              <v-img
+                :src="require('@/assets/sample/sample1.png')"
+                height="200"
+                contain
+                style="margin-bottom: 50px"
+              /><v-img />
+            </a>
+          </v-card>
+        </v-col>
+        <v-col cols="2">
+          <v-card
+            class="mx-auto"
+            max-width="260"
+            style="
+              border-radius: 200px;
+              color: gainsboro;
+              background-color: #232320;
+              box-shadow: 0 0 10px grey;
+            "
+            hover
+            outlined
+          >
+            <v-btn class="mt-7 ml-16" text icon large color="purple lighten-2">
+              <v-icon>mdi-circle</v-icon> SPARKLING
+            </v-btn>
+            <a href="/detail" style="color: gainsboro">
+              <v-img
+                :src="require('@/assets/sample/sample2.png')"
+                height="200"
+                contain
+                style="margin-bottom: 50px"
+              /><v-img />
+            </a>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
-  </v-main>
+  </div>
 </template>
-
 <script>
-// import rest from "../../api/index.js";
-// import { mapState } from "vuex";
+import http from "@/util/http-common";
 
 export default {
-  name: "Userlogin",
-  data: () => ({
-    valid: false,
-    // name rule
-    idRules: [
-      (v) => !!v || "ID is required",
-      (v) => (v && v.length <= 16) || "ID must be less than 16 characters",
-    ],
-    // password rule
-    show1: false,
-    rules: {
-      required: (value) => !!value || "Password is Required.",
-      min: (v) => 4 <= v.length <= 12 || "Max 12 characters",
-      emailMatch: () => `The email and password you entered don't match`,
-    },
+  name: "mypage",
+  components: {},
 
-    user: {
-      id: "",
-      password: "",
-    },
-  }),
+  data: () => ({}),
 
   computed: {
-    // ...mapState(memberStore, ["isLogin"]),
-    userstate() {
-      return this.$store.state.userstate;
+    // user 정보 가져오기
+    userInfo() {
+      return this.$store.state.userInfo;
     },
   },
 
+  created() {
+    this.getUserWine();
+  },
+
   methods: {
-    validate() {
-      console.log("id : ", this.user.id);
-      console.log("password : ", this.user.password);
-      this.$refs.form.validate();
-
-      if (this.$refs.form.validate() == true) {
-        this.login();
-      }
-    },
-
-    // async login() {
-    //   await rest
-    //     .axios({
-    //       method: "get",
-    //       url: "/members/login/" + this.user.id,
-    //     })
-    //     .then((res) => {
-    //       alert("회원가입 성공");
-    //       this.$router.push({ name: "Home" });
-    //       console.log(res);
-    //     })
-    //     .then((err) => {
-    //       console.log(err);
-    //     });
-    // },
-
-    login() {
-      console.log("Login", this.userstate.islogin);
-      this.$store.commit("userstate", true);
-      console.log("after Login", this.userstate.islogin);
-      this.$router.push({ name: "Home" });
-    },
-
-    signup() {
-      this.$router.push({ name: "Signup" });
+    async getUserWine() {
+      await http({
+        methods: "get",
+        url: "wine/latest_wine_list/" + this.userInfo.username + "/",
+      })
+        .then((res) => {
+          console.log("winelist : ", res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
 </script>
 
-<style scoped>
-.v-text-field {
-  width: 600px;
-  height: 90px;
-}
-</style>
+<style></style>
