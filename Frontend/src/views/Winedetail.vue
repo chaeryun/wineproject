@@ -1,64 +1,74 @@
 <template>
   <div>
-    <h1 class="text-center mt-13 mb-10 fw-bold">Detail</h1>
+    <h1 class="text-center mt-13 fw-bold">Detail</h1>
     <main>
       <div class="container">
         <div>
           <div class="row my-border text-start">
-            <div class="col-2 text-center">
+            <div class="col-3 text-center">
               <img id="wine-img" :src="this.winedetail.image" alt="..." />
               <div>
               <br />
               <v-btn 
               right
-              class="fs-3"
+              class="fs-4 fw-bold"
               text
               icon
               large
-              color="red lighten-3"
+              color="white"
             >
-              <v-icon>mdi-heart</v-icon> Wish List
+              <v-icon>mdi-heart</v-icon> 
+              Add to Wish List
             </v-btn>
             </div>
             </div>
-            <div class="col-4 shadow-sm">
-              <div class="fs-4 fw-bold pb-6 pt-6 pl-3">| INFORAMTION</div>
+            <div class="col-5 shadow-sm">
+              <div class="fs-4 fw-bold pb-6 pt-8 pl-3">INFORAMTION</div>
               <div class="card-body">
-                <h5 class="card-title pb-1 fs-3 ml-2">
+                <h5 class="card-title pb-1 fs-3">
                   {{ this.winedetail.wine }}
                   {{ this.winedetail.location }}
                 </h5>
                 <h5 class="pt-5 pb-3 border-top">
-                  <span class="badge outlined" id="my-badge">Wine Type</span>
+                  <span class="badge outlined" id="my-badge"> Wine Type</span>
                   {{ this.winedetail.color }}
                 </h5>
                 <div class="card-text border-top pt-3 pb-3">
                   <h5 class="pt-3 pb-3">
-                    <span class="badge" id="my-badge">Winery </span>
+                    <span class="badge" id="my-badge"> Winery </span>
                     {{ this.winedetail.winery }}
                   </h5>
                   <h5 class="pt-3 pb-3">
-                    <span class="badge" id="my-badge">Wine name</span>
+                    <span class="badge" id="my-badge"> Wine name</span>
                     {{ this.winedetail.wine }}
                   </h5>
                   <h5 class="pt-3 pb-3">
-                    <span class="badge" id="my-badge">Grpaes </span>
+                    <span class="badge" id="my-badge"> Grpaes </span>
                     {{ this.winedetail.grapes }}
                   </h5>
                   <h5 class="pt-3 pb-3">
-                    <span class="badge" id="my-badge">Alcohol </span>
-                    {{ this.winedetail.alcohol }}
+                    <span class="badge" id="my-badge"> Alcohol </span>
+                    {{ this.winedetail.alcohol }}%
                   </h5>
                   <h5 class="card-title pt-5 border-top">
-                    <span class="badge" id="my-badge">Price </span>
+                    <span class="badge" id="my-badge"> Price </span>
                     {{ this.winedetail.price }}원
                   </h5>
                 </div>
               </div>
+              <div class="fs-4 fw-bold pb-7 pl-3 pt-10">BOUQUET</div>
+              <span
+                class="pl-3"
+                :key="taste"
+                v-for="taste in tastes"
+              >
+                <span class="col-4 fs-5 fw-bold" id="my-badge">{{ taste }}</span>
+              </span>
+              <br />
             </div>
-            <div class="col-3">
-              <div class="fs-4 fw-bold pb-10 ml-10 align-right pt-6">
-                | TASTE
+            <div class="col-4">
+              <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-6">
+                TASTE
               </div>
               <span class="pl-3 fs-5 ml-10">
                 당도
@@ -67,7 +77,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="sweet"
-                    :color="sweet === chips ? 'red' : ' gray'"
+                    :color="sweet === chips ? 'rgb(255,0,0)' : ' gray'"
                     disabled
                   >
                     {{ chips }}
@@ -82,7 +92,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="acidic"
-                    :color="acidic === chips ? 'red' : ' gray'"
+                    :color="acidic === chips ? '#FF7E00' : ' gray'"
                     disabled
                   >
                     {{ chips }}
@@ -97,7 +107,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="bold"
-                    :color="bold === chips ? 'red' : ' gray'"
+                    :color="bold === chips ? 'rgb(255,255,0)' : 'gray'"
                     disabled
                   >
                     {{ chips }}
@@ -112,62 +122,52 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="tannic"
-                    :color="tannic === chips ? 'red' : ' gray'"
+                    :color="tannic === chips ? 'rgb(0,255,0)' : ' gray'"
                     disabled
                   >
                     {{ chips }}
                   </v-chip>
                 </v-chip-group>
               </span>
-            </div>
-            <div class="col-3">
-              <div class="fs-4 fw-bold pb-10 align-right pt-6">| BOUQUET</div>
-              <div
-                style="display: flex"
-                class="row"
-                :key="taste"
-                v-for="taste in tastes"
-              >
-                <span
-                  class="col-4 badge pt-4 mb-3 fs-5 ml-15 text-center"
-                  style="
-                    border-radius: 100px;
-                    height: 55px;
-                    background-color: rgb(180, 139, 85);
-                    color: white;
-                  "
-                  >{{ taste }}</span
-                >
-              </div>
-              <br />
-              <div class="fs-4 fw-bold pb-10 align-right pt-10">| FOOD</div>
-              <div
-                style="display: flex"
-                class="row"
+
+              <span class="pl-3 fs-5 ml-10">
+                탄산
+                <v-chip-group class="chip-group-box">
+                  <v-chip
+                    v-for="chips in chiplist"
+                    :key="chips"
+                    :bind="gentle"
+                    :color="gentle === chips ? '#6799FF' : ' gray'"
+                    disabled
+                  >
+                    {{ chips }}
+                  </v-chip>
+                </v-chip-group>
+              </span>
+
+              <div>
+              <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10">FOOD</div>
+              <span
                 :key="food"
                 v-for="food in temp"
               >
-                <span class="col-3 badge ml-3 mb-4 text-center"
-                  ><img
-                    :src="require(`../assets/food/${food}.png`)"
-                    style="width: 70px; height: 55px"
-                /></span>
                 <span
-                  class="col-5 badge ml-3 pt-4 mb-3 mt-1 fs-5 text-center"
+                  class="fs-4 ml-10 mb-5 text-center"
                   style="
-                    height: 55px;
-                    border-radius: 100px;
-                    background-color: rgb(180, 139, 85);
-                    color: white;
-                  "
-                >{{food}}
-                </span>
+                    color: white; display:inline-block;
+                  "><img
+                    :src="require(`../assets/food/${food}.png`)"
+                    style="width: 60px; height: 55px; margin-right: 10px;"
+                />{{food}}</span>
+                
+              </span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </main>
+  <br />
   </div>
 </template>
 
@@ -184,11 +184,12 @@ export default {
 
       chiplist: [1, 2, 3, 4, 5],
 
-      // 당도, 산도, 바디, 타닌
+      // 당도, 산도, 바디, 타닌, 탄산
       sweet: "",
       acidic: "",
       bold: "",
       tannic: "",
+      gentle: "",
 
       slicefood: "",
       foods: [],
@@ -305,6 +306,19 @@ export default {
       } else if (wine.smooth >= 8 && wine.smooth < 10) {
         this.tannic = 5;
       }
+
+      // 탄산값 설정
+      if (wine.gentle >= 0 && wine.gentle < 2) {
+        this.gentle = 1;
+      } else if (wine.gentle >= 2 && wine.gentle < 4) {
+        this.gentle = 2;
+      } else if (wine.gentle >= 4 && wine.gentle < 6) {
+        this.gentle = 3;
+      } else if (wine.gentle >= 6 && wine.gentle < 8) {
+        this.gentle = 4;
+      } else if (wine.gentle >= 8 && wine.gentle < 10) {
+        this.gentle = 5;
+      }
     },
 
     // wishlist 담기
@@ -333,8 +347,8 @@ export default {
 <style>
 #wine-img {
   width: 170px;
-  height: 650px;
-  margin-top: -100px;
+  height: 700px;
+  margin-top: 10px;
 }
 
 .badge {
@@ -346,12 +360,11 @@ export default {
 }
 
 #my-badge {
-  border-radius: 30px;
-  height: 30px;
+  border-radius: 10px;
   display: inline;
   padding-bottom: 11px;
   text-align: center;
-  background-color: #F29661;
+  background-color: #B39476;
   margin-right: 11px;
 }
 .chip-group-box{
@@ -385,7 +398,7 @@ export default {
   border-radius: 20px;
   opacity: 0.9;
   box-shadow: 0 0 15px grey;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 </style>

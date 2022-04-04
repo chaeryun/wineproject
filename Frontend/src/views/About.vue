@@ -9,6 +9,7 @@
     <br />
 
     <router-view></router-view>
+    <br />
   </div>
 </template>
 

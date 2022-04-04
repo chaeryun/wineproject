@@ -173,12 +173,12 @@ export default {
 }
 
 .signup-page{
-  background-image: url("../../assets/real_signup.jpg");
+  background-image: url("../../assets/signup2.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 20px;
-  padding: 140px;
+  padding: 130px;
   margin: auto !important;
   opacity: 0.9;
 }
