@@ -58,7 +58,7 @@
                   </h5>
                   <h5 class="card-title pt-5 border-top">
                     <div class="badge bg-danger mx-3" id="my-badge">PRICE</div>
-                    {{ this.winedetail.price }}
+                    {{ this.winedetail.price }}원
                   </h5>
                 </div>
               </div>

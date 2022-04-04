@@ -226,7 +226,11 @@
             <v-card-text>{{ wine.wine }}</v-card-text>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                  @click="wishlist(wine.wine_id)"
+                >
                   장바구니 담기
                 </button>
               </div>
@@ -285,6 +289,11 @@ export default {
     calData() {
       return this.winelist.slice(this.startOffset, this.endOffset);
     },
+
+    // user 정보 가져오기
+    userinfo() {
+      return this.$store.state.userInfo;
+    },
   },
 
   methods: {
@@ -297,15 +306,33 @@ export default {
         .then((res) => {
           //   console.log("wine list :", res);
           this.winelist = res.data;
-          console.log("winelist", this.winelist);
+          // console.log("winelist", this.winelist);
         })
         .catch((err) => {
           console.log(err);
         });
     },
 
+    // 와인 상세페이지 이동
     winedetail(wine_id) {
       this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
+    },
+
+    // wishlist 담기
+    async wishlist(wine_id) {
+      await http({
+        method: "post",
+        url: "wine/add_wine_wishlist/" + wine_id + "/",
+        // data: {
+        //   user: this.userinfo.username,
+        // },
+      })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
