@@ -1,17 +1,18 @@
-from ntpath import join
-from urllib import response
 from django.shortcuts import get_object_or_404, render
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view
 
 from .models import Userlikewine, Wine
-from .serializers import WineSerializer
+from .serializers import UserlikewineSerializer, WineSerializer
 
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import JsonResponse
 import json
+
+import random
+from reco.Algo import reco_color_average, reco_color_reviews, reco_likes
 # Create your views here.
 
 #-------------------와인 기본 API---------------------------------
@@ -76,12 +77,13 @@ def update_wine_data(request):
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def add_wine_wishlist(request, wine_id):
-    if Userlikewine.objects.filter(wine_id = wine_id).filter(user = request.user).exists():
+def add_wine_wishlist(request, wine_id, user_id):
+    if Userlikewine.objects.filter(wine_id = wine_id).filter(user_id = user_id).exists():
         wine = get_object_or_404(Wine, wine_id=wine_id)
         wine.likes -= 1
         wine.save()
-        like = get_object_or_404(Userlikewine, wine_id = wine_id, user=request.user),
+
+        like = get_object_or_404(Userlikewine, wine_id = wine_id, username = user_id),
         like.delete()
         
         return Response({"좋아요 취소 완료"}, status=status.HTTP_202_ACCEPTED)
@@ -91,10 +93,91 @@ def add_wine_wishlist(request, wine_id):
 
         instance = Userlikewine()
         instance.wine = wine
-        instance.user = request.user
+        instance.user_id = user_id
         instance.save()
 
         wine.likes += 1
         wine.save()
 
         return Response({"좋아요 완료"}, status=status.HTTP_202_ACCEPTED)
+
+#----------------------와인 추천 API-------------------------------
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def latest_wine_list(request, user_id):
+    wines = Userlikewine.objects.filter(user_id = user_id).order_by('-created_at')[:5]
+    serializer = UserlikewineSerializer(wines, many=True)
+    return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def reco_wishlist(request, user_id):
+    wines = Userlikewine.objects.filter(user_id = user_id)[:5]
+    reds = []
+    port = []
+    spark = []
+    white = []
+    rose = []
+    matrix = [0, 0, 0, 0, 0]
+    wine_matrix = [reds, port, spark, white, rose]
+    for wine in wines:
+        print(wine.wine.wine_id)
+        id_list = reco_likes(wine.wine.wine_id, n=5)
+        if wine.wine.color == "red":
+            matrix[0] += 1
+            for id in id_list:
+                wine_matrix[0].append(id)
+        elif wine.wine.color == "port":
+            matrix[1] += 1
+            for id in id_list:
+                wine_matrix[1].append(id)
+        elif wine.wine.color == "sparkling":
+            matrix[2] += 1
+            for id in id_list:
+                wine_matrix[2].append(id)
+        elif wine.wine.color == "white":
+            matrix[3] += 1
+            for id in id_list:
+                wine_matrix[3].append(id)
+        else:
+            matrix[4] += 1
+            for id in id_list:
+                wine_matrix[4].append(id)
+
+    if sum(matrix) < 5:
+        wine_list = wine_matrix[0] + wine_matrix[1] + wine_matrix[2] + wine_matrix[3] + wine_matrix[4]
+        wines = Wine.objects.filter(wine_id__in=random.sample(wine_list, 5))
+        wineserializers = WineSerializer(wines, many=True)
+        return Response(wineserializers.data, status=status.HTTP_200_OK)
+    else:
+        result_list = []
+        i = 0
+        while len(result_list) < 5:
+            
+            if matrix[i]:
+                matrix[i] -= 1
+                result_list.append(random.choice(wine_matrix[i]))
+            if i == 4:
+                i = 0
+        wines = Wine.objects.filter(wine_id__in=result_list)
+        wineserializers = WineSerializer(wines, many=True)
+        return Response(wineserializers.data, status=status.HTTP_200_OK)
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def reco_color_reviewbased(request, color):
+    result_list = reco_color_reviews(color, 5)
+    wines = Wine.objects.filter(wine_id__in=random.sample(result_list, 5))
+    wineserializers = WineSerializer(wines, many=True)
+    return Response(wineserializers.data, status=status.HTTP_200_OK)        
+
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def reco_color_score(request, color):
+    result_list = reco_color_average(color, 5)
+    wines = Wine.objects.filter(wine_id__in=random.sample(result_list, 5))
+    wineserializers = WineSerializer(wines, many=True)
+
+    return Response(wineserializers.data, status=status.HTTP_200_OK)        

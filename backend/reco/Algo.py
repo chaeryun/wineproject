@@ -13,8 +13,8 @@ import numpy as np
 #pip install scikit-learn
 #pip install scipy
 
-df = pd.read_json('wine_final.json')
-df2 = pd.read_json('cos.json')
+df = pd.read_json('./reco/wine_final.json')
+df2 = pd.read_json('./reco/cos.json')
 
 
 # 평점 높은 와인 추천
