@@ -2,8 +2,8 @@
   <div class="about mt-13">
     <h1>About Wine</h1>
     <div class="text-center">
-      <button class="food-button" @click="word">기본 용어</button>
-      <button class="food-button" @click="sense">와인 상식</button>
+      <button class="food-button" @click="word">와인 상식</button>
+      <button class="food-button" @click="sense">주요 생산국</button>
     </div>
 
     <br />

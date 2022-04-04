@@ -398,7 +398,7 @@ button {
 
 hr {
   border-style: dashed;
-  border-color: green;
+  border-color: orange;
   margin: 30px;
   border-width: 2px;
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center mt-13 fw-bold">Detail</h1>
+    <!-- <h1 class="text-center mt-13 fw-bold">Detail</h1> -->
     <main>
       <div class="container">
         <div>
@@ -77,7 +77,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="sweet"
-                    :color="sweet === chips ? 'rgb(255,0,0)' : ' gray'"
+                    :color="sweet === chips ? '#FF9999' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}
@@ -92,7 +92,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="acidic"
-                    :color="acidic === chips ? '#FF7E00' : ' gray'"
+                    :color="acidic === chips ? '#FF9999' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}
@@ -107,7 +107,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="bold"
-                    :color="bold === chips ? 'rgb(255,255,0)' : 'gray'"
+                    :color="bold === chips ? '#FF9999' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}
@@ -122,7 +122,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="tannic"
-                    :color="tannic === chips ? 'rgb(0,255,0)' : ' gray'"
+                    :color="tannic === chips ? '#FF9999' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}
@@ -137,7 +137,7 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="gentle"
-                    :color="gentle === chips ? '#6799FF' : ' gray'"
+                    :color="gentle === chips ? '#FF9999' : 'pink lighten-5'"
                     disabled
                   >
                     {{ chips }}
@@ -364,7 +364,7 @@ export default {
   display: inline;
   padding-bottom: 11px;
   text-align: center;
-  background-color: #B39476;
+  background-color: darksalmon;
   margin-right: 11px;
 }
 .chip-group-box {

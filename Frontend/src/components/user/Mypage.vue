@@ -3,7 +3,7 @@
     <v-container>
       <h1>My page</h1>
       <v-row class="text-h7" justify="center">
-        <h2 class="ml-10 pb-5">| {{ userInfo.nickname }}의 찜한 목록</h2>
+        <h2 class="ml-10 pb-5">| {{ userInfo.nickname }}님이 찜한 목록</h2>
       </v-row>
       <v-row justify="center" class="mb-5">
         <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
