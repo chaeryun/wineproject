@@ -8,7 +8,6 @@
             <div class="col-2 text-center">
               <img id="wine-img" :src="this.winedetail.image" alt="..." />
               <div>
-<<<<<<< HEAD
               <br />
               <v-btn 
               right
@@ -21,11 +20,6 @@
               <v-icon>mdi-heart</v-icon> Wish List
             </v-btn>
             </div>
-            </div>
-            <div class=" col-4 shadow-sm">
-              <div class="fs-4 fw-bold pb-6 pt-6 pl-3">
-                | INFORAMTION
-              </div>
             </div>
             <div class="col-4 shadow-sm">
               <div class="fs-4 fw-bold pb-6 pt-6 pl-3">| INFORAMTION</div>
@@ -135,9 +129,10 @@
                 v-for="taste in tastes"
               >
                 <span
-                  class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center"
+                  class="col-4 badge pt-4 mb-3 fs-5 ml-15 text-center"
                   style="
                     border-radius: 100px;
+                    height: 55px;
                     background-color: rgb(180, 139, 85);
                     color: white;
                   "
@@ -152,21 +147,20 @@
                 :key="food"
                 v-for="food in temp"
               >
-                <span class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center"
+                <span class="col-3 badge ml-3 mb-4 text-center"
                   ><img
                     :src="require(`../assets/food/${food}.png`)"
-                    style="width: 50px; height: 50px"
+                    style="width: 70px; height: 55px"
                 /></span>
                 <span
-                  class="col-5 badge ml-4 mb-10 fs-5 text-center"
+                  class="col-5 badge ml-3 pt-4 mb-3 mt-1 fs-5 text-center"
                   style="
                     height: 55px;
                     border-radius: 100px;
                     background-color: rgb(180, 139, 85);
                     color: white;
-                    padding: 0px;
                   "
-                >
+                >{{food}}
                 </span>
               </div>
             </div>
@@ -357,16 +351,11 @@ export default {
   display: inline;
   padding-bottom: 11px;
   text-align: center;
-<<<<<<< HEAD
   background-color: #F29661;
   margin-right: 11px;
 }
 .chip-group-box{
-=======
-} */
-.chip-group-box {
->>>>>>> d2614698142b08dbade017a1a837354fb866fa08
-  margin-left: 40px;
+  margin-left: 40px
 }
 
 #taste-badge {
