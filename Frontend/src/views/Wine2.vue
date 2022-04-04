@@ -212,34 +212,51 @@
           :key="i"
           v-for="(wine, i) in calData"
         >
-          <v-card  class="mx-auto mt-10" max-width="380"  style="border-radius: 100px; color:gainsboro; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
+          <v-card
+            class="mx-auto mt-10"
+            max-width="380"
+            style="
+              border-radius: 100px;
+              color: gainsboro;
+              background-color: #232320;
+              box-shadow: 0 0 10px grey;
+            "
+            hover
+            outlined
+          >
             <v-btn
-                  right
-                  class="mt-5 ml-10"
-                  text
-                  icon
-                  large
-                  color="red lighten-2"
-                >
-                  <v-icon>mdi-heart</v-icon>
-                </v-btn>
+              right
+              class="mt-5 ml-10"
+              text
+              icon
+              large
+              color="red lighten-2"
+            >
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
             <v-img
               :src="wine.image"
               height="300"
               alt="No image"
               contain
-              @click="winedetail(wine.wine)"
+              @click="winedetail(wine.wine_id)"
             /><v-img />
-            <hr style="border-width: 2px; border-color: pink; margin-bottom: -5px;"/>
-            <v-card-title class="justify-center">[{{wine.winery}}]</v-card-title>
-            <v-card-text  class="text-center fs-5" style="margin-top: -12px; color:gainsboro;">{{ wine.wine }}<br />
-            <br />
-            #{{wine.country}} #{{wine.color}}
+            <hr
+              style="border-width: 2px; border-color: pink; margin-bottom: -5px"
+            />
+            <v-card-title class="justify-center"
+              >[{{ wine.winery }}]</v-card-title
+            >
+            <v-card-text
+              class="text-center fs-5"
+              style="margin-top: -12px; color: gainsboro"
+              >{{ wine.wine }}<br />
+              <br />
+              #{{ wine.country }} #{{ wine.color }}
             </v-card-text>
-            <div class="d-flex justify-content-between align-items-center">
-
-                
-            </div>
+            <div
+              class="d-flex justify-content-between align-items-center"
+            ></div>
           </v-card>
         </div>
       </v-row>
@@ -294,6 +311,11 @@ export default {
     calData() {
       return this.winelist.slice(this.startOffset, this.endOffset);
     },
+
+    // user 정보 가져오기
+    userinfo() {
+      return this.$store.state.userInfo;
+    },
   },
 
   methods: {
@@ -306,14 +328,33 @@ export default {
         .then((res) => {
           //   console.log("wine list :", res);
           this.winelist = res.data;
+          // console.log("winelist", this.winelist);
         })
         .catch((err) => {
           console.log(err);
         });
     },
 
-    winedetail(wine) {
-      this.$router.push({ path: "/detail", qeury: { wine: wine } });
+    // 와인 상세페이지 이동
+    winedetail(wine_id) {
+      this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
+    },
+
+    // wishlist 담기
+    async wishlist(wine_id) {
+      await http({
+        method: "post",
+        url: "wine/add_wine_wishlist/" + wine_id + "/",
+        // data: {
+        //   user: this.userinfo.username,
+        // },
+      })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

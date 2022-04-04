@@ -138,7 +138,7 @@ export default {
 
 <style>
 .food-button{
-  background-color: rgba(90, 82, 59, 0.651);
+  background-color: #474747;
   color: cornsilk;
   font-size: 22px;
   width: 15em;

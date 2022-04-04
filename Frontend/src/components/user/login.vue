@@ -1,9 +1,10 @@
 <template>
   <v-main>
-    <v-container>
-      <v-layout row wrap align-center>
-        <v-flex xs8 sm4 offset-sm2 align-center justify-center>
-          <h1>로그인</h1>
+    <v-container class="login-page">
+      <v-layout row wrap >
+        <v-flex col-7></v-flex>
+        <v-flex col-5 >
+          <h1 style="color: tomato">로그인</h1>
           <br />
 
           <v-form ref="form" v-model="valid" lazy-validation>
@@ -26,7 +27,7 @@
               counter
               @click:append="show1 = !show1"
             ></v-text-field>
-
+            <div class="text-center">
             <v-btn
               :disabled="!valid"
               color="success"
@@ -37,6 +38,7 @@
             </v-btn>
 
             <v-btn color="error" class="mr-4" @click="signup"> Signup </v-btn>
+            </div>
           </v-form>
         </v-flex>
       </v-layout>
@@ -47,9 +49,11 @@
 <script>
 import http from "@/util/http-common";
 import jwt_decode from "jwt-decode";
+import Vintage from '../../views/Vintage.vue';
 // import { mapActions } from "vuex";
 
 export default {
+  components: { Vintage },
   name: "Userlogin",
   data: () => ({
     valid: false,
@@ -154,4 +158,15 @@ export default {
   width: 600px;
   height: 90px;
 }
+.login-page{
+  background-image: url("../../assets/wine_background2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 250px;
+  margin: auto !important;
+  opacity: 0.9;
+}
+
 </style>

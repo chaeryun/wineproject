@@ -35,7 +35,7 @@
         text
         icon
         large
-        color="white"
+        color="green"
       >
         <v-icon>mdi-circle</v-icon>WHITE
       </v-btn>
@@ -96,7 +96,7 @@
     <v-col cols="2">
           <v-card class="mx-auto" max-width="260"  style="border-radius: 200px; color:gainsboro; background-color: #232320; box-shadow: 0 0 10px grey;" hover outlined>
           <v-btn
-        class="mt-7 ml-15"
+        class="mt-7 ml-16"
         text
         icon
         large
