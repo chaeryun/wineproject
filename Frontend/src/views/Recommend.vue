@@ -102,7 +102,7 @@
         large
         color="purple lighten-2"
       >
-        <v-icon>mdi-circle</v-icon>SPARKLING
+        <v-icon>mdi-circle</v-icon> SPARKLING
       </v-btn>
       <a href="/detail" style="color: gainsboro">
           <v-img
@@ -117,7 +117,7 @@
 
     </v-row>
 
-    <v-row class="pa-5-mt-1 text-h7 pt-10 pb-5 border-top mt-10" justify="center" height="200">
+    <v-row class="pa-5-mt-1 text-h7 pt-10 pb-5 mt-10" justify="center" height="200">
       <h2 class="ml-10">| OO님과 유사한 취향의 와인</h2>
     </v-row>
      <v-row justify="center" class="mb-5">

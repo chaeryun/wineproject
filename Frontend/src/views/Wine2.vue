@@ -418,6 +418,7 @@ hr {
   border-style: dashed;
   border-color: green;
   margin: 30px;
+  border-width: 2px;
 }
 
 #wine-card {

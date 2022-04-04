@@ -3,7 +3,7 @@
     <Navbar />
     <h1 class="fw-bold mb-5">Vintage</h1>
     <h6 class="text-center"> 원하는 지역 / 연도 / 포도품종을 골라 날씨 빅데이터를 기반으로 VINTAGE한 와인을 추천 받아주세요!</h6>
-  <div class="form-group justify-center border-top border-bottom mt-3 mb-3">
+  <div class="form-group justify-center mt-3 mb-3">
     <select class="form-control secondary" id="productCategory2" ref="productCategory">
       <option value="1">Year</option>
       <option value="2">2021</option>
@@ -25,6 +25,14 @@
       <option value="18">2005</option>
       <option value="19">2004</option>
       <option value="20">2003</option>
+    </select>
+    <select class="form-control secondary" id="productCategory2" ref="productCategory">
+      <option value="1">Wine Type</option>
+      <option value="2">Red </option>
+      <option value="3">White</option>      
+      <option value="4">Rose</option>
+      <option value="5">Sparkling</option>
+      <option value="5">Port</option>
     </select>
     <select class="form-control secondary" id="productCategory2" ref="productCategory">
       <option value="1">Country</option>

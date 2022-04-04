@@ -106,11 +106,10 @@ export default {
       beforelogin: [
         { title: "Home", name: "Home", route: `/home` },
         { title: "Wine", name: "Wine", route: `/wine` },
-        { title: "Recommend", name: "Recommend", route: `/recommend` },
+        { title: "Recommend", name: "Recommend", route: `recommend` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
         { title: "Food Compatibility", name: "Food", route: `/food` },
         { title: "About Wine", name: "About", route: `/about` },
-        { title: "Detail", name: "Detail", route: `/detail` },
         { title: "Login", name: "Login", route: `/user/login` },
       ],
 

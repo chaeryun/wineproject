@@ -1,74 +1,80 @@
 <template>
-  <div class="home">
-    <h1 class="text-center mb-10 fw-bold">Detail</h1>
-    <main class="mt-3">
+  <div>
+    <h1 class="text-center mt-13 mb-10 fw-bold">Detail</h1>
+    <main>
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 pt-15 text-center">
-            <div>
+        <div>
+          <div class="row my-border text-start">
+            <div class="col-2 text-center">
+              <img id="wine-img" :src="this.winedetail.image" alt="..." />
               <div>
-                <!-- <v-img
-                  :src="this.winedetail.image"
-                  padding-top="100px"
-                  width="100px"
-                  height="450"
-                  alt="No image"
-                  contain
-                /><v-img /> -->
-                <img id="wine-img" :src="this.winedetail.image" alt="..." />
-              </div>
+              <br />
+              <v-btn 
+              right
+              class=""
+              text
+              icon
+              large
+              color="red lighten-3"
+            >
+              <v-icon>mdi-heart</v-icon> Wish List
+            </v-btn>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card shadow-sm" id="info-card">
+            </div>
+            <div class=" col-4 shadow-sm">
+              <div class="fs-4 fw-bold pb-6 pt-6 pl-3">
+                | INFORAMTION
+              </div>
               <div class="card-body">
-                <h5 class="card-title mx-3 pt-1 pb-1">
+                <h5 class="card-title pb-1 fs-4">
                   {{ this.winedetail.wine }}
                 </h5>
                 <h5 class="pt-5 pb-3 border-top">
-                  <div class="badge bg-secondary mx-3" id="my-badge">
+                  <!-- <div class="badge bg-secondary mx-3" id="my-badge">
                     WINE TYPE
-                  </div>
+                  </div> -->
+                  
                   {{ this.winedetail.color }}
                 </h5>
                 <div class="card-text border-top pt-3 pb-3">
                   <h5 class="pt-3 pb-3">
-                    <div class="badge bg-secondary mx-3" id="my-badge">
+                    <!-- <div class="badge bg-secondary mx-3" id="my-badge">
                       WINERY
-                    </div>
+                    </div> -->
                     {{ this.winedetail.winery }}
                   </h5>
                   <h5 class="pt-3 pb-3">
-                    <div class="badge bg-secondary mx-3" id="my-badge">
+                    <!-- <div class="badge bg-secondary mx-3" id="my-badge">
                       WINE
-                    </div>
+                    </div> -->
                     {{ this.winedetail.wine }}
                   </h5>
                   <h5 class="pt-3 pb-3">
-                    <div class="badge bg-secondary mx-3" id="my-badge">
+                    <!-- <div class="badge bg-secondary mx-3" id="my-badge">
                       GRAPES
-                    </div>
+                    </div> -->
                     {{ this.winedetail.grapes }}
                   </h5>
                   <h5 class="pt-3 pb-3">
-                    <div class="badge bg-secondary mx-3" id="my-badge">
+                    <!-- <div class="badge bg-secondary mx-3" id="my-badge">
                       ALCOHOL
-                    </div>
+                    </div> -->
                     {{ this.winedetail.alcohol }}
                   </h5>
                   <h5 class="card-title pt-5 border-top">
-                    <div class="badge bg-danger mx-3" id="my-badge">PRICE</div>
+                    <!-- <div class="badge bg-danger mx-3" id="my-badge">PRICE</div> -->
                     {{ this.winedetail.price }}원
                   </h5>
                 </div>
-              </div>
-              <div class="fs-4 fw-bold pb-10 align-right border-top pt-3 pl-10">
+          </div>
+            </div>
+            <div class="col-3">
+             <div class="fs-4 fw-bold pb-10 ml-10 align-right pt-6">
                 | TASTE
               </div>
-
-              <span class="pl-10">
+              <span class="pl-3 fs-5 ml-10">
                 당도
-                <v-chip-group>
+                <v-chip-group class="chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -80,9 +86,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-10">
+              <span class="pl-3 fs-5 ml-10">
                 산도
-                <v-chip-group>
+                <v-chip-group class="chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -94,9 +100,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-10">
+              <span class="pl-3 fs-5 ml-10">
                 바디
-                <v-chip-group>
+                <v-chip-group class="chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -108,9 +114,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-10">
+              <span class="pl-3 fs-5 ml-10">
                 타닌
-                <v-chip-group>
+                <v-chip-group class="chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -121,7 +127,29 @@
                   </v-chip>
                 </v-chip-group>
               </span>
-            </div>
+              </div>
+              <div class="col-3">
+                <div class="fs-4 fw-bold pb-10 align-right pt-6">
+                  | BOUQUET
+                </div>
+                <div style="display:flex;" class="row">
+          <span class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">{{ this.winedetail.taste[0] }}</span>
+        <span class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">{{ this.winedetail.taste[1] }}</span>
+        <span class="col-3 badge ml-3 pt-3 mb-3 fs-6 text-center" style="border-radius:100px; background-color: rgb(180, 139, 85); color: white;">{{ this.winedetail.taste[2] }}</span>
+        </div>
+        <br />
+                <div class="fs-4 fw-bold pb-10 align-right pt-10">
+                  | FOOD
+                </div>
+                <div class="row" style="display:flex;">
+        <span class="col-5 badge ml-4 mb-3 fs-6 text-center" style="height: 90px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;">
+          <div><img src="../assets/food/pork.png" style="width:70px; height:70px;" /></div> {{ this.winedetail.food[0] }}</span>
+        <span class="col-5 badge ml-4 mb-3 fs-6 text-center" style="height: 90px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div><img src="../assets/food/richfish.png" style="width:70px; height:70px;" /></div>{{ this.winedetail.food[1] }} </span>
+        <span class="col-5 badge ml-4 mb-3 fs-6 text-center" style="height: 90px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div><img src="../assets/food/shellfish.png" style="width:70px; height:70px;" /></div> {{ this.winedetail.food[2] }} </span>
+        <span class="col-5 badge ml-4 mb-3 fs-6 text-center" style="height: 90px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div><img src="../assets/food/soft_cheese.png" style="width:70px; height:70px;" /></div> {{ this.winedetail.food[3] }} </span>
+        </div>
+
+              </div>
           </div>
         </div>
       </div>
@@ -239,17 +267,11 @@ export default {
 </script>
 
 <style>
-#info-card {
-  border-style: dashed;
-  border-radius: 30px;
-  border-width: 5px thick;
-  display: flex;
-}
 
 #wine-img {
-  padding-top: 100px;
-  width: 100px;
-  height: 450px;
+  width: 170px;
+  height: 650px;
+  margin-top: -100px;
 }
 
 .badge {
@@ -260,12 +282,15 @@ export default {
   width: 70px;
 }
 
-#my-badge {
+/* #my-badge {
   height: 40px;
   display: inline;
   padding-bottom: 11px;
   width: 70px;
   text-align: center;
+} */
+.chip-group-box{
+  margin-left: 40px;
 }
 
 #taste-badge {
@@ -278,4 +303,24 @@ export default {
   margin-left: 1em;
   padding-left: 1em;
 }
+#my-detail-card{
+  border-radius: 30px;
+  border-style: dashed;
+  border-width: 5px thick;
+  border-color: burlywood;
+  margin-top: 10px;
+}
+
+.my-border{
+  background-color:rgb(56, 54, 54);
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  border-radius: 20px;
+  opacity: 0.9;
+  box-shadow: 0 0 15px grey;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 </style>

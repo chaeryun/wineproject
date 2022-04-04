@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 import Intro from "@/views/Intro.vue";
 import Home from "@/views/Home.vue";
 // import Detail from "@/views/Detail.vue";
+
 import Winedetail from "@/views/Winedetail.vue";
 import Wine2 from "@/views/Wine2.vue";
 import Vintage from "@/views/Vintage.vue";
@@ -30,7 +31,7 @@ const routes = [
     component: Home,
   },
   // {
-  //   path: "/detail",
+  //   path: "/detail2",
   //   name: "Detail",
   //   component: Detail,
   // },
