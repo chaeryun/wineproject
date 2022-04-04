@@ -154,7 +154,10 @@ export default {
         alert("로그아웃");
       }
     },
+
+    banner() {
+      this.$router.push({ name: "Home" }).catch((err) => err);
+    },
   },
 };
-
 </script>
