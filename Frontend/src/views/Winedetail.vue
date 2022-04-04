@@ -11,7 +11,7 @@
               <br />
               <v-btn 
               right
-              class=""
+              class="fs-3"
               text
               icon
               large
@@ -26,43 +26,34 @@
                 | INFORAMTION
               </div>
               <div class="card-body">
-                <h5 class="card-title pb-1 fs-4">
+                <h5 class="card-title pb-1 fs-3 ml-2">
                   {{ this.winedetail.wine }}
+                  {{ this.winedetail.location }}
                 </h5>
                 <h5 class="pt-5 pb-3 border-top">
-                  <!-- <div class="badge bg-secondary mx-3" id="my-badge">
-                    WINE TYPE
-                  </div> -->
+                  <span class="badge outlined" id="my-badge">Wine Type</span>
                   
                   {{ this.winedetail.color }}
                 </h5>
                 <div class="card-text border-top pt-3 pb-3">
                   <h5 class="pt-3 pb-3">
-                    <!-- <div class="badge bg-secondary mx-3" id="my-badge">
-                      WINERY
-                    </div> -->
+                    <span class="badge" id="my-badge">Winery </span>
                     {{ this.winedetail.winery }}
                   </h5>
                   <h5 class="pt-3 pb-3">
-                    <!-- <div class="badge bg-secondary mx-3" id="my-badge">
-                      WINE
-                    </div> -->
+                    <span class="badge" id="my-badge">Wine name</span>
                     {{ this.winedetail.wine }}
                   </h5>
                   <h5 class="pt-3 pb-3">
-                    <!-- <div class="badge bg-secondary mx-3" id="my-badge">
-                      GRAPES
-                    </div> -->
+                    <span class="badge" id="my-badge">Grpaes </span>
                     {{ this.winedetail.grapes }}
                   </h5>
                   <h5 class="pt-3 pb-3">
-                    <!-- <div class="badge bg-secondary mx-3" id="my-badge">
-                      ALCOHOL
-                    </div> -->
+                    <span class="badge" id="my-badge">Alcohol </span>
                     {{ this.winedetail.alcohol }}
                   </h5>
                   <h5 class="card-title pt-5 border-top">
-                    <!-- <div class="badge bg-danger mx-3" id="my-badge">PRICE</div> -->
+                    <span class="badge" id="my-badge">Price </span>
                     {{ this.winedetail.price }}원
                   </h5>
                 </div>
@@ -142,11 +133,10 @@
                   | FOOD
                 </div>
                 <div class="row" style="display:flex;">
-        <span class="col-5 badge ml-4 mb-3 fs-6 text-center" style="height: 90px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;">
-          <div><img src="../assets/food/pork.png" style="width:70px; height:70px;" /></div> {{ this.winedetail.food[0] }}</span>
-        <span class="col-5 badge ml-4 mb-3 fs-6 text-center" style="height: 90px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div><img src="../assets/food/richfish.png" style="width:70px; height:70px;" /></div>{{ this.winedetail.food[1] }} </span>
-        <span class="col-5 badge ml-4 mb-3 fs-6 text-center" style="height: 90px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div><img src="../assets/food/shellfish.png" style="width:70px; height:70px;" /></div> {{ this.winedetail.food[2] }} </span>
-        <span class="col-5 badge ml-4 mb-3 fs-6 text-center" style="height: 90px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div><img src="../assets/food/soft_cheese.png" style="width:70px; height:70px;" /></div> {{ this.winedetail.food[3] }} </span>
+        <span class="col-5 badge ml-4 mb-10 fs-5 text-center" style="height: 55px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div class="mb-2"><img src="../assets/food/pork.png" style="width:50px; height:50px;" /></div> {{ this.winedetail.food[0] }}</span>
+        <span class="col-5 badge ml-4 mb-10 fs-5 text-center" style="height: 55px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div class="mb-2"><img src="../assets/food/richfish.png" style="width:50px; height:50px;" /></div> {{ this.winedetail.food[1] }} </span>
+        <span class="col-5 badge ml-4 mb-10 fs-5 text-center" style="height: 55px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div class="mb-2"><img src="../assets/food/shellfish.png" style="width:50px; height:50px;" /></div> {{ this.winedetail.food[2] }} </span>
+        <span class="col-5 badge ml-4 mb-10 fs-5 text-center" style="height: 55px; border-radius:100px; background-color: rgb(180, 139, 85); color: white; padding:0px;"><div class="mb-2"><img src="../assets/food/soft_cheese.png" style="width:50px; height:50px;" /></div> {{ this.winedetail.food[3] }} </span>
         </div>
 
               </div>
@@ -282,13 +272,15 @@ export default {
   width: 70px;
 }
 
-/* #my-badge {
-  height: 40px;
+#my-badge {
+  border-radius: 30px;
+  height: 30px;
   display: inline;
   padding-bottom: 11px;
-  width: 70px;
   text-align: center;
-} */
+  background-color: #F29661;
+  margin-right: 11px;
+}
 .chip-group-box{
   margin-left: 40px;
 }
@@ -309,6 +301,7 @@ export default {
   border-width: 5px thick;
   border-color: burlywood;
   margin-top: 10px;
+  color: gainsboro;
 }
 
 .my-border{

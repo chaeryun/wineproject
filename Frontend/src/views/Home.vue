@@ -3,15 +3,14 @@
     <v-row>
       <v-carousel
         cycle
-        height="610"
+        height="700"
         hide-delimiter-background
         show-arrows-on-hover
       >
         <v-carousel-item v-for="wine in wines" :key="wine.name">
           <v-sheet height="100%">
             <v-row class="fill-height" align="center" justify="center">
-              <img :src="wine.picture" alt="img" height="700" />
-              <h1>안녕</h1>
+              <img :src="wine.picture" alt="img" height="710" />
             </v-row>
           </v-sheet>
         </v-carousel-item>
@@ -191,8 +190,9 @@ export default {
   data() {
     return {
       wines: [
-        { name: "wine2", picture: require("@/assets/wine2.jpg") },
+        { name: "wine2", picture: require("@/assets/reco2.jpg") },
         { name: "wine5", picture: require("@/assets/wine5.jpg") },
+        { name: "wine5", picture: require("@/assets/reco7.png") },
       ],
     };
   },

@@ -4,7 +4,7 @@
       <v-layout row wrap>
         <v-flex col-7></v-flex>
         <v-flex col-5 >
-          <h1 style="color: tomato">회원가입</h1>
+          <h1 style="color: tomato">Signup</h1>
           <br />
 
           <v-form ref="form" v-model="valid" lazy-validation>
@@ -173,12 +173,12 @@ export default {
 }
 
 .signup-page{
-  background-image: url("../../assets/wine_background2.jpg");
+  background-image: url("../../assets/real_signup.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 20px;
-  padding: 160px;
+  padding: 140px;
   margin: auto !important;
   opacity: 0.9;
 }

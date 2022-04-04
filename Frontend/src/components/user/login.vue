@@ -1,10 +1,10 @@
 <template>
   <v-main>
     <v-container class="login-page">
-      <v-layout row wrap >
+      <v-layout class="row wrap">
         <v-flex col-7></v-flex>
         <v-flex col-5 >
-          <h1 style="color: tomato">로그인</h1>
+          <h1 style="color: tomato">Login</h1>
           <br />
 
           <v-form ref="form" v-model="valid" lazy-validation>
@@ -159,7 +159,7 @@ export default {
   height: 90px;
 }
 .login-page{
-  background-image: url("../../assets/wine_background2.jpg");
+  background-image: url("../../assets/wine_login.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

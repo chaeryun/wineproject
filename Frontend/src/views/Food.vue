@@ -1,6 +1,6 @@
 <template>
   <div class="food mt-13">
-    <h1 style="margin-bottom: 20px;">음식과 어울리는 와인 추천</h1>
+    <h1 style="margin-bottom: 20px;">Food Compatibility</h1>
     <button class="food-button"> <img src="../assets/food/shellfish.png" class="food-img"> Shellfish </button>
             <button class="food-button"> <img src="../assets/food/pork.png" class="food-img"> Pork</button>
             <button class="food-button"> <img src="../assets/food/beef.png" class="food-img"> Beef</button>
