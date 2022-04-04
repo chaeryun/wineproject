@@ -16,7 +16,6 @@ import numpy as np
 df = pd.read_json('./reco/wine_final.json')
 df2 = pd.read_json('./reco/cos.json')
 
-
 # 평점 높은 와인 추천
 def reco_color_average(color= "red", n=5):
     df1 = df.copy()

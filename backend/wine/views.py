@@ -172,7 +172,6 @@ def reco_color_reviewbased(request, color):
     wineserializers = WineSerializer(wines, many=True)
     return Response(wineserializers.data, status=status.HTTP_200_OK)        
 
-
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def reco_color_score(request, color):

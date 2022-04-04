@@ -10,5 +10,5 @@ urlpatterns = [
 
     path('recommand/latest_wishlist/<int:user_id>/', views.reco_wishlist), #찜 기반 와인 추천
     path('recommand/reviews/<str:color>/', views.reco_color_reviewbased), #사람들이 많이 찾은 와인
-    path('recommand/color_score/<str:color>/', views.reco_color_score), #빈티지 점수 기반 추천 와인(완성)
+    path('recommand/color_score/<str:color>/', views.reco_color_score), #빈티지 점수 기반 추천 와인
 ]
