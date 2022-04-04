@@ -224,7 +224,23 @@
             hover
             outlined
           >
-            <v-btn class="mt-7 ml-15" text icon large color="green lighten-3">
+            <v-btn
+              class="mt-7 ml-15"
+              text
+              icon
+              large
+              :color="
+                wine.color == 'white'
+                  ? 'green lighten-3'
+                  : wine.color == 'red'
+                  ? 'red'
+                  : wine.color == 'rose'
+                  ? 'red lighten-3'
+                  : wine.color == 'port'
+                  ? 'blue lighten-3'
+                  : 'purple lighten-2'
+              "
+            >
               <v-icon>mdi-circle</v-icon> {{ wine.color }}
             </v-btn>
             <v-img
@@ -245,7 +261,6 @@
               style="margin-top: -12px; color: gainsboro"
               >{{ wine.wine }}<br />
               <br />
-              #{{ wine.country }} #{{ wine.color }}
             </v-card-text>
             <div
               class="d-flex justify-content-between align-items-center"

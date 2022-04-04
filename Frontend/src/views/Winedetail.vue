@@ -8,19 +8,19 @@
             <div class="col-3 text-center">
               <img id="wine-img" :src="this.winedetail.image" alt="..." />
               <div>
-              <br />
-              <v-btn 
-              right
-              class="fs-4 fw-bold"
-              text
-              icon
-              large
-              color="white"
-            >
-              <v-icon>mdi-heart</v-icon> 
-              Add to Wish List
-            </v-btn>
-            </div>
+                <br />
+                <v-btn
+                  right
+                  class="fs-3"
+                  text
+                  icon
+                  large
+                  color="red lighten-3"
+                  @click="wishlist"
+                >
+                  <v-icon>mdi-heart</v-icon> Wish List
+                </v-btn>
+              </div>
             </div>
             <div class="col-5 shadow-sm">
               <div class="fs-4 fw-bold pb-6 pt-8 pl-3">INFORAMTION</div>
@@ -367,8 +367,8 @@ export default {
   background-color: #B39476;
   margin-right: 11px;
 }
-.chip-group-box{
-  margin-left: 40px
+.chip-group-box {
+  margin-left: 40px;
 }
 
 #taste-badge {
