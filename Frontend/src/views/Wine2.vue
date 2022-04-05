@@ -174,33 +174,28 @@
     :value="value"
     color="warning"
     width="450px"
+    style="border-radius:20px;"
   >
-    <v-btn>
-      <span>Red</span>
+    <img src="../assets/red.png" style="margin-left:25px; margin-top:10px; width:25px; height:25px;" />
+    <v-btn class="display:flex;">
+      <h5>Red</h5>
 
-      <v-icon>mdi-pig</v-icon>
     </v-btn>
 
     <v-btn>
-      <span>White</span>
-
-      <v-icon>mdi-alien-outline</v-icon>
+      <h5>White</h5>
     </v-btn>
 
     <v-btn>
-      <span>Rose</span>
+      <h5>Rose</h5>
 
-      <v-icon>mdi-halloween</v-icon>
     </v-btn>
     <v-btn>
-      <span>Sparkling</span>
+      <h5>Sparkling</h5>
 
-      <v-icon>mdi-owl</v-icon>
     </v-btn>
     <v-btn>
-      <span>Port</span>
-
-      <v-icon>mdi-pirate</v-icon>
+      <h5>Port</h5>
     </v-btn>
   </v-bottom-navigation>
 
