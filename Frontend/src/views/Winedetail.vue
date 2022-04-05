@@ -173,7 +173,7 @@
               </div>
             </div>
         <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
-                  FOOD
+                  Similar wine
                 </div>
           </div>
         </div>
@@ -210,6 +210,9 @@ export default {
 
       slicetaste: "",
       tastes: "",
+
+      // 유사추천와인 담을 list
+      similarlist: [],
     };
   },
 
@@ -237,7 +240,7 @@ export default {
       })
         .then((res) => {
           this.winedetail = res.data;
-          console.log(this.winedetail);
+          console.log("와인상세정보 :", this.winedetail);
 
           // wine 값 설정
           this.winevalue(this.winedetail);
@@ -257,15 +260,18 @@ export default {
             }
           }
 
-          console.log("slicefood", this.foods);
-          console.log("temp: ", this.temp);
+          // console.log("slicefood", this.foods);
+          // console.log("temp: ", this.temp);
 
           // taste 배열로 변환
-          console.log("taste", this.winedetail.taste);
+          // console.log("taste", this.winedetail.taste);
 
           this.slicetaste = this.winedetail.taste.replace(reg, "");
           this.tastes = this.slicetaste.split(",");
-          console.log("taste : ", this.tastes);
+          // console.log("taste : ", this.tastes);
+
+          // 유사와인 리스트 받기
+          this.similarwine();
         })
         .catch((err) => {
           console.log(err);
@@ -354,6 +360,22 @@ export default {
         .then((res) => {
           alert("추가완료!");
           console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
+    // 유사한 와인 가져오기
+    async similarwine() {
+      await http({
+        method: "get",
+        url: "wine/recommand/similar_wine/" + this.wineid + "/",
+      })
+        .then((res) => {
+          // console.log(res);
+          this.similarlist = res.data;
+          console.log("유사와인추천 리스트 : ", this.similarlist);
         })
         .catch((err) => {
           console.log(err);
