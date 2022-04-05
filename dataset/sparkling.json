@@ -15,7 +15,7 @@
     "taste": ["brioche", "minerals", "caramel"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Dom Pérignon",
@@ -69,7 +69,7 @@
     "taste": ["apple", "brioche", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Noir"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Dom Pérignon",
@@ -87,7 +87,7 @@
     "taste": ["brioche", "honey", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Bollinger",
@@ -123,7 +123,7 @@
     "taste": ["apple", "brioche", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Krug",
@@ -267,7 +267,7 @@
     "taste": ["brioche", "minerals", "caramel"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Krug",
@@ -411,7 +411,7 @@
     "taste": ["brioche", "citrus", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Charles Heidsieck",
@@ -420,7 +420,7 @@
     "image": "https://images.vivino.com/thumbs/PxgKVrRLT7uBaxhTiiCtCw_pb_x300.png",
     "id": 24,
     "color": "sparkling",
-    "price": "",
+    "price": 1565446,
     "light": 8.8,
     "smooth": "",
     "dry": "",
@@ -429,7 +429,7 @@
     "taste": ["vanilla", "apple", "cheese"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Meunier", "Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Moët & Chandon",
@@ -438,7 +438,7 @@
     "image": "https://images.vivino.com/thumbs/8XZqb52NRhaWolq_v4mVvg_pb_x300.png",
     "id": 25,
     "color": "sparkling",
-    "price": "",
+    "price": 146960,
     "light": 7.6,
     "smooth": "",
     "dry": "",
@@ -447,7 +447,7 @@
     "taste": ["apple", "toast", "caramel"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Meunier", "Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Altaneve",
@@ -456,7 +456,7 @@
     "image": "https://images.vivino.com/thumbs/OJMMpuHxQ5qkldwxLCrb9A_pb_x300.png",
     "id": 26,
     "color": "sparkling",
-    "price": "",
+    "price": 30350,
     "light": 3.5,
     "smooth": "",
     "dry": "",
@@ -744,7 +744,7 @@
     "image": "https://images.vivino.com/thumbs/4qjMPPbiQda_57Qct7cX-g_pb_x300.png",
     "id": 42,
     "color": "sparkling",
-    "price": "",
+    "price": 983994,
     "light": 8.3,
     "smooth": "",
     "dry": "",
@@ -906,7 +906,7 @@
     "image": "https://images.vivino.com/thumbs/yYHkkUczRVaBfBBl1NAoww_pb_x300.png",
     "id": 51,
     "color": "sparkling",
-    "price": "",
+    "price": 1699627,
     "light": 7.9,
     "smooth": "",
     "dry": "",
@@ -996,7 +996,7 @@
     "image": "https://images.vivino.com/thumbs/VjabAwzhSViJtNhYcHtS7A_pb_x300.png",
     "id": 56,
     "color": "sparkling",
-    "price": "",
+    "price": 3095748,
     "light": 7.8,
     "smooth": "",
     "dry": "",
@@ -1122,7 +1122,7 @@
     "image": "https://images.vivino.com/thumbs/UOIohsiJRVOwUxC6u3sJOg_pb_x300.png",
     "id": 63,
     "color": "sparkling",
-    "price": "",
+    "price": 900930,
     "light": 8.1,
     "smooth": "",
     "dry": "",
@@ -1140,7 +1140,7 @@
     "image": "https://images.vivino.com/thumbs/URFBcLe4TNar72CXLie8Kg_pb_x300.png",
     "id": 64,
     "color": "sparkling",
-    "price": "",
+    "price": 314687,
     "light": 7.6,
     "smooth": "",
     "dry": "",
@@ -1149,7 +1149,7 @@
     "taste": ["oak", "honey", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Salon",
@@ -1203,7 +1203,7 @@
     "taste": ["brioche", "citrus", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Louis Roederer",
@@ -1221,7 +1221,7 @@
     "taste": ["citrus", "brioche", "apple"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Noir", "Chardonnay"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Veuve Clicquot",
@@ -1428,7 +1428,7 @@
     "image": "https://images.vivino.com/thumbs/qYsRxC1qRY-Xvu6VmhMJCA_pb_x300.png",
     "id": 80,
     "color": "sparkling",
-    "price": "",
+    "price": 1785886,
     "light": 7.0,
     "smooth": "",
     "dry": "",
@@ -1437,7 +1437,7 @@
     "taste": ["strawberry", "toast", "minerals"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Noir", "Chardonnay"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Rockford",
@@ -1968,7 +1968,7 @@
     "image": "https://images.vivino.com/thumbs/VyG4h_8mT5Sg3VtNJZSuMg_pb_x300.png",
     "id": 110,
     "color": "sparkling",
-    "price": "",
+    "price": 218843,
     "light": 6.8,
     "smooth": "",
     "dry": "",
@@ -1977,7 +1977,7 @@
     "taste": ["strawberry", "apple", "brioche"],
     "food": ["shellfish", "appetizers and snacks", "leanfish", "aperitif"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.6
   },
   {
     "winery": "Dom Pérignon",
@@ -2148,7 +2148,7 @@
     "image": "https://images.vivino.com/thumbs/AOpJlbxcR-ynd7-AREcNHg_pb_x300.png",
     "id": 120,
     "color": "sparkling",
-    "price": "",
+    "price": 576659,
     "light": 7.6,
     "smooth": "",
     "dry": "",
@@ -2157,7 +2157,7 @@
     "taste": ["apple", "brioche", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12.8
   },
   {
     "winery": "Louis Roederer",
@@ -2400,7 +2400,7 @@
     "image": "https://images.vivino.com/thumbs/TOEYEKkAST62OOGtOlxhow_pb_x300.png",
     "id": 134,
     "color": "sparkling",
-    "price": "",
+    "price": 54311,
     "light": 6.2,
     "smooth": "",
     "dry": "",
@@ -2418,7 +2418,7 @@
     "image": "https://images.vivino.com/thumbs/uc3qkd0HQHaTGIG7AJ1UPA_pb_x300.png",
     "id": 135,
     "color": "sparkling",
-    "price": "",
+    "price": 47922,
     "light": 6.2,
     "smooth": "",
     "dry": "",
@@ -2454,7 +2454,7 @@
     "image": "https://images.vivino.com/thumbs/8XZqb52NRhaWolq_v4mVvg_pb_x300.png",
     "id": 137,
     "color": "sparkling",
-    "price": "",
+    "price": 62298,
     "light": 6.8,
     "smooth": "",
     "dry": "",
@@ -2463,7 +2463,7 @@
     "taste": ["apple", "toast", "caramel"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Meunier", "Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Schramsberg",
@@ -2940,7 +2940,7 @@
     "image": "https://images.vivino.com/thumbs/u8kjWpe6Q2WxJqXS2tWcyw_pb_x300.png",
     "id": 164,
     "color": "sparkling",
-    "price": "",
+    "price": 432894,
     "light": 6.4,
     "smooth": "",
     "dry": "",
@@ -2976,7 +2976,7 @@
     "image": "https://images.vivino.com/thumbs/PchdyrPvRZa060_RL1Ha_Q_pb_x300.png",
     "id": 166,
     "color": "sparkling",
-    "price": "",
+    "price": 710840,
     "light": 7.4,
     "smooth": "",
     "dry": "",
@@ -3228,7 +3228,7 @@
     "image": "https://images.vivino.com/thumbs/y4QqwvAMRzmCHj6l-8-L_A_pb_x300.png",
     "id": 180,
     "color": "sparkling",
-    "price": "",
+    "price": 880164,
     "light": 7.5,
     "smooth": "",
     "dry": "",
@@ -3570,7 +3570,7 @@
     "image": "https://images.vivino.com/thumbs/CzTj0zhETIuNto9vxx6Biw_pb_x300.png",
     "id": 199,
     "color": "sparkling",
-    "price": "",
+    "price": 928086,
     "light": 6.6,
     "smooth": "",
     "dry": "",
@@ -3759,7 +3759,7 @@
     "taste": ["oak", "honey", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Armand de Brignac",
@@ -4092,7 +4092,7 @@
     "image": "https://images.vivino.com/thumbs/SshGmI3HQZKZia7AhVnfZQ_pb_x300.png",
     "id": 228,
     "color": "sparkling",
-    "price": "",
+    "price": 30350,
     "light": 2.8,
     "smooth": "",
     "dry": "",
@@ -4453,15 +4453,15 @@
     "id": 248,
     "color": "sparkling",
     "price": "",
-    "light": "",
+    "light": 7.2,
     "smooth": "",
     "dry": "",
-    "soft": "",
-    "gentle": "", 
-    "taste": ["apple", "brioche", "citrus"],
+    "soft": 8.0,
+    "gentle": 7.7, 
+    "taste": ["strawberry", "brioche", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 11.5
   },
   {
     "winery": "Krug",
@@ -4470,7 +4470,7 @@
     "image": "https://images.vivino.com/thumbs/ECz-28QOTx-JgpyjS9JtPg_pb_x300.png",
     "id": 249,
     "color": "sparkling",
-    "price": "",
+    "price": 1880132,
     "light": 6.6,
     "smooth": "",
     "dry": "",
@@ -4524,7 +4524,7 @@
     "image": "https://images.vivino.com/thumbs/LZnxy7C4RFGeNi96DFZAVg_pb_x300.png",
     "id": 252,
     "color": "sparkling",
-    "price": "",
+    "price": 1656497,
     "light": 7.2,
     "smooth": "",
     "dry": "",
@@ -4560,7 +4560,7 @@
     "image": "https://images.vivino.com/thumbs/esk8UGj7RA6cv50SJSzTlA_pb_x300.png",
     "id": 254,
     "color": "sparkling",
-    "price": "",
+    "price": 402543,
     "light": 7.8,
     "smooth": "",
     "dry": "",
@@ -4569,7 +4569,7 @@
     "taste": ["toast", "butter", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Meunier", "Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Dom Pérignon",
@@ -4632,7 +4632,7 @@
     "image": "https://images.vivino.com/thumbs/jt4N6-XGQd6JlF8wve_Tmw_pb_x300.png",
     "id": 258,
     "color": "sparkling",
-    "price": "",
+    "price": 322673,
     "light": 7.5,
     "smooth": "",
     "dry": "",
@@ -4641,7 +4641,7 @@
     "taste": ["apple", "brioche", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Dom Pérignon",
@@ -4659,7 +4659,7 @@
     "taste": ["oak", "honey", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Henri Giraud",
@@ -4668,7 +4668,7 @@
     "image": "https://images.vivino.com/thumbs/YdjjMzrZS9WbzKJwC5cb2w_pb_x300.png",
     "id": 260,
     "color": "sparkling",
-    "price": "",
+    "price": 928086,
     "light": 7.8,
     "smooth": "",
     "dry": "",
@@ -4686,16 +4686,16 @@
     "image": "https://images.vivino.com/thumbs/n29_C8wiQbSOYlK12BRcuQ_pb_x300.png",
     "id": 261,
     "color": "sparkling",
-    "price": "",
-    "light": "",
+    "price": 468036,
+    "light": 6.7,
     "smooth": "",
     "dry": "",
-    "soft": "",
-    "gentle": "", 
-    "taste": ["apple", "brioche", "citrus"],
+    "soft": 8.0,
+    "gentle": 7.5, 
+    "taste": ["minerals", "lemon", "peach"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Bruno Paillard",
@@ -4704,16 +4704,16 @@
     "image": "https://images.vivino.com/thumbs/qdpXp4BrTmyQrQqzWKNajA_pb_x300.png",
     "id": 262,
     "color": "sparkling",
-    "price": "",
-    "light": "",
+    "price": 254534,
+    "light": 7.0,
     "smooth": "",
     "dry": "",
-    "soft": "",
-    "gentle": "", 
-    "taste": ["apple", "brioche", "citrus"],
+    "soft": 8.4,
+    "gentle": 7.6, 
+    "taste": ["honey", "apple", "toast"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Laurent-Perrier",
@@ -4722,15 +4722,15 @@
     "image": "https://images.vivino.com/thumbs/pLSFom4yT_KoBYN1nJ-i6Q_pb_x300.png",
     "id": 263,
     "color": "sparkling",
-    "price": "",
-    "light": "",
+    "price": 467662,
+    "light": 6.8,
     "smooth": "",
     "dry": "",
-    "soft": "",
-    "gentle": "", 
-    "taste": ["apple", "brioche", "citrus"],
+    "soft": 8.6,
+    "gentle": 7.7, 
+    "taste": ["strawberry", "orange", "brioche"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
-    "grapes": ["Chardonnay"],
+    "grapes": ["Chardonnay", "Pinot Noir"],
     "alchol": -1
   },
   {
@@ -4741,15 +4741,15 @@
     "id": 264,
     "color": "sparkling",
     "price": "",
-    "light": "",
+    "light": 6.7,
     "smooth": "",
     "dry": "",
-    "soft": "",
-    "gentle": "", 
+    "soft": 7.2,
+    "gentle": 7.1, 
     "taste": ["apple", "brioche", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
-    "grapes": ["Chardonnay"],
-    "alchol": -1
+    "grapes": ["Chardonnay", "Pinot Noir"],
+    "alchol": 12
   },
   {
     "winery": "Jacques Selosse",
@@ -4866,7 +4866,7 @@
     "image": "https://images.vivino.com/thumbs/AOpJlbxcR-ynd7-AREcNHg_pb_x300.png",
     "id": 271,
     "color": "sparkling",
-    "price": "",
+    "price": 576659,
     "light": 7.8,
     "smooth": "",
     "dry": "",
@@ -4875,7 +4875,7 @@
     "taste": ["apple", "brioche", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12.8
   },
   {
     "winery": "Ferrari",
@@ -4920,7 +4920,7 @@
     "image": "https://images.vivino.com/thumbs/PxgKVrRLT7uBaxhTiiCtCw_pb_x300.png",
     "id": 274,
     "color": "sparkling",
-    "price": "",
+    "price": 1565446,
     "light": 8.8,
     "smooth": "",
     "dry": "",
@@ -4929,7 +4929,7 @@
     "taste": ["butter", "apple", "cheese"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Meunier", "Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Ferrari",
@@ -5028,7 +5028,7 @@
     "image": "https://images.vivino.com/thumbs/wecCYV_PSH--fpuJPuaDSw_pb_x300.png",
     "id": 280,
     "color": "sparkling",
-    "price": "",
+    "price": 456855,
     "light": 6.7,
     "smooth": "",
     "dry": "",
@@ -5136,7 +5136,7 @@
     "image": "https://images.vivino.com/thumbs/AOpJlbxcR-ynd7-AREcNHg_pb_x300.png",
     "id": 286,
     "color": "sparkling",
-    "price": "",
+    "price": 576659,
     "light": 8.2,
     "smooth": "",
     "dry": "",
@@ -5145,7 +5145,7 @@
     "taste": ["apple", "brioche", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12.8
   },
   {
     "winery": "Philipponnat",
@@ -5316,7 +5316,7 @@
     "image": "https://images.vivino.com/thumbs/ec_CNOjyQb-cbAUYbV-H9w_pb_x300.png",
     "id": 296,
     "color": "sparkling",
-    "price": "",
+    "price": 913709,
     "light": 6.8,
     "smooth": "",
     "dry": "",
@@ -5370,7 +5370,7 @@
     "image": "https://images.vivino.com/thumbs/cLjuQUxmRc2EAPxuY838wg_pb_x300.png",
     "id": 299,
     "color": "sparkling",
-    "price": "",
+    "price": 239609,
     "light": 8.8,
     "smooth": "",
     "dry": "",
@@ -5442,7 +5442,7 @@
     "image": "https://images.vivino.com/thumbs/allYkjnVTsiq2Uhv4pt7kg_pb_x300.png",
     "id": 303,
     "color": "sparkling",
-    "price": "",
+    "price": 62298,
     "light": 6.8,
     "smooth": "",
     "dry": "",
@@ -5640,7 +5640,7 @@
     "image": "https://images.vivino.com/thumbs/URFBcLe4TNar72CXLie8Kg_pb_x300.png",
     "id": 314,
     "color": "sparkling",
-    "price": "",
+    "price": 6141978,
     "light": 7.6,
     "smooth": "",
     "dry": "",
@@ -5649,7 +5649,7 @@
     "taste": ["oak", "honey", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Veuve Clicquot",
@@ -5982,7 +5982,7 @@
     "image": "https://images.vivino.com/thumbs/ajfomyyMSnSbAql2YU9ysw_pb_x300.png",
     "id": 333,
     "color": "sparkling",
-    "price": "",
+    "price": 102233,
     "light": 7.1,
     "smooth": "",
     "dry": "",
@@ -5991,7 +5991,7 @@
     "taste": ["apple", "brioche", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Meunier", "Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Jacques Selosse",
@@ -6000,7 +6000,7 @@
     "image": "https://images.vivino.com/thumbs/AOpJlbxcR-ynd7-AREcNHg_pb_x300.png",
     "id": 334,
     "color": "sparkling",
-    "price": "",
+    "price": 576659,
     "light": 7.9,
     "smooth": "",
     "dry": "",
@@ -6009,7 +6009,7 @@
     "taste": ["apple", "brioche", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12.8
   },
   {
     "winery": "Louis Roederer",
@@ -6720,7 +6720,7 @@
     "image": "https://images.vivino.com/thumbs/YdjjMzrZS9WbzKJwC5cb2w_pb_x300.png",
     "id": 374,
     "color": "sparkling",
-    "price": "",
+    "price": 928086,
     "light": 7.4,
     "smooth": "",
     "dry": "",
@@ -6918,7 +6918,7 @@
     "image": "https://images.vivino.com/thumbs/AOpJlbxcR-ynd7-AREcNHg_pb_x300.png",
     "id": 385,
     "color": "sparkling",
-    "price": "",
+    "price": 576659,
     "light": 7.8,
     "smooth": "",
     "dry": "",
@@ -6927,7 +6927,7 @@
     "taste": ["apple", "brioche", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12.8
   },
   {
     "winery": "Taittinger",
@@ -7170,7 +7170,7 @@
     "image": "https://images.vivino.com/thumbs/wecCYV_PSH--fpuJPuaDSw_pb_x300.png",
     "id": 399,
     "color": "sparkling",
-    "price": "",
+    "price": 196479,
     "light": 6.8,
     "smooth": "",
     "dry": "",
@@ -7206,7 +7206,7 @@
     "image": "https://images.vivino.com/thumbs/AOpJlbxcR-ynd7-AREcNHg_pb_x300.png",
     "id": 401,
     "color": "sparkling",
-    "price": "",
+    "price": 576659,
     "light": 7.6,
     "smooth": "",
     "dry": "",
@@ -7215,7 +7215,7 @@
     "taste": ["apple", "brioche", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12.8
   },
   {
     "winery": "Taittinger",
@@ -7332,7 +7332,7 @@
     "image": "https://images.vivino.com/thumbs/_N1qkPv8TQWT4gpyltAZ6A_pb_x300.png",
     "id": 408,
     "color": "sparkling",
-    "price": "",
+    "price": 918501,
     "light": 7.4,
     "smooth": "",
     "dry": "",
@@ -7548,7 +7548,7 @@
     "image": "https://images.vivino.com/thumbs/URFBcLe4TNar72CXLie8Kg_pb_x300.png",
     "id": 420,
     "color": "sparkling",
-    "price": "",
+    "price": 6141978,
     "light": 7.0,
     "smooth": "",
     "dry": "",
@@ -7557,7 +7557,7 @@
     "taste": ["oak", "honey", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Krug",
@@ -7602,7 +7602,7 @@
     "image": "https://images.vivino.com/thumbs/wecCYV_PSH--fpuJPuaDSw_pb_x300.png",
     "id": 423,
     "color": "sparkling",
-    "price": "",
+    "price": 448868,
     "light": 6.6,
     "smooth": "",
     "dry": "",
@@ -7764,7 +7764,7 @@
     "image": "https://images.vivino.com/thumbs/hT2-6rDHTTOlR1A3Klg0xw_pb_x300.png",
     "id": 432,
     "color": "sparkling",
-    "price": "",
+    "price": 680490,
     "light": 7.9,
     "smooth": "",
     "dry": "",
@@ -7773,7 +7773,7 @@
     "taste": ["honey", "peach", "brioche"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Recaredo",
@@ -7800,7 +7800,7 @@
     "image": "https://images.vivino.com/thumbs/n5By4_iWSS2Zmf7anQtL_Q_pb_x300.png",
     "id": 434,
     "color": "sparkling",
-    "price": "",
+    "price": 579854,
     "light": 7.0,
     "smooth": "",
     "dry": "",
@@ -7809,7 +7809,7 @@
     "taste": ["apple", "brioche", "honey"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Deutz",
@@ -8286,7 +8286,7 @@
     "image": "https://images.vivino.com/thumbs/YdjjMzrZS9WbzKJwC5cb2w_pb_x300.png",
     "id": 461,
     "color": "sparkling",
-    "price": "",
+    "price": 928086,
     "light": 7.2,
     "smooth": "",
     "dry": "",
@@ -8682,7 +8682,7 @@
     "image": "https://images.vivino.com/thumbs/AwEADCh_Tx2GnXBHnIOajA_pb_x300.png",
     "id": 483,
     "color": "sparkling",
-    "price": "",
+    "price": 437686,
     "light": 6.8,
     "smooth": "",
     "dry": "",
@@ -8898,8 +8898,8 @@
     "image": "https://images.vivino.com/thumbs/bhELJiYKTGG2-ze3D-yGsg_pb_x300.png",
     "id": 495,
     "color": "sparkling",
-    "price": 6.9,
-    "light": "",
+    "price": 913709,
+    "light": 6.9,
     "smooth": "",
     "dry": "",
     "soft": 8.8,
@@ -8970,7 +8970,7 @@
     "image": "https://images.vivino.com/thumbs/6gK2EDXOSPGqhy8W5CW24A_pb_x300.png",
     "id": 499,
     "color": "sparkling",
-    "price": "",
+    "price": 269959,
     "light": 7.2,
     "smooth": "",
     "dry": "",
@@ -11562,7 +11562,7 @@
     "image": "https://images.vivino.com/thumbs/4QLoP0eeQ_6apbY4AsvoQA_pb_x300.png",
     "id": 643,
     "color": "sparkling",
-    "price": "",
+    "price": 87857,
     "light": 6.6,
     "smooth": "",
     "dry": "",
@@ -11652,7 +11652,7 @@
     "image": "https://images.vivino.com/thumbs/GvVD9sSISUGqLcsdWE3zgg_pb_x300.png",
     "id": 648,
     "color": "sparkling",
-    "price": "",
+    "price": 404141,
     "light": 8.2,
     "smooth": "",
     "dry": "",
@@ -11742,7 +11742,7 @@
     "image": "https://images.vivino.com/thumbs/7FGLN24bRUiCHCeqFbtRKQ_pb_x300.png",
     "id": 653,
     "color": "sparkling",
-    "price": "",
+    "price": 177311,
     "light": 6.6,
     "smooth": "",
     "dry": "",
@@ -11751,7 +11751,7 @@
     "taste": ["brioche", "toffee", "lemon"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Armand de Brignac",
@@ -11760,7 +11760,7 @@
     "image": "https://images.vivino.com/thumbs/_bVZMqPvRjasPjwbeADukw_pb_x300.png",
     "id": 654,
     "color": "sparkling",
-    "price": "",
+    "price": 477621,
     "light": 6.8,
     "smooth": "",
     "dry": "",
@@ -11913,7 +11913,7 @@
     "taste": ["strawberry", "cream", "orange"],
     "food": ["shellfish", "appetizers and snacks", "leanfish", "aperitif"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Egly-Ouriet",
@@ -12111,7 +12111,7 @@
     "taste": ["apple", "brioche", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Bonnaire",
@@ -12426,7 +12426,7 @@
     "image": "https://images.vivino.com/thumbs/jklhgRdyToCOq80GCAMSpQ_pb_x300.png",
     "id": 691,
     "color": "sparkling",
-    "price": "",
+    "price": 138973,
     "light": 6.8,
     "smooth": "",
     "dry": "",
@@ -12507,7 +12507,7 @@
     "taste": ["apple", "brioche", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Noir", "Pinot Meunier", "Chardonnay"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Drappier",
@@ -12660,7 +12660,7 @@
     "image": "https://images.vivino.com/thumbs/RDbp2VzPTpykQElOEH36Sw_pb_x300.png",
     "id": 704,
     "color": "sparkling",
-    "price": "",
+    "price": 73480,
     "light": 6.5,
     "smooth": "",
     "dry": "",
@@ -12966,7 +12966,7 @@
     "image": "https://images.vivino.com/thumbs/8eplhbUISsSo-nqz0nv22w_pb_x300.png",
     "id": 721,
     "color": "sparkling",
-    "price": "",
+    "price": 105428,
     "light": 6.4,
     "smooth": "",
     "dry": "",
@@ -13029,7 +13029,7 @@
     "taste": ["pear", "cream", "citrus"],
     "food": ["shellfish", "appetizers and snacks", "leanfish", "aperitif"],  
     "grapes": ["Chardonnay", "Pinot Noir"],
-    "alchol": -1
+    "alchol": 12.5
   },
   {
     "winery": "Maxime Cheurlin-Noëllat",
@@ -13164,7 +13164,7 @@
     "image": "https://images.vivino.com/thumbs/MwzrYHo3TdedryTg2l_MtQ_pb_x300.png",
     "id": 732,
     "color": "sparkling",
-    "price": "",
+    "price": 115012,
     "light": 7.0,
     "smooth": "",
     "dry": "",
@@ -13173,7 +13173,7 @@
     "taste": ["apple", "brioche", "citrus"],
     "food": ["pork", "richfish", "shellfish", "mild and softcheese"],  
     "grapes": ["Pinot Noir", "Chardonnay"],
-    "alchol": -1
+    "alchol": 12
   },
   {
     "winery": "Veuve Clicquot",
@@ -13236,7 +13236,7 @@
     "image": "https://images.vivino.com/thumbs/-TzXkfqsRuWJ0I-OJwvhqw_pb_x300.png",
     "id": 736,
     "color": "sparkling",
-    "price": "",
+    "price": 94246,
     "light": 7.0,
     "smooth": "",
     "dry": "",
