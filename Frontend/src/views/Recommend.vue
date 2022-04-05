@@ -7,23 +7,22 @@
           | {{ userInfo.nickname }}님이 최근 찜한 와인
         </h2>
       </v-row>
-      <v-row justify="center" class="mb-5">
-        <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
-          <v-card
-            class="mx-auto"
-            style="
-              height: 450px;
-              margin: auto;
-              border-radius: 50px;
-              color: gainsboro;
-              background-color: #232320;
-              box-shadow: 0 0 10px grey;
-            "
-            hover
-            outlined
-          >
-            <v-btn
-              class="mt-7 ml-15"
+     <v-row justify="center" class="mb-5">
+                <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
+                  <v-card
+                    style="
+                      height: 240px;
+                      margin: auto;
+                      border-radius: 160px;
+                      color: gainsboro;
+                      background-color: #232320;
+                      box-shadow: 0 0 10px grey;
+                    "
+                    hover
+                    outlined
+                  >
+                    <v-btn
+                      class="mt-4 ml-15 pl-8"
               text
               icon
               large
@@ -44,12 +43,12 @@
 
             <v-img
               :src="wine.image"
-              height="250"
+              height="170"
               contain
               @click="winedetail(wine.wine_id)"
             /><v-img />
             <hr
-              style="border-width: 2px; border-color: pink; margin-bottom: 5px"
+              style="border-width: 2px; border-color: pink; margin-bottom: 2px;"
             />
             <v-card-text class="text-center fs-5" style="color: gainsboro"
               >{{ wine.wine }}<br />
@@ -58,9 +57,9 @@
           </v-card>
         </v-col>
       </v-row>
-
+      <br />
       <v-row
-        class="pa-5-mt-1 text-h7 pt-10 pb-5 mt-10"
+        class="pa-5-mt-1 text-h7 pt-10 pb-5 mt-15 pt-15"
         justify="center"
         height="200"
       >
@@ -76,7 +75,7 @@
             style="
               height: 450px;
               margin: auto;
-              border-radius: 50px;
+              border-radius: 20px;
               color: gainsboro;
               background-color: #232320;
               box-shadow: 0 0 10px grey;
@@ -205,6 +204,11 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+
+    // 와인 상세페이지 이동
+    winedetail(wine_id) {
+      this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
     },
   },
 };

@@ -19,54 +19,48 @@
     <br />
     <br />
 
-    <v-row class="text-h7" justify="center">
+    <v-row class="text-h7 text-center" justify="center">
       <h1 class="mt-10 mb-10">요즘 인기 많은 와인</h1>
-    </v-row>
+    
     <!-- 와인타입 선택바 -->
-    <div style="position: relative; left: 15%; margin-bottom: 30px">
+    <div style="position: relative; left: 9%; padding-top: 30px">
       <v-bottom-navigation
-        color="warning"
+        color="#CD5C5C"
         width="450px"
         style="
           border-radius: 20px;
           margin-left: 10px;
-          background-color: cornsilk;
+          background-color: #FFDEAD;
           text-align: center;
         "
       >
         <v-btn value="red" @click="redReview">
           <span class="fs-6">Red</span>
-          <img src="../assets/red.png" style="width: 30px; height: 30px" />
         </v-btn>
 
         <v-btn value="white" @click="whiteReview">
           <span class="fs-6">White</span>
-          <img src="../assets/white.png" style="width: 30px; height: 30px" />
         </v-btn>
 
         <v-btn value="rose" @click="roseReview">
           <span class="fs-6">Rose</span>
-          <img src="../assets/rose.png" style="width: 30px; height: 30px" />
         </v-btn>
 
         <v-btn value="sparkling" @click="sparklingReview">
           <span class="fs-6">Sparkling</span>
-          <img
-            src="../assets/sparkling.png"
-            style="width: 30px; height: 30px"
-          />
         </v-btn>
 
         <v-btn value="port" @click="portReview">
           <span class="fs-6">Port</span>
-          <img src="../assets/port.png" style="width: 30px; height: 30px" />
         </v-btn>
       </v-bottom-navigation>
     </div>
 
-    <v-row>
+</v-row>
+
+    <v-row style="justify-content:center;">
       <div
-        class="col-xl-3 col-lg-4 col-md-6"
+        class="col-2"
         :key="i"
         v-for="(wine, i) in reviewlist"
       >
@@ -74,7 +68,7 @@
           class="mx-auto mt-10"
           max-width="380"
           style="
-            border-radius: 100px;
+            border-radius: 20px;
             height: 530px;
             color: gainsboro;
             background-color: #232320;
@@ -126,54 +120,46 @@
       </div>
     </v-row>
 
-    <v-row class="pa-2 mt-15 text-h7" justify="center">
+    <v-row class="pa-2 mt-15 text-h7" style="justify-content:center;">
       <h1 class="mt-10 mb-10">만족도 높은 와인</h1>
     </v-row>
     <!-- 와인타입 선택바 -->
-    <div style="position: relative; left: 15%; margin-bottom: 30px">
+    <div style="position: relative; left: 9%; padding-top: 30px">
       <v-bottom-navigation
-        color="warning"
+        color="#CD5C5C"
         width="450px"
         style="
           border-radius: 20px;
           margin-left: 10px;
-          background-color: cornsilk;
-          
+          background-color: #FFDEAD;
+          text-align: center;
         "
       >
         <v-btn value="red" @click="redScore">
           <span class="fs-6">Red</span>
-          <img src="../assets/red.png" style="width: 30px; height: 30px" />
         </v-btn>
 
         <v-btn value="white" @click="whiteScore">
           <span class="fs-6">White</span>
-          <img src="../assets/white.png" style="width: 30px; height: 30px" />
         </v-btn>
 
         <v-btn value="rose" @click="roseScore">
           <span class="fs-6">Rose</span>
-          <img src="../assets/rose.png" style="width: 30px; height: 30px" />
         </v-btn>
 
         <v-btn value="sparkling" @click="sparklingScore">
           <span class="fs-6">Sparkling</span>
-          <img
-            src="../assets/sparkling.png"
-            style="width: 30px; height: 30px"
-          />
         </v-btn>
 
         <v-btn value="port" @click="portScore">
           <span class="fs-6">Port</span>
-          <img src="../assets/port.png" style="width: 30px; height: 30px" />
         </v-btn>
       </v-bottom-navigation>
     </div>
 
-    <v-row>
+    <v-row style="justify-content:center;">
       <div
-        class="col-xl-3 col-lg-4 col-md-6"
+        class="col-2"
         :key="i"
         v-for="(wine, i) in scorelist"
       >
@@ -181,7 +167,7 @@
           class="mx-auto mt-10"
           max-width="380"
           style="
-            border-radius: 100px;
+            border-radius: 20px;
             height: 530px;
             color: gainsboro;
             background-color: #232320;
@@ -233,6 +219,8 @@
       </div>
     </v-row>
     <br />
+    <br />
+    <br />
   </v-app>
 </template>
 
@@ -245,9 +233,8 @@ export default {
   data() {
     return {
       wines: [
-        { name: "wine2", picture: require("@/assets/reco2.jpg") },
-        { name: "wine5", picture: require("@/assets/wine5.jpg") },
         { name: "wine7", picture: require("@/assets/reco7.png") },
+        { name: "wine2", picture: require("@/assets/reco2.jpg") },
       ],
 
       // type default value="red"

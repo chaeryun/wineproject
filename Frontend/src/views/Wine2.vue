@@ -170,30 +170,34 @@
       </form>
       <hr />
       <!-- 와인타입 선택바 -->
-      <v-bottom-navigation color="warning" width="450px" style="border-radius: 20px; margin-left: 10px; background-color: cornsilk;">
+      <v-bottom-navigation
+        color="#CD5C5C"
+        width="450px"
+        style="
+          border-radius: 20px;
+          margin-left: 10px;
+          background-color: #FFDEAD;
+          text-align: center;
+        "
+      >
         <v-btn value="red" @click="typered">
           <span class="fs-6">Red</span>
-          <img src="../assets/red.png" style="width:30px; height:30px;" />
         </v-btn>
 
         <v-btn value="white" @click="typewhite">
           <span class="fs-6">White</span>
-          <img src="../assets/white.png" style="width:30px; height:30px;" />
         </v-btn>
 
         <v-btn value="rose" @click="typerose">
           <span class="fs-6">Rose</span>
-          <img src="../assets/rose.png" style="width:30px; height:30px;" />
         </v-btn>
 
         <v-btn value="sparkling" @click="typesparkling">
           <span class="fs-6">Sparkling</span>
-          <img src="../assets/sparkling.png" style="width:30px; height:30px;" />
         </v-btn>
 
         <v-btn value="port" @click="typeport">
           <span class="fs-6">Port</span>
-          <img src="../assets/port.png" style="width:30px; height:30px;" />
         </v-btn>
       </v-bottom-navigation>
 
@@ -207,7 +211,7 @@
             class="mx-auto mt-10"
             max-width="380"
             style="
-              border-radius: 100px;
+              border-radius: 80px;
               height: 530px;
               color: gainsboro;
               background-color: #232320;

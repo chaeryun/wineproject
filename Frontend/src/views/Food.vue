@@ -2,6 +2,7 @@
   <div class="food mt-13">
     <h1 style="margin-bottom: 20px">음식과 어울리는 와인 추천</h1>
     <div class="text-center">
+    <hr style="border-color: grey"/>
       <button class="food-button" @click="clickfood($event)" value="shellfish">
         <img src="../assets/food/shellfish.png" class="food-img" /> Shellfish
       </button>
@@ -82,12 +83,18 @@
         <img src="../assets/food/leanfish.png" class="food-img" /> Lean Fish
       </button>
     </div>
+    <hr style="border-color: grey"/>
     <!-- 와인타입 선택바 -->
-    <div style="position: relative; left: 4%; padding-top: 30px">
+    <div style="position: relative; left: 2%; padding-top: 30px">
       <v-bottom-navigation
-        color="warning"
+        color="#CD5C5C"
         width="450px"
-        style="border-radius: 20px; background-color: grey"
+        style="
+          border-radius: 20px;
+          margin-left: 10px;
+          background-color: #FFDEAD;
+          text-align: center;
+        "
       >
         <v-btn value="red" @click="typered">
           <span class="fs-6">Red</span>
@@ -352,6 +359,10 @@ export default {
         this.recentlist = this.foodlist;
       }
     },
+
+    winedetail(wine_id) {
+      this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
+    },
   },
 };
 </script>
@@ -366,6 +377,7 @@ export default {
   height: 70px;
   border-radius: 40px;
   margin: 10px;
+  opacity: 0.8;
 }
 
 .food-img {
