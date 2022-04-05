@@ -23,7 +23,17 @@
               </div>
             </div>
             <div class="col-5 shadow-sm">
-              <div class="fs-4 fw-bold pb-6 pt-8 pl-3"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>INFORAMTION</div>
+              <div class="fs-4 fw-bold pb-6 pt-8 pl-3">
+                <img
+                  src="../assets/wine_logo.png"
+                  style="
+                    margin-bottom: 8px;
+                    width: 40px;
+                    height: 40px;
+                    color: white;
+                  "
+                />INFORAMTION
+              </div>
               <div class="card-body">
                 <h5 class="card-title pb-1 fs-3">
                   {{ this.winedetail.wine }}
@@ -60,7 +70,17 @@
                   </h5>
                 </div>
               </div>
-              <div class="fs-4 fw-bold pb-6 pl-3 pt-8"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>BOUQUET</div>
+              <div class="fs-4 fw-bold pb-6 pl-3 pt-8">
+                <img
+                  src="../assets/wine_logo.png"
+                  style="
+                    margin-bottom: 8px;
+                    width: 40px;
+                    height: 40px;
+                    color: white;
+                  "
+                />BOUQUET
+              </div>
               <span class="pl-3" :key="taste" v-for="taste in tastes">
                 <span class="col-4 fs-5 fw-bold" id="my-badge">{{
                   taste
@@ -69,8 +89,18 @@
               <br />
             </div>
             <div class="col-4">
-              <div class="mt-4 fs-4 fw-bold pb-2 ml-10 align-right pt-5"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>TASTE</div>
-              <br/>
+              <div class="mt-4 fs-4 fw-bold pb-2 ml-10 align-right pt-5">
+                <img
+                  src="../assets/wine_logo.png"
+                  style="
+                    margin-bottom: 8px;
+                    width: 40px;
+                    height: 40px;
+                    color: white;
+                  "
+                />TASTE
+              </div>
+              <br />
               <span class="pl-3 fs-5 ml-10">
                 당도
                 <v-chip-group class="chip-group-box">
@@ -157,7 +187,16 @@
               </span>
 
               <div class="pt-8">
-                <div class="fs-4 mt-14 fw-bold pb-2 ml-10 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
+                <div class="fs-4 mt-14 fw-bold pb-2 ml-10 align-right pt-10">
+                  <img
+                    src="../assets/wine_logo.png"
+                    style="
+                      margin-bottom: 8px;
+                      width: 40px;
+                      height: 40px;
+                      color: white;
+                    "
+                  />
                   FOOD
                 </div>
                 <span :key="food" v-for="food in temp">
@@ -177,69 +216,82 @@
             <!-- similar wine -->
             <div class="row">
               <div class="col-3"></div>
-        <div class="col-8 ml-3 fs-4 fw-bold pb-5 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
+              <div class="col-8 ml-3 fs-4 fw-bold pb-5 align-right pt-10">
+                <img
+                  src="../assets/wine_logo.png"
+                  style="
+                    margin-bottom: 8px;
+                    width: 40px;
+                    height: 40px;
+                    color: white;
+                  "
+                />
                 SIMILAR WINE
-                </div>
+              </div>
 
-          <v-row justify="center" class="mb-5">
-        <v-col cols="2" v-for="wine in recommandlist" :key="wine.wine_id">
-          <v-card
-            class="mx-auto"
-            style="
-              height: 450px;
-              margin: auto;
-              border-radius: 50px;
-              color: gainsboro;
-              background-color: #232320;
-              box-shadow: 0 0 10px grey;
-            "
-            hover
-            outlined
-          >
-            <v-btn
-              class="mt-7 ml-15"
-              text
-              icon
-              large
-              :color="
-                wine.color == 'white'
-                  ? 'green lighten-3'
-                  : wine.color == 'red'
-                  ? 'red'
-                  : wine.color == 'rose'
-                  ? 'red lighten-3'
-                  : wine.color == 'port'
-                  ? 'blue lighten-3'
-                  : 'purple lighten-2'
-              "
-            >
-              <v-icon>mdi-circle</v-icon> {{ wine.color }}
-            </v-btn>
+              <v-row justify="center" class="mb-5">
+                <v-col cols="2" v-for="wine in similarlist" :key="wine.wine_id">
+                  <v-card
+                    class="mx-auto"
+                    style="
+                      height: 450px;
+                      margin: auto;
+                      border-radius: 50px;
+                      color: gainsboro;
+                      background-color: #232320;
+                      box-shadow: 0 0 10px grey;
+                    "
+                    hover
+                    outlined
+                  >
+                    <v-btn
+                      class="mt-7 ml-15"
+                      text
+                      icon
+                      large
+                      :color="
+                        wine.color == 'white'
+                          ? 'green lighten-3'
+                          : wine.color == 'red'
+                          ? 'red'
+                          : wine.color == 'rose'
+                          ? 'red lighten-3'
+                          : wine.color == 'port'
+                          ? 'blue lighten-3'
+                          : 'purple lighten-2'
+                      "
+                    >
+                      <v-icon>mdi-circle</v-icon> {{ wine.color }}
+                    </v-btn>
 
-            <v-img
-              :src="wine.image"
-              height="250"
-              contain
-              @click="winedetail(wine.wine_id)"
-            /><v-img />
-            <hr
-              style="border-width: 2px; border-color: pink; margin-bottom: 5px"
-            />
-            <v-card-text class="text-center fs-5" style="color: gainsboro"
-              >{{ wine.wine }}<br />
-              <br />
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-          </div>
-
+                    <v-img
+                      :src="wine.image"
+                      height="250"
+                      contain
+                      @click="winedetail(wine.wine_id)"
+                    /><v-img />
+                    <hr
+                      style="
+                        border-width: 2px;
+                        border-color: pink;
+                        margin-bottom: 5px;
+                      "
+                    />
+                    <v-card-text
+                      class="text-center fs-5"
+                      style="color: gainsboro"
+                      >{{ wine.wine }}<br />
+                      <br />
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </div>
           </div>
         </div>
       </div>
     </main>
     <br />
-
   </div>
 </template>
 
@@ -248,7 +300,6 @@ import http from "@/util/http-common";
 
 export default {
   name: "Winedetail",
-  
 
   data() {
     return {
@@ -283,10 +334,9 @@ export default {
     // wineID값 가져오기
     this.wineid = this.$route.query.wine_id;
     this.getWineDetail();
-    // user 와인 가져오기
-    this.getUserWine();
+
     // Recommand와인 가져오기
-    this.recommandWine();
+    this.similarwine();
   },
 
   computed: {
@@ -371,7 +421,7 @@ export default {
         this.sweet = 3;
       } else if (wine.dry >= 6 && wine.dry < 8) {
         this.sweet = 4;
-      } else if (wine.dry >= 8 && wine.dry < 10) {
+      } else if (wine.dry >= 8 && wine.dry <= 10) {
         this.sweet = 5;
       }
 
@@ -384,7 +434,7 @@ export default {
         this.acidic = 3;
       } else if (wine.soft >= 6 && wine.soft < 8) {
         this.acidic = 4;
-      } else if (wine.soft >= 8 && wine.soft < 10) {
+      } else if (wine.soft >= 8 && wine.soft <= 10) {
         this.acidic = 5;
       }
 
@@ -397,7 +447,7 @@ export default {
         this.bold = 3;
       } else if (wine.light >= 6 && wine.light < 8) {
         this.bold = 4;
-      } else if (wine.light >= 8 && wine.light < 10) {
+      } else if (wine.light >= 8 && wine.light <= 10) {
         this.bold = 5;
       }
 
@@ -410,7 +460,7 @@ export default {
         this.tannic = 3;
       } else if (wine.smooth >= 6 && wine.smooth < 8) {
         this.tannic = 4;
-      } else if (wine.smooth >= 8 && wine.smooth < 10) {
+      } else if (wine.smooth >= 8 && wine.smooth <= 10) {
         this.tannic = 5;
       }
 
@@ -423,7 +473,7 @@ export default {
         this.gentle = 3;
       } else if (wine.gentle >= 6 && wine.gentle < 8) {
         this.gentle = 4;
-      } else if (wine.gentle >= 8 && wine.gentle < 10) {
+      } else if (wine.gentle >= 8 && wine.gentle <= 10) {
         this.gentle = 5;
       }
     },
@@ -457,7 +507,7 @@ export default {
         .then((res) => {
           // console.log(res);
           this.similarlist = res.data;
-          console.log("유사와인추천 리스트 : ", this.similarlist);
+          // console.log("유사와인추천 리스트 : ", this.similarlist);
         })
         .catch((err) => {
           console.log(err);

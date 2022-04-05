@@ -352,6 +352,10 @@ export default {
         this.recentlist = this.foodlist;
       }
     },
+
+    winedetail(wine_id) {
+      this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
+    },
   },
 };
 </script>

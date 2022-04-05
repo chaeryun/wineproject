@@ -206,6 +206,11 @@ export default {
           console.log(err);
         });
     },
+
+    // 와인 상세페이지 이동
+    winedetail(wine_id) {
+      this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
+    },
   },
 };
 </script>
