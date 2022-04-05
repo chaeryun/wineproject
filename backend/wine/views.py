@@ -10,9 +10,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.http import JsonResponse
 import json
-
+import math
 import random
-from reco.Algo import reco_color_average, reco_color_reviews, reco_likes
+from reco.algo1 import reco_color_average, reco_color_reviews, reco_likes
 # Create your views here.
 
 #-------------------와인 기본 API---------------------------------
@@ -112,6 +112,22 @@ def latest_wine_list(request, user_id):
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
+def latest_wine_totallist(request, user_id):
+    wines = Userlikewine.objects.filter(user_id = user_id).order_by('-created_at')
+    serializer = UserlikewineSerializer(wines, many=True)
+    return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def reco_similar_wine(request, wine_id):
+    wine_list = reco_likes(wine_id)
+    wines = Wine.objects.filter(wine_id__in=random.sample(wine_list, 3))
+    wineserializers = WineSerializer(wines, many=True)
+    return Response(wineserializers.data, status=status.HTTP_202_ACCEPTED)
+
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
 def reco_wishlist(request, user_id):
     wines = Userlikewine.objects.filter(user_id = user_id)[:5]
     reds = []
@@ -122,7 +138,6 @@ def reco_wishlist(request, user_id):
     matrix = [0, 0, 0, 0, 0]
     wine_matrix = [reds, port, spark, white, rose]
     for wine in wines:
-        print(wine.wine.wine_id)
         id_list = reco_likes(wine.wine.wine_id, n=5)
         if wine.wine.color == "red":
             matrix[0] += 1
@@ -160,6 +175,7 @@ def reco_wishlist(request, user_id):
                 result_list.append(random.choice(wine_matrix[i]))
             if i == 4:
                 i = 0
+            i += 1
         wines = Wine.objects.filter(wine_id__in=result_list)
         wineserializers = WineSerializer(wines, many=True)
         return Response(wineserializers.data, status=status.HTTP_200_OK)
@@ -180,3 +196,31 @@ def reco_color_score(request, color):
     wineserializers = WineSerializer(wines, many=True)
 
     return Response(wineserializers.data, status=status.HTTP_200_OK)        
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def reco_onlyfood(request, food):
+    wines = Wine.objects.filter(food__contains=food)
+    wineserializers = WineSerializer(wines, many=True)
+    return Response(wineserializers.data, status=status.HTTP_200_OK)
+
+
+#path('recommand/categorize/<str:country>/<str:grapes>/<int:min_price>/<int:max_price>/<int:taste>/<int:dry>/<int:soft>/<int:light>/<int:smooth>/', views.reco_categorize),
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def reco_categorize(request, country, grapes, min_price, max_price, taste, dry, soft, light, smooth):
+
+    def get_min_max(number):
+        sample_number = math.floor(number)
+        if sample_number % 2:
+            return (sample_number - 1)*2, sample_number * 2
+        else:
+            return (sample_number), (sample_number+1)*2       
+
+    dry_min, dry_max = get_min_max(dry)
+    soft_min, soft_max = get_min_max(soft)
+    light_min, light_max = get_min_max(light)
+    smooth_min, smooth_max = get_min_max(smooth)
+    wines = Wine.objects.filter(country=country).filter(grapes__in=grapes).filter(price__gte=min_price).filter(price__lte=max_price).filter(taste__in=taste).filter(dry__lte=dry_max).filter(dry__gte=dry_min).filter(soft__lte=soft_max).filter(soft__gte=soft_min).filter(light__lte=light_max).filter(light__gte=light_min).filter(smooth__lte=smooth_max).filter(smooth__gte=smooth_min)
+    wineserializers = WineSerializer(wines, many=True)
+    return Response(wineserializers, status=status.HTTP_200_OK)
