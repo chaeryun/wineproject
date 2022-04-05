@@ -60,7 +60,7 @@
                   </h5>
                 </div>
               </div>
-              <div class="fs-4 fw-bold pb-4 pl-3 pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>BOUQUET</div>
+              <div class="fs-4 fw-bold pb-6 pl-3 pt-8"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>BOUQUET</div>
               <span class="pl-3" :key="taste" v-for="taste in tastes">
                 <span class="col-4 fs-5 fw-bold" id="my-badge">{{
                   taste
@@ -69,7 +69,8 @@
               <br />
             </div>
             <div class="col-4">
-              <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-6"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>TASTE</div>
+              <div class="mt-4 fs-4 fw-bold pb-2 ml-10 align-right pt-5"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>TASTE</div>
+              <br/>
               <span class="pl-3 fs-5 ml-10">
                 당도
                 <v-chip-group class="chip-group-box">
@@ -155,13 +156,13 @@
                 </v-chip-group>
               </span>
 
-              <div>
-                <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
+              <div class="pt-8">
+                <div class="fs-4 mt-14 fw-bold pb-2 ml-10 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
                   FOOD
                 </div>
                 <span :key="food" v-for="food in temp">
                   <span
-                    class="fs-4 ml-10 mb-5 text-center"
+                    class="fs-4 ml-10 mb-2 text-center"
                     style="color: white; display: inline-block"
                     ><img
                       :src="require(`../assets/food/${food}.png`)"
@@ -172,9 +173,67 @@
                 </span>
               </div>
             </div>
-        <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
-                  Similar wine
+
+            <!-- similar wine -->
+            <div class="row">
+              <div class="col-3"></div>
+        <div class="col-8 ml-3 fs-4 fw-bold pb-5 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
+                SIMILAR WINE
                 </div>
+
+          <v-row justify="center" class="mb-5">
+        <v-col cols="2" v-for="wine in recommandlist" :key="wine.wine_id">
+          <v-card
+            class="mx-auto"
+            style="
+              height: 450px;
+              margin: auto;
+              border-radius: 50px;
+              color: gainsboro;
+              background-color: #232320;
+              box-shadow: 0 0 10px grey;
+            "
+            hover
+            outlined
+          >
+            <v-btn
+              class="mt-7 ml-15"
+              text
+              icon
+              large
+              :color="
+                wine.color == 'white'
+                  ? 'green lighten-3'
+                  : wine.color == 'red'
+                  ? 'red'
+                  : wine.color == 'rose'
+                  ? 'red lighten-3'
+                  : wine.color == 'port'
+                  ? 'blue lighten-3'
+                  : 'purple lighten-2'
+              "
+            >
+              <v-icon>mdi-circle</v-icon> {{ wine.color }}
+            </v-btn>
+
+            <v-img
+              :src="wine.image"
+              height="250"
+              contain
+              @click="winedetail(wine.wine_id)"
+            /><v-img />
+            <hr
+              style="border-width: 2px; border-color: pink; margin-bottom: 5px"
+            />
+            <v-card-text class="text-center fs-5" style="color: gainsboro"
+              >{{ wine.wine }}<br />
+              <br />
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+          </div>
+
           </div>
         </div>
       </div>
@@ -189,6 +248,7 @@ import http from "@/util/http-common";
 
 export default {
   name: "Winedetail",
+  
 
   data() {
     return {
@@ -196,6 +256,9 @@ export default {
       winedetail: [],
 
       chiplist: [1, 2, 3, 4, 5],
+
+      // 유저 추천와인 list
+      recommandlist: [],
 
       // 당도, 산도, 바디, 타닌, 탄산
       sweet: "",
@@ -220,6 +283,10 @@ export default {
     // wineID값 가져오기
     this.wineid = this.$route.query.wine_id;
     this.getWineDetail();
+    // user 와인 가져오기
+    this.getUserWine();
+    // Recommand와인 가져오기
+    this.recommandWine();
   },
 
   computed: {
@@ -272,6 +339,21 @@ export default {
 
           // 유사와인 리스트 받기
           this.similarwine();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
+    async getwishlist(wine_id) {
+      await http({
+        methods: "get",
+        url: "wine/get_wine_data/" + wine_id + "/",
+      })
+        .then((res) => {
+          // console.log(res);
+          // wine data list에 추가
+          this.userwishlist.push(res.data);
         })
         .catch((err) => {
           console.log(err);
@@ -389,7 +471,7 @@ export default {
 #wine-img {
   width: 170px;
   height: 700px;
-  margin-top: 10px;
+  margin-top: 80px;
 }
 
 .badge {
