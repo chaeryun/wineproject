@@ -23,7 +23,7 @@
               </div>
             </div>
             <div class="col-5 shadow-sm">
-              <div class="fs-4 fw-bold pb-6 pt-8 pl-3">INFORAMTION</div>
+              <div class="fs-4 fw-bold pb-6 pt-8 pl-3"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>INFORAMTION</div>
               <div class="card-body">
                 <h5 class="card-title pb-1 fs-3">
                   {{ this.winedetail.wine }}
@@ -60,7 +60,7 @@
                   </h5>
                 </div>
               </div>
-              <div class="fs-4 fw-bold pb-7 pl-3 pt-10">BOUQUET</div>
+              <div class="fs-4 fw-bold pb-4 pl-3 pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>BOUQUET</div>
               <span class="pl-3" :key="taste" v-for="taste in tastes">
                 <span class="col-4 fs-5 fw-bold" id="my-badge">{{
                   taste
@@ -69,7 +69,7 @@
               <br />
             </div>
             <div class="col-4">
-              <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-6">TASTE</div>
+              <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-6"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>TASTE</div>
               <span class="pl-3 fs-5 ml-10">
                 당도
                 <v-chip-group class="chip-group-box">
@@ -156,7 +156,7 @@
               </span>
 
               <div>
-                <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10">
+                <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
                   FOOD
                 </div>
                 <span :key="food" v-for="food in temp">
@@ -172,11 +172,15 @@
                 </span>
               </div>
             </div>
+        <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
+                  FOOD
+                </div>
           </div>
         </div>
       </div>
     </main>
     <br />
+
   </div>
 </template>
 

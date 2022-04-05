@@ -22,6 +22,36 @@
     <v-row class="text-h7" justify="center">
       <h1 class="mt-10 mb-10">올해의 와인</h1>
     </v-row>
+    <!-- 와인타입 선택바 -->
+    <div style="position:relative; left:15%; margin-bottom:30px;">
+      <v-bottom-navigation color="warning" width="450px" style="border-radius: 20px; margin-left: 10px; background-color: cornsilk; text-align:center;">
+        <v-btn value="red" @click="typered">
+          <span class="fs-6">Red</span>
+          <img src="../assets/red.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="white" @click="typewhite">
+          <span class="fs-6">White</span>
+          <img src="../assets/white.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="rose" @click="typerose">
+          <span class="fs-6">Rose</span>
+          <img src="../assets/rose.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="sparkling" @click="typesparkling">
+          <span class="fs-6">Sparkling</span>
+          <img src="../assets/sparkling.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="port" @click="typeport">
+          <span class="fs-6">Port</span>
+          <img src="../assets/port.png" style="width:30px; height:30px;" />
+        </v-btn>
+      </v-bottom-navigation>
+      </div>
+
     <v-row justify="center">
       <v-col cols="3">
         <v-card
@@ -122,10 +152,40 @@
         </v-card>
       </v-col>
     </v-row>
-
+    
     <v-row class="pa-2 mt-15 text-h7" justify="center">
       <h1 class="mt-10 mb-10">이달의 와인</h1>
     </v-row>
+    <!-- 와인타입 선택바 -->
+    <div style="position:relative; left:15%; margin-bottom:30px;">
+      <v-bottom-navigation color="warning" width="450px" style="border-radius: 20px; margin-left: 10px; background-color: cornsilk;">
+        <v-btn value="red" @click="typered">
+          <span class="fs-6">Red</span>
+          <img src="../assets/red.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="white" @click="typewhite">
+          <span class="fs-6">White</span>
+          <img src="../assets/white.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="rose" @click="typerose">
+          <span class="fs-6">Rose</span>
+          <img src="../assets/rose.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="sparkling" @click="typesparkling">
+          <span class="fs-6">Sparkling</span>
+          <img src="../assets/sparkling.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="port" @click="typeport">
+          <span class="fs-6">Port</span>
+          <img src="../assets/port.png" style="width:30px; height:30px;" />
+        </v-btn>
+      </v-bottom-navigation>
+    </div>
+
     <v-row justify="center">
       <v-col cols="3">
         <v-card

@@ -1,7 +1,7 @@
 <template>
   <div class="wine mt-13">
     <v-container>
-      <h1>Recommend</h1>
+      <!-- <h1>추천 받기</h1> -->
       <v-row class="text-h7" justify="center">
         <h2 class="ml-10 mt-10 pb-5">| OO님이 최근 찜한 와인</h2>
         <h5 class="ml-12 pb-5">oo님이 찜한 와인 목록을 기반으로 유사한 취향의 와인을 추천해드립니다.</h5>
@@ -67,7 +67,37 @@
       >
         <h2 class="ml-10">| OO님과 유사한 취향의 와인</h2>
       </v-row>
-      <v-row justify="center" class="mb-5">
+
+      <!-- 와인타입 선택바 -->
+      <v-bottom-navigation color="warning" width="450px" style="border-radius: 20px; margin-left: 15px; background-color: cornsilk;">
+        <v-btn value="red" @click="typered">
+          <span class="fs-6">Red</span>
+          <img src="../assets/red.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="white" @click="typewhite">
+          <span class="fs-6">White</span>
+          <img src="../assets/white.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="rose" @click="typerose">
+          <span class="fs-6">Rose</span>
+          <img src="../assets/rose.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="sparkling" @click="typesparkling">
+          <span class="fs-6">Sparkling</span>
+          <img src="../assets/sparkling.png" style="width:30px; height:30px;" />
+        </v-btn>
+
+        <v-btn value="port" @click="typeport">
+          <span class="fs-6">Port</span>
+          <img src="../assets/port.png" style="width:30px; height:30px;" />
+        </v-btn>
+      </v-bottom-navigation>
+
+
+      <v-row justify="center" class="mb-5 mt-5">
         <v-col cols="3">
           <v-card
             class="mx-auto"

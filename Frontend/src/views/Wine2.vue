@@ -1,7 +1,7 @@
 <template>
   <div class="wine mt-13">
     <v-container>
-      <h1>Wine</h1>
+      <h1>와인 조회</h1>
       <hr />
       <form
         v-on:submit.prevent="registerProduct()"
@@ -163,37 +163,37 @@
             placeholder="와인 이름을 검색해주세요."
             ref="wineName"
           />
-          <button type="submit" id="searchWine" class="btn btn-warning">
+          <button type="submit" id="searchWine" class="btn btn-warning" style="width:72px;">
             <img src="../assets/find.png" id="find-icon" class="pb-2" alt="" />
           </button>
         </div>
       </form>
       <hr />
       <!-- 와인타입 선택바 -->
-      <v-bottom-navigation color="warning" width="450px">
+      <v-bottom-navigation color="warning" width="450px" style="border-radius: 20px; margin-left: 10px; background-color: cornsilk;">
         <v-btn value="red" @click="typered">
-          <span>Red</span>
-          <v-icon>mdi-pig</v-icon>
+          <span class="fs-6">Red</span>
+          <img src="../assets/red.png" style="width:30px; height:30px;" />
         </v-btn>
 
         <v-btn value="white" @click="typewhite">
-          <span>White</span>
-          <v-icon>mdi-alien-outline</v-icon>
+          <span class="fs-6">White</span>
+          <img src="../assets/white.png" style="width:30px; height:30px;" />
         </v-btn>
 
         <v-btn value="rose" @click="typerose">
-          <span>Rose</span>
-          <v-icon>mdi-halloween</v-icon>
+          <span class="fs-6">Rose</span>
+          <img src="../assets/rose.png" style="width:30px; height:30px;" />
         </v-btn>
 
         <v-btn value="sparkling" @click="typesparkling">
-          <span>Sparkling</span>
-          <v-icon>mdi-owl</v-icon>
+          <span class="fs-6">Sparkling</span>
+          <img src="../assets/sparkling.png" style="width:30px; height:30px;" />
         </v-btn>
 
         <v-btn value="port" @click="typeport">
-          <span>Port</span>
-          <v-icon>mdi-pirate</v-icon>
+          <span class="fs-6">Port</span>
+          <img src="../assets/port.png" style="width:30px; height:30px;" />
         </v-btn>
       </v-bottom-navigation>
 

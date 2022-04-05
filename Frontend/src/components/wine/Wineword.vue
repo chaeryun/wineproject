@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="row mt-10">
+    <div class="row">
       <div class="col-3"></div>
       <div class="col-6">
-        <h1 class="text-start ml-10">와인 상식 Top10</h1>
+        <!-- <h1 class="text-start ml-10">자주하는 질문 Top10</h1> -->
         <hr style="width: 980px; border-width: 3px" />
         <h3 class="ml-13 mb-5">1. 유럽 와인 vs. 비유럽 와인</h3>
         <h5 class="ml-14">유럽에서 생산된 와인은 와인이 만들어지는 지역에 따라 이름을 붙이고, 유럽 이외의 지역에서 만들어진 와인은 와인을 만든 포도의 품종에 따라 이름이 붙여집니다.</h5>

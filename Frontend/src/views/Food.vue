@@ -1,6 +1,7 @@
 <template>
   <div class="food mt-13">
     <h1 style="margin-bottom: 20px">음식과 어울리는 와인 추천</h1>
+    <div class="text-center">
     <button class="food-button">
       <img src="../assets/food/shellfish.png" class="food-img" /> Shellfish
     </button>
@@ -11,14 +12,13 @@
       <img src="../assets/food/beef.png" class="food-img" /> Beef
     </button>
     <button class="food-button">
-      <img src="../assets/food/mildandsoftcheese.png" class="food-img" /> Mild
-      and Soft Cheese
+      <img src="../assets/food/mildandsoftcheese.png" class="food-img" /> Soft Cheese
     </button>
     <button class="food-button">
       <img src="../assets/food/poultry.png" class="food-img" /> Poultry
     </button>
     <button class="food-button">
-      <img src="../assets/food/richfish.png" class="food-img" /> Richfish
+      <img src="../assets/food/richfish.png" class="food-img" /> Rich fish
     </button>
     <button class="food-button">
       <img src="../assets/food/lamb.png" class="food-img" /> Lamb
@@ -28,7 +28,7 @@
     </button>
     <button class="food-button">
       <img src="../assets/food/matureandhardcheese.png" class="food-img" />
-      Mature and Hard Cheese
+      Hard Cheese
     </button>
     <button class="food-button">
       <img src="../assets/food/salmon.png" class="food-img" /> Salmon
@@ -50,7 +50,7 @@
     </button>
     <button class="food-button">
       <img src="../assets/food/appetizersandsnaks.png" class="food-img" />
-      Appetizers and Snacks
+      Appetizers
     </button>
     <button class="food-button">
       <img src="../assets/food/bluecheese.png" class="food-img" /> Blue Cheese
@@ -65,7 +65,40 @@
     <button class="food-button">
       <img src="../assets/food/deer.png" class="food-img" /> Deer
     </button>
-    <v-row class="mt-10">
+    <button class="food-button">
+      <img src="../assets/food/leanfish.png" class="food-img" /> Lean Fish
+    </button>
+    </div>
+<!-- 와인타입 선택바 -->
+    <div style="position:relative; left:4%; padding-top:30px;">
+      <v-bottom-navigation color="warning" width="450px" style="border-radius: 20px; background-color: grey;">
+        <v-btn value="red" @click="typered">
+          <span class="fs-6">Red</span>
+                  </v-btn>
+
+        <v-btn value="white" @click="typewhite">
+          <span class="fs-6">White</span>
+          
+        </v-btn>
+
+        <v-btn value="rose" @click="typerose">
+          <span class="fs-6">Rose</span>
+          
+        </v-btn>
+
+        <v-btn value="sparkling" @click="typesparkling">
+          <span class="fs-6">Sparkling</span>
+         
+        </v-btn>
+
+        <v-btn value="port" @click="typeport">
+          <span class="fs-6">Port</span>
+          
+        </v-btn>
+      </v-bottom-navigation>
+    </div>
+
+    <v-row>
       <div
         class="col-xl-3 col-lg-4 col-md-6"
         :key="i"
@@ -189,12 +222,13 @@ export default {
 
 <style>
 .food-button {
-  background-color: #474747;
+  background-color: rgb(78, 78, 78);
+  box-shadow: 0 0 10px #3b3b34;
   color: cornsilk;
   font-size: 22px;
-  width: 15em;
-  height: 75px;
-  border-radius: 30px;
+  width: 12em;
+  height: 70px;
+  border-radius: 40px;
   margin: 10px;
 }
 
