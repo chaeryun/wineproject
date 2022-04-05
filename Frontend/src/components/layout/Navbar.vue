@@ -6,8 +6,14 @@
         class="hidden-md-and-up"
       ></v-app-bar-nav-icon>
       <v-app-bar-title class="headline text-uppercase white--text">
-        <a style="text-decoration: none;" href="/home">
-        <h1 class="font-weight-light mt-5" style="margin-right: 200px; color:wheat;">와인어때?</h1></a>
+        <a style="text-decoration: none" href="/home">
+          <h1
+            class="font-weight-light mt-5"
+            style="margin-right: 200px; color: wheat"
+          >
+            와인어때?
+          </h1></a
+        >
       </v-app-bar-title>
       <v-autocomplete
         v-model="model"
@@ -74,7 +80,12 @@
       </v-app-bar> -->
 
       <v-tabs dark slider-size:1 right v-if="userstate.islogin == false">
-        <v-tab v-for="link in beforelogin" :key="link.name" :to="link.route">
+        <v-tab
+          v-for="link in beforelogin"
+          :key="link.name"
+          :to="link.route"
+          @click="clicknav(link.name)"
+        >
           {{ link.title }}
         </v-tab>
       </v-tabs>
@@ -106,7 +117,7 @@ export default {
       beforelogin: [
         { title: "Home", name: "Home", route: `/home` },
         { title: "Wine", name: "Wine", route: `/wine` },
-        { title: "Recommend", name: "Recommend", route: `recommend` },
+        { title: "Recommand", name: "Recommand", route: `/recommend` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
         { title: "Food Compatibility", name: "Food", route: `/food` },
         { title: "About Wine", name: "About", route: `/about` },
@@ -116,7 +127,7 @@ export default {
       afterlogin: [
         { title: "Home", name: "Home", route: `/home` },
         { title: "Wine", name: "Wine", route: `/wine` },
-        { title: "Recommend", name: "Recommend", route: `/recommend` },
+        { title: "Recommand", name: "Recommand", route: `/recommend` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
         { title: "Food Compatibility", name: "Food", route: `/food` },
         { title: "About Wine", name: "About", route: `/about` },
@@ -137,6 +148,10 @@ export default {
     userstate() {
       return this.$store.state.userstate;
     },
+
+    userInfo() {
+      return this.$store.state.userInfo;
+    },
   },
   methods: {
     signup() {
@@ -148,9 +163,19 @@ export default {
       if (name === "Logout") {
         this.$store.commit("userstate", false);
         sessionStorage.clear();
-        location.reload();
-        // this.$router.push({ name: "Home" });
+        // location.reload();
         alert("로그아웃");
+        this.$router.push({ name: "Home" });
+      }
+    },
+
+    clicknav(name) {
+      // Recommand 클릭시 로그인 상태 아니면 로그인 페이지로 이동
+      if (name === "Recommand") {
+        if (this.userstate.islogin == false) {
+          alert("로그인 후 사용해주세요");
+          this.$router.push({ name: "login" });
+        }
       }
     },
 
