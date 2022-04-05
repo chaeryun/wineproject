@@ -43,6 +43,10 @@
                     {{ this.winedetail.wine }}
                   </h5>
                   <h5 class="pt-3 pb-3">
+                    <span class="badge" id="my-badge"> Country</span>
+                    {{ this.winedetail.country }}
+                  </h5>
+                  <h5 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Grpaes </span>
                     {{ this.winedetail.grapes }}
                   </h5>
@@ -57,19 +61,15 @@
                 </div>
               </div>
               <div class="fs-4 fw-bold pb-7 pl-3 pt-10">BOUQUET</div>
-              <span
-                class="pl-3"
-                :key="taste"
-                v-for="taste in tastes"
-              >
-                <span class="col-4 fs-5 fw-bold" id="my-badge">{{ taste }}</span>
+              <span class="pl-3" :key="taste" v-for="taste in tastes">
+                <span class="col-4 fs-5 fw-bold" id="my-badge">{{
+                  taste
+                }}</span>
               </span>
               <br />
             </div>
             <div class="col-4">
-              <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-6">
-                TASTE
-              </div>
+              <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-6">TASTE</div>
               <span class="pl-3 fs-5 ml-10">
                 당도
                 <v-chip-group class="chip-group-box">
@@ -77,7 +77,9 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="sweet"
-                    :color="sweet === chips ? 'pink lighten-2' : 'pink lighten-5'"
+                    :color="
+                      sweet === chips ? 'pink lighten-2' : 'pink lighten-5'
+                    "
                     disabled
                   >
                     {{ chips }}
@@ -92,7 +94,9 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="acidic"
-                    :color="acidic === chips ? 'pink lighten-2' : 'pink lighten-5'"
+                    :color="
+                      acidic === chips ? 'pink lighten-2' : 'pink lighten-5'
+                    "
                     disabled
                   >
                     {{ chips }}
@@ -107,7 +111,9 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="bold"
-                    :color="bold === chips ? 'pink lighten-2' : 'pink lighten-5'"
+                    :color="
+                      bold === chips ? 'pink lighten-2' : 'pink lighten-5'
+                    "
                     disabled
                   >
                     {{ chips }}
@@ -122,7 +128,9 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="tannic"
-                    :color="tannic === chips ? 'pink lighten-2' : 'pink lighten-5'"
+                    :color="
+                      tannic === chips ? 'pink lighten-2' : 'pink lighten-5'
+                    "
                     disabled
                   >
                     {{ chips }}
@@ -137,7 +145,9 @@
                     v-for="chips in chiplist"
                     :key="chips"
                     :bind="gentle"
-                    :color="gentle === chips ? 'pink lighten-2' : 'pink lighten-5'"
+                    :color="
+                      gentle === chips ? 'pink lighten-2' : 'pink lighten-5'
+                    "
                     disabled
                   >
                     {{ chips }}
@@ -146,28 +156,27 @@
               </span>
 
               <div>
-              <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10">FOOD</div>
-              <span
-                :key="food"
-                v-for="food in temp"
-              >
-                <span
-                  class="fs-4 ml-10 mb-5 text-center"
-                  style="
-                    color: white; display:inline-block;
-                  "><img
-                    :src="require(`../assets/food/${food}.png`)"
-                    style="width: 60px; height: 55px; margin-right: 10px;"
-                />{{food}}</span>
-                
-              </span>
+                <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10">
+                  FOOD
+                </div>
+                <span :key="food" v-for="food in temp">
+                  <span
+                    class="fs-4 ml-10 mb-5 text-center"
+                    style="color: white; display: inline-block"
+                    ><img
+                      :src="require(`../assets/food/${food}.png`)"
+                      style="width: 60px; height: 55px; margin-right: 10px"
+                      alt="no image"
+                    />{{ food }}</span
+                  >
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </main>
-  <br />
+    <br />
   </div>
 </template>
 
@@ -236,6 +245,12 @@ export default {
           for (let i = 0; i < this.slicefood.length; i++) {
             this.foods[i] = this.slicefood[i].trim();
             this.temp[i] = this.foods[i].replace(reg, "");
+          }
+
+          for (let i = 0; i < this.temp.length; i++) {
+            if (this.temp[i] == "") {
+              this.temp[i] = "ice";
+            }
           }
 
           console.log("slicefood", this.foods);

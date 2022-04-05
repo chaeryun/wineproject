@@ -170,39 +170,32 @@
       </form>
       <hr />
       <!-- 와인타입 선택바 -->
-      <v-bottom-navigation
-    :value="value"
-    color="warning"
-    width="450px"
-  >
-    <v-btn>
-      <span>Red</span>
+      <v-bottom-navigation color="warning" width="450px">
+        <v-btn value="red" @click="typered">
+          <span>Red</span>
+          <v-icon>mdi-pig</v-icon>
+        </v-btn>
 
-      <v-icon>mdi-pig</v-icon>
-    </v-btn>
+        <v-btn value="white" @click="typewhite">
+          <span>White</span>
+          <v-icon>mdi-alien-outline</v-icon>
+        </v-btn>
 
-    <v-btn>
-      <span>White</span>
+        <v-btn value="rose" @click="typerose">
+          <span>Rose</span>
+          <v-icon>mdi-halloween</v-icon>
+        </v-btn>
 
-      <v-icon>mdi-alien-outline</v-icon>
-    </v-btn>
+        <v-btn value="sparkling" @click="typesparkling">
+          <span>Sparkling</span>
+          <v-icon>mdi-owl</v-icon>
+        </v-btn>
 
-    <v-btn>
-      <span>Rose</span>
-
-      <v-icon>mdi-halloween</v-icon>
-    </v-btn>
-    <v-btn>
-      <span>Sparkling</span>
-
-      <v-icon>mdi-owl</v-icon>
-    </v-btn>
-    <v-btn>
-      <span>Port</span>
-
-      <v-icon>mdi-pirate</v-icon>
-    </v-btn>
-  </v-bottom-navigation>
+        <v-btn value="port" @click="typeport">
+          <span>Port</span>
+          <v-icon>mdi-pirate</v-icon>
+        </v-btn>
+      </v-bottom-navigation>
 
       <v-row>
         <div
@@ -285,6 +278,18 @@ export default {
   data: () => ({
     // winelist 저장
     winelist: [],
+    redwinelist: [],
+    whitewinelist: [],
+    rosewinelist: [],
+    sparklingwinelist: [],
+    portwinelist: [],
+    recentlist: [],
+
+    redoption: false,
+    whiteoption: false,
+    roseoption: false,
+    sparklingoption: false,
+    portoption: false,
 
     // pagenation
     currentPage: 1,
@@ -304,10 +309,10 @@ export default {
       return this.startOffset + this.perPage;
     },
     numOfPages() {
-      return Math.ceil(this.winelist.length / this.perPage);
+      return Math.ceil(this.recentlist.length / this.perPage);
     },
     calData() {
-      return this.winelist.slice(this.startOffset, this.endOffset);
+      return this.recentlist.slice(this.startOffset, this.endOffset);
     },
 
     // user 정보 가져오기
@@ -326,16 +331,85 @@ export default {
         .then((res) => {
           //   console.log("wine list :", res);
           this.winelist = res.data;
+          this.recentlist = this.winelist;
           // console.log("winelist", this.winelist);
+
+          // wine type별 winelist 추가
+          this.typewine(res.data);
         })
         .catch((err) => {
           console.log(err);
         });
     },
 
+    typewine(wine) {
+      console.log("wine", wine[0]);
+      for (let i = 0; i < wine.length; i++) {
+        if (wine[i].color == "red") {
+          this.redwinelist.push(wine[i]);
+        } else if (wine[i].color == "white") {
+          this.whitewinelist.push(wine[i]);
+        } else if (wine[i].color == "rose") {
+          this.rosewinelist.push(wine[i]);
+        } else if (wine[i].color == "sparkling") {
+          this.sparklingwinelist.push(wine[i]);
+        } else if (wine[i].color == "port") {
+          this.portwinelist.push(wine[i]);
+        }
+      }
+
+      console.log("red winelist :", this.redwinelist);
+    },
+
     // 와인 상세페이지 이동
     winedetail(wine_id) {
       this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
+    },
+
+    typered() {
+      if (!this.redoption) {
+        this.recentlist = this.redwinelist;
+        this.redoption = true;
+      } else {
+        this.recentlist = this.winelist;
+        this.redoption = false;
+      }
+    },
+    typewhite() {
+      if (!this.whiteoption) {
+        this.recentlist = this.whitewinelist;
+        this.whiteoption = true;
+      } else {
+        this.recentlist = this.winelist;
+        this.whiteoption = false;
+      }
+    },
+    typerose() {
+      if (!this.roseoption) {
+        this.recentlist = this.rosewinelist;
+        this.roseoption = true;
+      } else {
+        this.recentlist = this.winelist;
+        this.roseoption = false;
+      }
+    },
+    typesparkling() {
+      if (!this.sparklingoption) {
+        this.recentlist = this.sparklingwinelist;
+        this.sparklingoption = true;
+      } else {
+        this.recentlist = this.winelist;
+        this.sparklingoption = false;
+      }
+    },
+    typeport() {
+      if (!this.portoption) {
+        this.recentlist = this.portwinelist;
+        this.portoption = true;
+      } else {
+        this.recentlist = this.winelist;
+        this.portoption = false;
+      }
     },
   },
 };
