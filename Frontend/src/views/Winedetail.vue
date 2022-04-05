@@ -23,57 +23,57 @@
               </div>
             </div>
             <div class="col-5 shadow-sm">
-              <div class="fs-4 fw-bold pb-6 pt-8 pl-3"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>INFORAMTION</div>
+              <div class="fs-4 fw-bold pb-6 pt-8 pl-3">INFORAMTION</div>
               <div class="card-body">
-                <h5 class="card-title pb-1 fs-3">
+                <h4 class="fw-bold card-title pb-1 fs-3">
                   {{ this.winedetail.wine }}
                   {{ this.winedetail.location }}
-                </h5>
-                <h5 class="pt-5 pb-3 border-top">
+                </h4>
+                <h4 class="pt-5 pb-3 border-top">
                   <span class="badge outlined" id="my-badge"> Wine Type</span>
                   {{ this.winedetail.color }}
-                </h5>
+                </h4>
                 <div class="card-text border-top pt-3 pb-3">
-                  <h5 class="pt-3 pb-3">
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Winery </span>
                     {{ this.winedetail.winery }}
-                  </h5>
-                  <h5 class="pt-3 pb-3">
+                  </h4>
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Wine name</span>
                     {{ this.winedetail.wine }}
-                  </h5>
-                  <h5 class="pt-3 pb-3">
+                  </h4>
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Country</span>
                     {{ this.winedetail.country }}
-                  </h5>
-                  <h5 class="pt-3 pb-3">
+                  </h4>
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Grpaes </span>
                     {{ this.winedetail.grapes }}
-                  </h5>
-                  <h5 class="pt-3 pb-3">
+                  </h4>
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Alcohol </span>
                     {{ this.winedetail.alcohol }}%
-                  </h5>
-                  <h5 class="card-title pt-5 border-top">
+                  </h4>
+                  <h4 class="card-title pt-5 border-top">
                     <span class="badge" id="my-badge"> Price </span>
                     {{ this.winedetail.price }}원
-                  </h5>
+                  </h4>
                 </div>
               </div>
-              <div class="fs-4 fw-bold pb-6 pl-3 pt-8"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>BOUQUET</div>
-              <span class="pl-3" :key="taste" v-for="taste in tastes">
-                <span class="col-4 fs-5 fw-bold" id="my-badge">{{
-                  taste
-                }}</span>
-              </span>
               <br />
             </div>
             <div class="col-4">
-              <div class="mt-4 fs-4 fw-bold pb-2 ml-10 align-right pt-5"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>TASTE</div>
-              <br/>
-              <span class="pl-3 fs-5 ml-10">
-                당도
-                <v-chip-group class="chip-group-box">
+              <div class="fs-4 fw-bold pb-6 pl-10 pt-8">BOUQUET</div>
+              <span class="pl-3" :key="taste" v-for="taste in tastes">
+                <span style="display:inline-flex; margin-left:40px;">
+                  <h3 >{{taste}}</h3>
+                  </span>
+              </span>
+              <div class="mt-4 fs-4 fw-bold pb-10 ml-10 align-right pt-5">TASTE</div>
+        
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">당도</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -88,9 +88,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-3 fs-5 ml-10">
-                산도
-                <v-chip-group class="chip-group-box">
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">산도</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -105,9 +105,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-3 fs-5 ml-10">
-                바디
-                <v-chip-group class="chip-group-box">
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">바디</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -122,9 +122,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-3 fs-5 ml-10">
-                타닌
-                <v-chip-group class="chip-group-box">
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">타닌</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -139,9 +139,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-3 fs-5 ml-10">
-                탄산
-                <v-chip-group class="chip-group-box">
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">탄산</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -156,8 +156,8 @@
                 </v-chip-group>
               </span>
 
-              <div class="pt-8">
-                <div class="fs-4 mt-14 fw-bold pb-2 ml-10 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
+              <div>
+                <div class="fs-4 mt-10 fw-bold pb-2 ml-10 align-right pt-2">
                   FOOD
                 </div>
                 <span :key="food" v-for="food in temp">
@@ -168,7 +168,7 @@
                       :src="require(`../assets/food/${food}.png`)"
                       style="width: 60px; height: 55px; margin-right: 10px"
                       alt="no image"
-                    />{{ food }}</span
+                    /><h3> {{ food }} </h3></span
                   >
                 </span>
               </div>
@@ -177,7 +177,7 @@
             <!-- similar wine -->
             <div class="row">
               <div class="col-3"></div>
-        <div class="col-8 ml-3 fs-4 fw-bold pb-5 align-right pt-10"><img src="../assets/wine_logo.png" style="margin-bottom: 8px; width:40px; height:40px; color:white;"/>
+        <div class="col-8 ml-3 fs-4 fw-bold pb-5 align-right pt-10">
                 SIMILAR WINE
                 </div>
 

@@ -138,6 +138,7 @@
           border-radius: 20px;
           margin-left: 10px;
           background-color: cornsilk;
+          
         "
       >
         <v-btn value="red" @click="redScore">
