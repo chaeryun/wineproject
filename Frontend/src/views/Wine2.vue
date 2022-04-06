@@ -5,100 +5,154 @@
       <hr />
 
       <label for="productCategory" class="ml-15 mb-5"> | Wine Search </label>
-      <div class="form-group px-15 mx-15" >
-        <v-select 
-          style="border-radius: 100px; height: 55px; width:80px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
+      <div class="form-group px-15 mx-15">
+        <v-select
+          style="
+            border-radius: 100px;
+            height: 55px;
+            width: 80px;
+            margin-right: 10px;
+            background-color: wheat;
+            box-shadow: 0 0 10px grey;
+          "
           v-model="country"
           :items="countrylist"
           item-text="name"
           item-value="value"
           label="국가"
-          solo 
-          item-color="warning"          
+          solo
+          item-color="warning"
         >
         </v-select>
         <v-select
-          style="border-radius: 100px; height: 55px; width:80px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
+          style="
+            border-radius: 100px;
+            height: 55px;
+            width: 80px;
+            margin-right: 10px;
+            background-color: wheat;
+            box-shadow: 0 0 10px grey;
+          "
           v-model="grape"
           :items="grapes"
           item-text="name"
           item-value="value"
           label="포도품종"
           solo
-          item-color="warning" 
+          item-color="warning"
         >
         </v-select>
 
         <v-select
-          style="border-radius: 100px; height: 55px; width:80px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
+          style="
+            border-radius: 100px;
+            height: 55px;
+            width: 80px;
+            margin-right: 10px;
+            background-color: wheat;
+            box-shadow: 0 0 10px grey;
+          "
           v-model="price"
           :items="prices"
           item-text="name"
           item-value="value"
           label="가격"
           solo
-          item-color="warning" 
+          item-color="warning"
         >
         </v-select>
 
         <v-select
-          style="border-radius: 100px; height: 55px; width:80px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
+          style="
+            border-radius: 100px;
+            height: 55px;
+            width: 80px;
+            margin-right: 10px;
+            background-color: wheat;
+            box-shadow: 0 0 10px grey;
+          "
           v-model="taste"
           :items="tastes"
           item-text="name"
           item-value="value"
           label="향"
           solo
-          item-color="warning" 
+          item-color="warning"
         >
         </v-select>
       </div>
-      <label for="productCategory" class="ml-15 mt-5 mb-5"> | Wine Style </label>
+      <label for="productCategory" class="ml-15 mt-5 mb-5">
+        | Wine Style
+      </label>
       <div class="form-group px-15 mx-15">
         <v-select
-          style="border-radius: 100px; height: 55px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
+          style="
+            border-radius: 100px;
+            height: 55px;
+            margin-right: 10px;
+            background-color: wheat;
+            box-shadow: 0 0 10px grey;
+          "
           v-model="dryscore"
           :items="drylist"
           item-text="name"
           item-value="value"
           label="당도"
           solo
-          item-color="warning" 
+          item-color="warning"
         >
         </v-select>
 
         <v-select
-          style="border-radius: 100px; height: 55px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
+          style="
+            border-radius: 100px;
+            height: 55px;
+            margin-right: 10px;
+            background-color: wheat;
+            box-shadow: 0 0 10px grey;
+          "
           v-model="softscore"
           :items="softlist"
           item-text="name"
           item-value="value"
           label="산도"
           solo
-          item-color="warning" 
+          item-color="warning"
         >
         </v-select>
 
         <v-select
-          style="border-radius: 100px; height: 55px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
+          style="
+            border-radius: 100px;
+            height: 55px;
+            margin-right: 10px;
+            background-color: wheat;
+            box-shadow: 0 0 10px grey;
+          "
           v-model="lightscore"
           :items="lightlist"
           item-text="name"
           item-value="value"
           label="바디"
           solo
-          item-color="warning" 
+          item-color="warning"
         >
         </v-select>
         <v-select
-          style="border-radius: 100px; height: 55px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
+          style="
+            border-radius: 100px;
+            height: 55px;
+            margin-right: 10px;
+            background-color: wheat;
+            box-shadow: 0 0 10px grey;
+          "
           v-model="smoothscore"
           :items="smoothlist"
           item-text="name"
           item-value="value"
           label="타닌"
           solo
-          item-color="warning" 
+          item-color="warning"
         >
         </v-select>
       </div>
@@ -108,12 +162,13 @@
           class="form-control"
           id="wineName"
           placeholder="와인 이름을 검색해주세요."
-          ref="wineName"
+          v-model="keyword"
+          @keyup.enter="searchresultshow(keyword)"
         />
         <v-btn
           id="searchWine"
-          class="btn "
-          style="width: 70px;"
+          class="btn"
+          style="width: 70px"
           @click="winesearch"
         >
           <img src="../assets/find.png" id="find-icon" class="pb-2" alt="" />
@@ -379,6 +434,11 @@ export default {
     sparklingoption: false,
     portoption: false,
 
+    // 검색기능
+    keyword: "",
+    // 검색 와인 리스트
+    keywordlist: [],
+
     // pagenation
     currentPage: 1,
     perPage: 20,
@@ -541,17 +601,22 @@ export default {
         this.maxprice = 100000000;
       }
 
-      console.log("국가 :", this.country);
-      console.log("포도품종 :", this.grape);
-      console.log("최소가격 :", this.minprice);
-      console.log("최대가격 :", this.maxprice);
-      console.log("향 :", this.taste);
-      console.log("당도 :", this.dryscore);
-      console.log("산도 :", this.softscore);
-      console.log("바디 :", this.lightscore);
-      console.log("타닌 :", this.smoothscore);
+      // console.log("국가 :", this.country);
+      // console.log("포도품종 :", this.grape);
+      // console.log("최소가격 :", this.minprice);
+      // console.log("최대가격 :", this.maxprice);
+      // console.log("향 :", this.taste);
+      // console.log("당도 :", this.dryscore);
+      // console.log("산도 :", this.softscore);
+      // console.log("바디 :", this.lightscore);
+      // console.log("타닌 :", this.smoothscore);
+      // console.log("키워드 :", this.keyword);
 
-      this.search();
+      if (this.keyword == "") {
+        this.search();
+      } else {
+        this.searchresultshow(this.keyword);
+      }
     },
 
     async search() {
@@ -592,6 +657,30 @@ export default {
           console.log(err);
         });
     },
+
+    searchresultshow(keyword) {
+      if (keyword != "") {
+        // console.log("keyword", keyword);
+        // console.log("전체 : winelist", this.winelist);
+
+        // 키워드 리스트 초기화
+        this.keywordlist = [];
+
+        for (let i = 0; i < this.winelist.length; i++) {
+          if (
+            this.winelist[i].wine.toLowerCase().includes(keyword.toLowerCase())
+          ) {
+            // console.log("키워드 일치");
+            this.keywordlist.push(this.winelist[i]);
+            // console.log("키워드 일치 와인리스트", this.keywordlist);
+          }
+        }
+
+        this.recentlist = this.keywordlist;
+      } else {
+        alert("키워드를 입력해주세요!");
+      }
+    },
   },
 };
 </script>
@@ -599,7 +688,7 @@ export default {
 <style>
 .form-group {
   display: flex;
-  text-align :center;
+  text-align: center;
 }
 
 label {
