@@ -1,7 +1,7 @@
 <template>
   <v-app id="intro">
     <v-img
-      :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
+      :max-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
       src="https://cdn.imweb.me/upload/S2017101359e025984d346/671b7600c2bf9.jpg"
     >
       <v-theme-provider dark>
@@ -15,7 +15,7 @@
                   :class="[
                     $vuetify.breakpoint.smAndDown ? 'display-2' : 'display-3',
                   ]"
-                  class="font-weight-black"
+                  class="font-weight-black fw-bold"
                 >
                   잠깐만요!
                 </span>
@@ -29,20 +29,18 @@
                   ]"
                   class="font-weight-light"
                 >
-                  만 19세 이상인가요?
+                  <h1 style="color: white;">만 19세 이상인가요?</h1>
                 </span>
 
-                <br />
-                <br />
                 <v-btn text>
                   <span
                     :class="[
                       $vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2',
                     ]"
-                    class="font-weight-black"
+                    class="font-weight-black mr-5"
                     @click="gomain"
                   >
-                    Yes
+                    Yes 
                   </span>
                 </v-btn>
 
@@ -50,9 +48,9 @@
                   :class="[
                     $vuetify.breakpoint.smAndDown ? 'display-0' : 'display-1',
                   ]"
-                  class="font-weight-light"
+                  class="font-weight-black"
                 >
-                  or
+                   or
                 </span>
 
                 <v-btn text>
@@ -61,8 +59,8 @@
                       $vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2',
                     ]"
                     class="font-weight-black"
-                  >
-                    No
+                  > 
+                  No
                   </span>
                 </v-btn>
               </div>
@@ -89,7 +87,7 @@ export default {
 
 <style>
 #alert-card{
-   height: 400px;
+   height: 380px;
    max-width: 600px;
    background-color: #050000;
    background-color: rgba(3, 0, 0, 0.397);

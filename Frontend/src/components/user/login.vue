@@ -1,5 +1,5 @@
 <template>
-  <v-main>
+  <v-main class="pt-10 pb-10">
     <v-container class="login-page">
       <v-layout class="row wrap">
         <v-flex col-7></v-flex>

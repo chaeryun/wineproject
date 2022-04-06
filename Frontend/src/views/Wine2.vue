@@ -182,7 +182,7 @@
         width="450px"
         style="
           border-radius: 30px;
-          margin-left: 10px;
+          margin-left: 110px;
           background-color: #ffdead;
           text-align: center;
         "
@@ -735,7 +735,6 @@ button {
   margin-right: 1em;
   margin-left: 20px;
   background-color: wheat;
-  border-color: orange;
 }
 
 #searchWine {
@@ -743,7 +742,6 @@ button {
   color: white;
   background-color: wheat;
   height: 48px;
-  border-color: orange;
 }
 
 hr {
