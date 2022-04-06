@@ -117,7 +117,7 @@ export default {
       beforelogin: [
         { title: "Home", name: "Home", route: `/home` },
         { title: "Wine", name: "Wine", route: `/wine` },
-        { title: "Recommand", name: "Recommand", route: `/recommend` },
+        { title: "Recommand", name: "Recommand", route: `/recommand` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
         { title: "Food Compatibility", name: "Food", route: `/food` },
         { title: "About Wine", name: "About", route: `/about` },
@@ -127,7 +127,7 @@ export default {
       afterlogin: [
         { title: "Home", name: "Home", route: `/home` },
         { title: "Wine", name: "Wine", route: `/wine` },
-        { title: "Recommand", name: "Recommand", route: `/recommend` },
+        { title: "Recommand", name: "Recommand", route: `/recommand` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
         { title: "Food Compatibility", name: "Food", route: `/food` },
         { title: "About Wine", name: "About", route: `/about` },

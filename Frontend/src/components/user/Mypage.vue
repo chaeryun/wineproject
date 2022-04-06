@@ -12,7 +12,7 @@
             style="
               height: 450px;
               margin: auto;
-              border-radius: 50px;
+              border-radius: 90px;
               color: gainsboro;
               background-color: #232320;
               box-shadow: 0 0 10px grey;

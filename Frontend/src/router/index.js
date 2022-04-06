@@ -8,7 +8,7 @@ import Home from "@/views/Home.vue";
 import Winedetail from "@/views/Winedetail.vue";
 import Wine2 from "@/views/Wine2.vue";
 import Vintage from "@/views/Vintage.vue";
-import Recommend from "@/views/Recommend.vue";
+import Recommand from "@/views/Recommand.vue";
 import Food from "@/views/Food.vue";
 
 import About from "@/views/About.vue";
@@ -55,8 +55,8 @@ const routes = [
   },
   {
     path: "/recommand",
-    name: "Recommend",
-    component: Recommend,
+    name: "Recommand",
+    component: Recommand,
   },
   {
     path: "/vintage",

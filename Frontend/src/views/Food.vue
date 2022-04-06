@@ -90,7 +90,7 @@
         color="#CD5C5C"
         width="450px"
         style="
-          border-radius: 20px;
+          border-radius: 30px;
           margin-left: 10px;
           background-color: #FFDEAD;
           text-align: center;

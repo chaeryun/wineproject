@@ -4,81 +4,105 @@
       <h1>와인 조회</h1>
       <hr />
 
-      <label for="productCategory"> | Wine Search </label>
-      <div class="form-group">
-        <v-select
+      <label for="productCategory" class="ml-15 mb-5"> | Wine Search </label>
+      <div class="form-group px-15 mx-15" >
+        <v-select 
+          style="border-radius: 100px; height: 55px; width:80px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
           v-model="country"
           :items="countrylist"
           item-text="name"
           item-value="value"
           label="국가"
+          solo 
+          item-color="warning"          
         >
         </v-select>
         <v-select
+          style="border-radius: 100px; height: 55px; width:80px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
           v-model="grape"
           :items="grapes"
           item-text="name"
           item-value="value"
           label="포도품종"
+          solo
+          item-color="warning" 
         >
         </v-select>
 
         <v-select
+          style="border-radius: 100px; height: 55px; width:80px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
           v-model="price"
           :items="prices"
           item-text="name"
           item-value="value"
           label="가격"
+          solo
+          item-color="warning" 
         >
         </v-select>
 
         <v-select
+          style="border-radius: 100px; height: 55px; width:80px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
           v-model="taste"
           :items="tastes"
           item-text="name"
           item-value="value"
           label="향"
+          solo
+          item-color="warning" 
         >
         </v-select>
       </div>
-      <label for="productCategory"> | Wine Style </label>
-      <div class="form-group">
+      <label for="productCategory" class="ml-15 mt-5 mb-5"> | Wine Style </label>
+      <div class="form-group px-15 mx-15">
         <v-select
+          style="border-radius: 100px; height: 55px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
           v-model="dryscore"
           :items="drylist"
           item-text="name"
           item-value="value"
           label="당도"
+          solo
+          item-color="warning" 
         >
         </v-select>
 
         <v-select
+          style="border-radius: 100px; height: 55px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
           v-model="softscore"
           :items="softlist"
           item-text="name"
           item-value="value"
           label="산도"
+          solo
+          item-color="warning" 
         >
         </v-select>
 
         <v-select
+          style="border-radius: 100px; height: 55px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
           v-model="lightscore"
           :items="lightlist"
           item-text="name"
           item-value="value"
           label="바디"
+          solo
+          item-color="warning" 
         >
         </v-select>
         <v-select
+          style="border-radius: 100px; height: 55px; margin-right: 10px; background-color: wheat; box-shadow: 0 0 10px grey;"
           v-model="smoothscore"
           :items="smoothlist"
           item-text="name"
           item-value="value"
           label="타닌"
+          solo
+          item-color="warning" 
         >
         </v-select>
       </div>
-      <div class="select-input">
+      <div class="select-input mt-10 ml-14 pl-10">
         <input
           type="text"
           class="form-control"
@@ -88,8 +112,8 @@
         />
         <v-btn
           id="searchWine"
-          class="btn btn-warning"
-          style="width: 72px"
+          class="btn "
+          style="width: 70px;"
           @click="winesearch"
         >
           <img src="../assets/find.png" id="find-icon" class="pb-2" alt="" />
@@ -102,7 +126,7 @@
         color="#CD5C5C"
         width="450px"
         style="
-          border-radius: 20px;
+          border-radius: 30px;
           margin-left: 10px;
           background-color: #ffdead;
           text-align: center;
@@ -575,9 +599,11 @@ export default {
 <style>
 .form-group {
   display: flex;
+  text-align :center;
 }
 
 label {
+  font-size: 19px;
   margin-left: 1em;
   font-weight: bold;
 }
@@ -593,7 +619,6 @@ h1 {
 #productCategory {
   color: white;
   border-radius: 2em;
-  text-align: center;
   height: 50px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -617,13 +642,19 @@ button {
 #wineName {
   width: 900px;
   border-radius: 2em;
-  height: 50px;
+  height: 45px;
   margin-right: 1em;
+  margin-left: 20px;
+  background-color: wheat;
+  border-color: orange;
 }
 
 #searchWine {
   border-radius: 2em;
   color: white;
+  background-color: wheat;
+  height: 48px;
+  border-color: orange;
 }
 
 hr {

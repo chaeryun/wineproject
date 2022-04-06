@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-row>
+    <!-- <v-row>
       <v-carousel
         cycle
         height="700"
@@ -15,12 +15,20 @@
           </v-sheet>
         </v-carousel-item>
       </v-carousel>
-    </v-row>
+    </v-row> -->
+    
+    <video autoplay loop muted>
+      <source src="../assets/video/wine.mp4" type="video/mp4">
+    </video>
     <br />
     <br />
 
     <v-row class="text-h7 text-center" justify="center">
-      <h1 class="mt-10 mb-10">요즘 인기 많은 와인</h1>
+      <!-- <h1 class="mt-10 mb-10">요즘 인기 많은 와인</h1> -->
+<!--       
+<h1><span style="border-bottom: 12px solid #dcf1fb; padding: 0 0 0 0.2em;" class="mb-10 mt-10">인기 와인</span></h1> -->
+ <h1 class="mb-10 mt-15"><span  style="text-align: center; border-radius: 15px 15px 15px 0; border: 3px solid #FFAD5B; padding: 0.5em 0.6em; color: #FF8000;">인기 폭발 와인</span></h1>
+ 
 
       <!-- 와인타입 선택바 -->
       <div style="position: relative; left: 9%; padding-top: 30px">
@@ -28,7 +36,7 @@
           color="#CD5C5C"
           width="450px"
           style="
-            border-radius: 20px;
+            border-radius: 30px;
             margin-left: 10px;
             background-color: #ffdead;
             text-align: center;
@@ -63,8 +71,8 @@
           class="mx-auto mt-10"
           max-width="380"
           style="
-            border-radius: 20px;
-            height: 530px;
+            border-radius: 100px;
+            height: 360px;
             color: gainsboro;
             background-color: #232320;
             box-shadow: 0 0 10px grey;
@@ -73,7 +81,7 @@
           outlined
         >
           <v-btn
-            class="mt-7 ml-15"
+            class="mt-6 pl-10 ml-8"
             text
             icon
             large
@@ -93,11 +101,12 @@
           </v-btn>
           <v-img
             :src="wine.image"
-            height="300"
+            height="270"
             alt="No image"
             contain
             @click="winedetail(wine.wine_id)"
           /><v-img />
+          <br />
           <hr
             style="border-width: 2px; border-color: pink; margin-bottom: -5px"
           />
@@ -115,8 +124,9 @@
       </div>
     </v-row>
 
-    <v-row class="pa-2 mt-15 text-h7" style="justify-content: center">
-      <h1 class="mt-10 mb-10">만족도 높은 와인</h1>
+    <v-row class="pt-15 mt-15  text-h7" style="justify-content: center">
+      <!-- <h1 class="mt-10 mb-10">만족도 높은 와인</h1> -->
+      <h1 class="mb-10 mt-15"><span  style="text-align: center; border-radius: 15px 15px 15px 0; border: 3px solid #FFAD5B; padding: 0.5em 0.6em; color: #FF8000;">만족도 높은 와인</span></h1>
     </v-row>
     <!-- 와인타입 선택바 -->
     <div style="position: relative; left: 9%; padding-top: 30px">
@@ -124,7 +134,7 @@
         color="#CD5C5C"
         width="450px"
         style="
-          border-radius: 20px;
+          border-radius: 30px;
           margin-left: 10px;
           background-color: #ffdead;
           text-align: center;
@@ -158,8 +168,8 @@
           class="mx-auto mt-10"
           max-width="380"
           style="
-            border-radius: 20px;
-            height: 530px;
+            border-radius: 100px;
+            height: 360px;
             color: gainsboro;
             background-color: #232320;
             box-shadow: 0 0 10px grey;
@@ -168,7 +178,7 @@
           outlined
         >
           <v-btn
-            class="mt-7 ml-15"
+            class="mt-5 ml-10 pl-8"
             text
             icon
             large
@@ -188,11 +198,12 @@
           </v-btn>
           <v-img
             :src="wine.image"
-            height="300"
+            height="280"
             alt="No image"
             contain
             @click="winedetail(wine.wine_id)"
           /><v-img />
+          <br />
           <hr
             style="border-width: 2px; border-color: pink; margin-bottom: -5px"
           />
@@ -209,9 +220,7 @@
         </v-card>
       </div>
     </v-row>
-    <br />
-    <br />
-    <br />
+    <div class="mt-15 mb-15 pt-15 pb-15"></div>
   </v-app>
 </template>
 
@@ -367,4 +376,9 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+video {
+  min-width: 100%;
+  width: auto; height: auto;
+}
+</style>
