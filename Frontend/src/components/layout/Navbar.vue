@@ -15,7 +15,7 @@
           </h1></a
         >
       </v-app-bar-title>
-      <v-autocomplete
+      <!-- <v-autocomplete
         v-model="model"
         :items="items"
         :loading="isLoading"
@@ -63,7 +63,7 @@
             <v-icon>mdi-bitcoin</v-icon>
           </v-list-item-action>
         </template>
-      </v-autocomplete>
+      </v-autocomplete> -->
       <!-- <v-spacer></v-spacer> -->
 
       <!-- <v-app-bar class="hidden-sm-and-down">

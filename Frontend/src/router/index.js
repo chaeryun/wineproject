@@ -54,7 +54,7 @@ const routes = [
     component: Food,
   },
   {
-    path: "/recommend",
+    path: "/recommand",
     name: "Recommend",
     component: Recommend,
   },

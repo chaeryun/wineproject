@@ -21,49 +21,44 @@
 
     <v-row class="text-h7 text-center" justify="center">
       <h1 class="mt-10 mb-10">요즘 인기 많은 와인</h1>
-    
-    <!-- 와인타입 선택바 -->
-    <div style="position: relative; left: 9%; padding-top: 30px">
-      <v-bottom-navigation
-        color="#CD5C5C"
-        width="450px"
-        style="
-          border-radius: 20px;
-          margin-left: 10px;
-          background-color: #FFDEAD;
-          text-align: center;
-        "
-      >
-        <v-btn value="red" @click="redReview">
-          <span class="fs-6">Red</span>
-        </v-btn>
 
-        <v-btn value="white" @click="whiteReview">
-          <span class="fs-6">White</span>
-        </v-btn>
+      <!-- 와인타입 선택바 -->
+      <div style="position: relative; left: 9%; padding-top: 30px">
+        <v-bottom-navigation
+          color="#CD5C5C"
+          width="450px"
+          style="
+            border-radius: 20px;
+            margin-left: 10px;
+            background-color: #ffdead;
+            text-align: center;
+          "
+        >
+          <v-btn value="red" @click="redReview">
+            <span class="fs-6">Red</span>
+          </v-btn>
 
-        <v-btn value="rose" @click="roseReview">
-          <span class="fs-6">Rose</span>
-        </v-btn>
+          <v-btn value="white" @click="whiteReview">
+            <span class="fs-6">White</span>
+          </v-btn>
 
-        <v-btn value="sparkling" @click="sparklingReview">
-          <span class="fs-6">Sparkling</span>
-        </v-btn>
+          <v-btn value="rose" @click="roseReview">
+            <span class="fs-6">Rose</span>
+          </v-btn>
 
-        <v-btn value="port" @click="portReview">
-          <span class="fs-6">Port</span>
-        </v-btn>
-      </v-bottom-navigation>
-    </div>
+          <v-btn value="sparkling" @click="sparklingReview">
+            <span class="fs-6">Sparkling</span>
+          </v-btn>
 
-</v-row>
+          <v-btn value="port" @click="portReview">
+            <span class="fs-6">Port</span>
+          </v-btn>
+        </v-bottom-navigation>
+      </div>
+    </v-row>
 
-    <v-row style="justify-content:center;">
-      <div
-        class="col-2"
-        :key="i"
-        v-for="(wine, i) in reviewlist"
-      >
+    <v-row style="justify-content: center">
+      <div class="col-2" :key="i" v-for="(wine, i) in reviewlist">
         <v-card
           class="mx-auto mt-10"
           max-width="380"
@@ -120,7 +115,7 @@
       </div>
     </v-row>
 
-    <v-row class="pa-2 mt-15 text-h7" style="justify-content:center;">
+    <v-row class="pa-2 mt-15 text-h7" style="justify-content: center">
       <h1 class="mt-10 mb-10">만족도 높은 와인</h1>
     </v-row>
     <!-- 와인타입 선택바 -->
@@ -131,7 +126,7 @@
         style="
           border-radius: 20px;
           margin-left: 10px;
-          background-color: #FFDEAD;
+          background-color: #ffdead;
           text-align: center;
         "
       >
@@ -157,12 +152,8 @@
       </v-bottom-navigation>
     </div>
 
-    <v-row style="justify-content:center;">
-      <div
-        class="col-2"
-        :key="i"
-        v-for="(wine, i) in scorelist"
-      >
+    <v-row style="justify-content: center">
+      <div class="col-2" :key="i" v-for="(wine, i) in scorelist">
         <v-card
           class="mx-auto mt-10"
           max-width="380"
@@ -367,6 +358,11 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+
+    // 와인 상세페이지 이동
+    winedetail(wine_id) {
+      this.$router.push({ path: "/detail", query: { wine_id: wine_id } });
     },
   },
 };
