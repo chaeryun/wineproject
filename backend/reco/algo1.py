@@ -59,4 +59,3 @@ def reco_likes(wine_id,n=5):
     result = df2_similarity[df1['wine_id'][wine_id]].sort_values(ascending=False)[:n]
     array = np.array(result.index.values)
     return list(array)
-print(reco_likes(2,10))
