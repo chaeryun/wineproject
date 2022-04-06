@@ -9,7 +9,13 @@
 
 # 진행방식
 
+## 0. 기본설정
+
+
+설치후, conf/nginx.conf 파일 복붙 & html/index.html 삭제.
+
 ## 1. 포트 바꾸기.
+
 
 nginx.conf 파일 포트를 확인.
 
