@@ -326,6 +326,15 @@ export default {
             if (this.temp[i] == "") {
               this.temp[i] = "ice";
             }
+            if (this.temp[i] == "matureandhardcheese") {
+              this.temp[i] = "hardcheese";
+            }
+            if (this.temp[i] == "mildandsoftcheese") {
+              this.temp[i] = "softcheese";
+            }
+            if (this.temp[i] == "appetizersandsnacks") {
+              this.temp[i] = "appetizers";
+            }
           }
 
           // console.log("slicefood", this.foods);
