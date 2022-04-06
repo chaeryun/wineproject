@@ -18,7 +18,7 @@
                   color="red lighten-3"
                   @click="wishlist"
                 >
-                  <v-icon>mdi-heart</v-icon> Wish List
+                  <v-icon>mdi-heart</v-icon> <h3 class="mt-2 ml-2">Add to Wish List</h3>
                 </v-btn>
               </div>
             </div>
@@ -132,7 +132,7 @@
                   <h3>{{taste}}</h3>
                   </span>
               </span>
-              <div class="mt-4 fs-4 fw-bold pb-5 ml-10 align-right pt-5">TASTE</div>
+              <div class="mt-8 fs-4 fw-bold pb-5 ml-10 align-right pt-5">TASTE</div>
         
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">당도</h3>
@@ -220,7 +220,7 @@
               </span>
 
               <div>
-                <div class="fs-4 mt-10 fw-bold pb-2 ml-10 align-right pt-2">
+                <div class="fs-4 mt-10 fw-bold pb-6 ml-10 align-right pt-2">
                   FOOD
                 </div>
                 <span :key="food" v-for="food in temp">
