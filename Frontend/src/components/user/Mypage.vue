@@ -47,11 +47,9 @@
               @click="winedetail(wine.wine_id)"
             /><v-img />
             <hr
-              style="border-width: 2px; border-color: pink; margin-bottom: 5px;"
+              style="border-width: 2px; border-color: pink; margin-bottom: 5px"
             />
-            <v-card-text
-              class="text-center fs-5"
-              style="color: gainsboro"
+            <v-card-text class="text-center fs-5" style="color: gainsboro"
               >{{ wine.wine }}<br />
               <br />
             </v-card-text>
@@ -91,7 +89,7 @@ export default {
     async getUserWine() {
       await http({
         methods: "get",
-        url: "wine/latest_wine_list/" + this.userInfo.username + "/",
+        url: "wine/latest_wine_totallist/" + this.userInfo.username + "/",
       })
         .then((res) => {
           // console.log("winelist : ", res.data);
