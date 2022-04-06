@@ -133,10 +133,9 @@
                   </span>
               </span>
               <div class="mt-8 fs-4 fw-bold pb-5 ml-10 align-right pt-5">TASTE</div>
-        
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">당도</h3>
-                <v-chip-group class="col-8 chip-group-box">
+                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -153,7 +152,7 @@
 
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">산도</h3>
-                <v-chip-group class="col-8 chip-group-box">
+                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -170,7 +169,7 @@
 
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">바디</h3>
-                <v-chip-group class="col-8 chip-group-box">
+                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -187,7 +186,7 @@
 
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">타닌</h3>
-                <v-chip-group class="col-8 chip-group-box">
+                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -204,7 +203,7 @@
 
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">탄산</h3>
-                <v-chip-group class="col-8 chip-group-box">
+                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -220,7 +219,7 @@
               </span>
 
               <div>
-                <div class="fs-4 mt-10 fw-bold pb-6 ml-10 align-right pt-2">
+                <div class="fs-4 mt-10 fw-bold pb-5 ml-10 align-right pt-10">
                   FOOD
                 </div>
                 <span :key="food" v-for="food in temp">
