@@ -32,11 +32,11 @@ schema_view = get_schema_view( # swager 기본설정
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls), #admin 경로
+    path('api/admin/', admin.site.urls), #admin 경로
     path(r'swagger(?P<format>\.json|\.yaml)', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path(r'swagger', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path(r'redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc-v1'),
     # wine 및 accounts 관련 요청이 들어왔을 때 path경로 설정
-    path('wine/', include('wine.urls')),
-    path('accounts/', include('accounts.urls'))
+    path('api/wine/', include('wine.urls')),
+    path('api/accounts/', include('accounts.urls'))
 ]

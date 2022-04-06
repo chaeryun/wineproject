@@ -6,6 +6,10 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install -U drf-yasg
 
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+
+
 # Project를 /usr/src/app으로 복사
 COPY . .
 # 포트 설정
