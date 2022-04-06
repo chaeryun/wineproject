@@ -18,7 +18,8 @@
                   color="red lighten-3"
                   @click="wishlist"
                 >
-                  <v-icon>mdi-heart</v-icon> <h3 class="mt-2 ml-2">Add to Wish List</h3>
+                  <v-icon>mdi-heart</v-icon>
+                  <h3 class="mt-2 ml-2">Add to Wish List</h3>
                 </v-btn>
               </div>
             </div>
@@ -60,11 +61,13 @@
                   </h4>
                 </div>
               </div>
-              
-              <!-- similar wine -->
-           <div class="ml-3 fs-4 fw-bold pb-5 align-right mt-5">SIMILAR WINE</div>
 
-          <v-row justify="center" class="mb-5">
+              <!-- similar wine -->
+              <div class="ml-3 fs-4 fw-bold pb-5 align-right mt-5">
+                SIMILAR WINE
+              </div>
+
+              <v-row justify="center" class="mb-5">
                 <v-col cols="4" v-for="wine in similarlist" :key="wine.wine_id">
                   <v-card
                     style="
@@ -72,7 +75,7 @@
                       margin: auto;
                       border-radius: 160px;
                       color: gainsboro;
-                      background-color: #5D5D5D;
+                      background-color: #5d5d5d;
                       opacity: 0.8;
                       box-shadow: 0 0 10px grey;
                     "
@@ -103,7 +106,7 @@
                       :src="wine.image"
                       height="170"
                       contain
-                      @click="winedetail(wine.wine_id)"
+                      @click="gowinedetail(wine.wine_id)"
                     /><v-img />
                     <hr
                       style="
@@ -121,21 +124,24 @@
                   </v-card>
                 </v-col>
               </v-row>
-
             </div>
-
 
             <div class="col-4">
               <div class="fs-4 fw-bold pb-4 pl-10 pt-8">BOUQUET</div>
               <span class="pl-3" :key="taste" v-for="taste in tastes">
-                <span style="display:inline-flex; margin-left:40px;">
-                  <h3>{{taste}}</h3>
-                  </span>
+                <span style="display: inline-flex; margin-left: 40px">
+                  <h3>{{ taste }}</h3>
+                </span>
               </span>
-              <div class="mt-8 fs-4 fw-bold pb-5 ml-10 align-right pt-5">TASTE</div>
+              <div class="mt-8 fs-4 fw-bold pb-5 ml-10 align-right pt-5">
+                TASTE
+              </div>
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">당도</h3>
-                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
+                <v-chip-group
+                  class="col-10 chip-group-box"
+                  style="margin-left: -7px; margin-top: -5px"
+                >
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -152,7 +158,10 @@
 
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">산도</h3>
-                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
+                <v-chip-group
+                  class="col-10 chip-group-box"
+                  style="margin-left: -7px; margin-top: -5px"
+                >
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -169,7 +178,10 @@
 
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">바디</h3>
-                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
+                <v-chip-group
+                  class="col-10 chip-group-box"
+                  style="margin-left: -7px; margin-top: -5px"
+                >
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -186,7 +198,10 @@
 
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">타닌</h3>
-                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
+                <v-chip-group
+                  class="col-10 chip-group-box"
+                  style="margin-left: -7px; margin-top: -5px"
+                >
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -203,7 +218,10 @@
 
               <span class="row pl-3 fs-5 ml-10">
                 <h3 class="col-2">탄산</h3>
-                <v-chip-group class="col-10 chip-group-box" style="margin-left: -7px; margin-top: -5px;">
+                <v-chip-group
+                  class="col-10 chip-group-box"
+                  style="margin-left: -7px; margin-top: -5px"
+                >
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -228,9 +246,15 @@
                     style="color: white; display: inline-block"
                     ><img
                       :src="require(`../assets/food/${food}.png`)"
-                      style="width: 60px; height: 55px; margin-right: 10px; margin-bottom: 10px;"
+                      style="
+                        width: 60px;
+                        height: 55px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                      "
                       alt="no image"
-                    /><h3> {{ food }} </h3></span
+                    />
+                    <h3>{{ food }}</h3></span
                   >
                 </span>
               </div>
@@ -242,7 +266,6 @@
     <br />
     <br />
     <br />
-
   </div>
 </template>
 
@@ -463,6 +486,14 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+
+    // 유사와인 상세페이지 이동
+    gowinedetail(wine_id) {
+      this.$router
+        .push({ path: "/detail", query: { wine_id: wine_id } })
+        .catch(() => {});
+      location.reload();
     },
   },
 };
