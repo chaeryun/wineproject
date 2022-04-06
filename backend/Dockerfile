@@ -1,8 +1,7 @@
 FROM python:3
 WORKDIR /usr/src/app
 # requirements.txt에 명시된 필요한 packages 설치
-COPY requirements.txt ./
-COPY manage.py ./
+COPY . ./
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
