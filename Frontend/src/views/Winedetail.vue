@@ -18,61 +18,125 @@
                   color="red lighten-3"
                   @click="wishlist"
                 >
-                  <v-icon>mdi-heart</v-icon> Wish List
+                  <v-icon>mdi-heart</v-icon> <h3 class="mt-2 ml-2">Add to Wish List</h3>
                 </v-btn>
               </div>
             </div>
             <div class="col-5 shadow-sm">
-              <div class="fs-4 fw-bold pb-6 pt-8 pl-3">INFORAMTION</div>
+              <div class="fs-4 fw-bold pb-1 pt-8 pl-3">INFORAMTION</div>
               <div class="card-body">
-                <h5 class="card-title pb-1 fs-3">
+                <h4 class="fw-bold card-title pb-1 fs-4">
                   {{ this.winedetail.wine }}
                   {{ this.winedetail.location }}
-                </h5>
-                <h5 class="pt-5 pb-3 border-top">
+                </h4>
+                <h4 class="pt-5 pb-3 border-top">
                   <span class="badge outlined" id="my-badge"> Wine Type</span>
                   {{ this.winedetail.color }}
-                </h5>
+                </h4>
                 <div class="card-text border-top pt-3 pb-3">
-                  <h5 class="pt-3 pb-3">
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Winery </span>
                     {{ this.winedetail.winery }}
-                  </h5>
-                  <h5 class="pt-3 pb-3">
+                  </h4>
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Wine name</span>
                     {{ this.winedetail.wine }}
-                  </h5>
-                  <h5 class="pt-3 pb-3">
+                  </h4>
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Country</span>
                     {{ this.winedetail.country }}
-                  </h5>
-                  <h5 class="pt-3 pb-3">
+                  </h4>
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Grpaes </span>
                     {{ this.winedetail.grapes }}
-                  </h5>
-                  <h5 class="pt-3 pb-3">
+                  </h4>
+                  <h4 class="pt-3 pb-3">
                     <span class="badge" id="my-badge"> Alcohol </span>
                     {{ this.winedetail.alcohol }}%
-                  </h5>
-                  <h5 class="card-title pt-5 border-top">
+                  </h4>
+                  <h4 class="card-title pt-5 border-top">
                     <span class="badge" id="my-badge"> Price </span>
                     {{ this.winedetail.price }}원
-                  </h5>
+                  </h4>
                 </div>
               </div>
-              <div class="fs-4 fw-bold pb-7 pl-3 pt-10">BOUQUET</div>
-              <span class="pl-3" :key="taste" v-for="taste in tastes">
-                <span class="col-4 fs-5 fw-bold" id="my-badge">{{
-                  taste
-                }}</span>
-              </span>
-              <br />
+              
+              <!-- similar wine -->
+           <div class="ml-3 fs-4 fw-bold pb-5 align-right mt-5">SIMILAR WINE</div>
+
+          <v-row justify="center" class="mb-5">
+                <v-col cols="4" v-for="wine in similarlist" :key="wine.wine_id">
+                  <v-card
+                    style="
+                      height: 240px;
+                      margin: auto;
+                      border-radius: 160px;
+                      color: gainsboro;
+                      background-color: #5D5D5D;
+                      opacity: 0.8;
+                      box-shadow: 0 0 10px grey;
+                    "
+                    hover
+                    outlined
+                  >
+                    <v-btn
+                      class="mt-2 ml-15"
+                      text
+                      icon
+                      large
+                      :color="
+                        wine.color == 'white'
+                          ? 'green lighten-3'
+                          : wine.color == 'red'
+                          ? 'red'
+                          : wine.color == 'rose'
+                          ? 'red lighten-3'
+                          : wine.color == 'port'
+                          ? 'blue lighten-3'
+                          : 'purple lighten-2'
+                      "
+                    >
+                      <v-icon>mdi-circle</v-icon> {{ wine.color }}
+                    </v-btn>
+
+                    <v-img
+                      :src="wine.image"
+                      height="170"
+                      contain
+                      @click="winedetail(wine.wine_id)"
+                    /><v-img />
+                    <hr
+                      style="
+                        border-width: 2px;
+                        border-color: pink;
+                        margin-bottom: 1px;
+                      "
+                    />
+                    <v-card-text
+                      class="text-center fs-5"
+                      style="color: gainsboro"
+                      >{{ wine.wine }}<br />
+                      <br />
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+              </v-row>
+
             </div>
+
+
             <div class="col-4">
-              <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-6">TASTE</div>
-              <span class="pl-3 fs-5 ml-10">
-                당도
-                <v-chip-group class="chip-group-box">
+              <div class="fs-4 fw-bold pb-4 pl-10 pt-8">BOUQUET</div>
+              <span class="pl-3" :key="taste" v-for="taste in tastes">
+                <span style="display:inline-flex; margin-left:40px;">
+                  <h3>{{taste}}</h3>
+                  </span>
+              </span>
+              <div class="mt-8 fs-4 fw-bold pb-5 ml-10 align-right pt-5">TASTE</div>
+        
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">당도</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -87,9 +151,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-3 fs-5 ml-10">
-                산도
-                <v-chip-group class="chip-group-box">
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">산도</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -104,9 +168,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-3 fs-5 ml-10">
-                바디
-                <v-chip-group class="chip-group-box">
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">바디</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -121,9 +185,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-3 fs-5 ml-10">
-                타닌
-                <v-chip-group class="chip-group-box">
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">타닌</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -138,9 +202,9 @@
                 </v-chip-group>
               </span>
 
-              <span class="pl-3 fs-5 ml-10">
-                탄산
-                <v-chip-group class="chip-group-box">
+              <span class="row pl-3 fs-5 ml-10">
+                <h3 class="col-2">탄산</h3>
+                <v-chip-group class="col-8 chip-group-box">
                   <v-chip
                     v-for="chips in chiplist"
                     :key="chips"
@@ -156,18 +220,18 @@
               </span>
 
               <div>
-                <div class="fs-4 fw-bold pb-5 ml-10 align-right pt-10">
+                <div class="fs-4 mt-10 fw-bold pb-6 ml-10 align-right pt-2">
                   FOOD
                 </div>
                 <span :key="food" v-for="food in temp">
                   <span
-                    class="fs-4 ml-10 mb-5 text-center"
+                    class="fs-4 ml-10 mb-2 text-center"
                     style="color: white; display: inline-block"
                     ><img
                       :src="require(`../assets/food/${food}.png`)"
-                      style="width: 60px; height: 55px; margin-right: 10px"
+                      style="width: 60px; height: 55px; margin-right: 10px; margin-bottom: 10px;"
                       alt="no image"
-                    />{{ food }}</span
+                    /><h3> {{ food }} </h3></span
                   >
                 </span>
               </div>
@@ -177,6 +241,9 @@
       </div>
     </main>
     <br />
+    <br />
+    <br />
+
   </div>
 </template>
 
@@ -193,6 +260,9 @@ export default {
 
       chiplist: [1, 2, 3, 4, 5],
 
+      // 유저 추천와인 list
+      recommandlist: [],
+
       // 당도, 산도, 바디, 타닌, 탄산
       sweet: "",
       acidic: "",
@@ -206,6 +276,9 @@ export default {
 
       slicetaste: "",
       tastes: "",
+
+      // 유사추천와인 담을 list
+      similarlist: [],
     };
   },
 
@@ -213,6 +286,9 @@ export default {
     // wineID값 가져오기
     this.wineid = this.$route.query.wine_id;
     this.getWineDetail();
+
+    // Recommand와인 가져오기
+    this.similarwine();
   },
 
   computed: {
@@ -233,7 +309,7 @@ export default {
       })
         .then((res) => {
           this.winedetail = res.data;
-          console.log(this.winedetail);
+          console.log("와인상세정보 :", this.winedetail);
 
           // wine 값 설정
           this.winevalue(this.winedetail);
@@ -253,15 +329,33 @@ export default {
             }
           }
 
-          console.log("slicefood", this.foods);
-          console.log("temp: ", this.temp);
+          // console.log("slicefood", this.foods);
+          // console.log("temp: ", this.temp);
 
           // taste 배열로 변환
-          console.log("taste", this.winedetail.taste);
+          // console.log("taste", this.winedetail.taste);
 
           this.slicetaste = this.winedetail.taste.replace(reg, "");
           this.tastes = this.slicetaste.split(",");
-          console.log("taste : ", this.tastes);
+          // console.log("taste : ", this.tastes);
+
+          // 유사와인 리스트 받기
+          this.similarwine();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
+    async getwishlist(wine_id) {
+      await http({
+        methods: "get",
+        url: "wine/get_wine_data/" + wine_id + "/",
+      })
+        .then((res) => {
+          // console.log(res);
+          // wine data list에 추가
+          this.userwishlist.push(res.data);
         })
         .catch((err) => {
           console.log(err);
@@ -279,7 +373,7 @@ export default {
         this.sweet = 3;
       } else if (wine.dry >= 6 && wine.dry < 8) {
         this.sweet = 4;
-      } else if (wine.dry >= 8 && wine.dry < 10) {
+      } else if (wine.dry >= 8 && wine.dry <= 10) {
         this.sweet = 5;
       }
 
@@ -292,7 +386,7 @@ export default {
         this.acidic = 3;
       } else if (wine.soft >= 6 && wine.soft < 8) {
         this.acidic = 4;
-      } else if (wine.soft >= 8 && wine.soft < 10) {
+      } else if (wine.soft >= 8 && wine.soft <= 10) {
         this.acidic = 5;
       }
 
@@ -305,7 +399,7 @@ export default {
         this.bold = 3;
       } else if (wine.light >= 6 && wine.light < 8) {
         this.bold = 4;
-      } else if (wine.light >= 8 && wine.light < 10) {
+      } else if (wine.light >= 8 && wine.light <= 10) {
         this.bold = 5;
       }
 
@@ -318,7 +412,7 @@ export default {
         this.tannic = 3;
       } else if (wine.smooth >= 6 && wine.smooth < 8) {
         this.tannic = 4;
-      } else if (wine.smooth >= 8 && wine.smooth < 10) {
+      } else if (wine.smooth >= 8 && wine.smooth <= 10) {
         this.tannic = 5;
       }
 
@@ -331,7 +425,7 @@ export default {
         this.gentle = 3;
       } else if (wine.gentle >= 6 && wine.gentle < 8) {
         this.gentle = 4;
-      } else if (wine.gentle >= 8 && wine.gentle < 10) {
+      } else if (wine.gentle >= 8 && wine.gentle <= 10) {
         this.gentle = 5;
       }
     },
@@ -355,6 +449,22 @@ export default {
           console.log(err);
         });
     },
+
+    // 유사한 와인 가져오기
+    async similarwine() {
+      await http({
+        method: "get",
+        url: "wine/recommand/similar_wine/" + this.wineid + "/",
+      })
+        .then((res) => {
+          // console.log(res);
+          this.similarlist = res.data;
+          // console.log("유사와인추천 리스트 : ", this.similarlist);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
 };
 </script>
@@ -363,7 +473,7 @@ export default {
 #wine-img {
   width: 170px;
   height: 700px;
-  margin-top: 10px;
+  margin-top: 80px;
 }
 
 .badge {
@@ -414,6 +524,6 @@ export default {
   opacity: 0.9;
   box-shadow: 0 0 15px grey;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 100px;
 }
 </style>

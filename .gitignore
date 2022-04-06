@@ -360,3 +360,4 @@ pnpm-debug.log*
 *.sw?
 
 # End of https://www.toptal.com/developers/gitignore/api/venv,python,django,windows,macos,linux
+venv/
