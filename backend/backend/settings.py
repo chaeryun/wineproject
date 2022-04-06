@@ -177,3 +177,5 @@ CORS_ALLOW_METHODS = (
     'DELETE',
     'OPTIONS'
 ) #실제 요청에 허용되는 HTTP동사 리스트
+
+ALLOWED_HOSTS = ['127.0.0.1']

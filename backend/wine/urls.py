@@ -15,5 +15,5 @@ urlpatterns = [
     path('recommand/color_score/<str:color>/', views.reco_color_score), #빈티지 점수 기반 추천 와인
 
     path('recommand/onlyfood/<str:food>/', views.reco_onlyfood),
-    path('recommand/categorize/<str:country>/<str:grapes>/<int:min_price>/<int:max_price>/<int:taste>/<int:dry>/<int:soft>/<int:light>/<int:smooth>/', views.reco_categorize),
+    path('recommand/categorize/<str:country>/<str:grapes>/<int:min_price>/<int:max_price>/<str:taste>/<int:dry>/<int:soft>/<int:light>/<int:smooth>/', views.reco_categorize),
 ]

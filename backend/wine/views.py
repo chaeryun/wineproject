@@ -213,14 +213,26 @@ def reco_categorize(request, country, grapes, min_price, max_price, taste, dry, 
     def get_min_max(number):
         sample_number = math.floor(number)
         if sample_number % 2:
-            return (sample_number - 1)*2, sample_number * 2
+            return float((sample_number - 1)*2), float(sample_number * 2)
         else:
-            return (sample_number), (sample_number+1)*2       
+            return float((sample_number)), float((sample_number+1)*2)      
 
-    dry_min, dry_max = get_min_max(dry)
-    soft_min, soft_max = get_min_max(soft)
-    light_min, light_max = get_min_max(light)
-    smooth_min, smooth_max = get_min_max(smooth)
-    wines = Wine.objects.filter(country=country).filter(grapes__in=grapes).filter(price__gte=min_price).filter(price__lte=max_price).filter(taste__in=taste).filter(dry__lte=dry_max).filter(dry__gte=dry_min).filter(soft__lte=soft_max).filter(soft__gte=soft_min).filter(light__lte=light_max).filter(light__gte=light_min).filter(smooth__lte=smooth_max).filter(smooth__gte=smooth_min)
+    if dry != -1: dry_min, dry_max = get_min_max(dry)
+    if soft != -1: soft_min, soft_max = get_min_max(soft)
+    if light != -1: light_min, light_max = get_min_max(light)
+    if smooth != -1: smooth_min, smooth_max = get_min_max(smooth)
+
+    if country != all: wines = Wine.objects.filter(country=country)
+    else: wines = Wine.objects.all()
+    if grapes != all: wines = wines.filter(grapes__contains=grapes)
+    if min_price != -1: wines = wines.filter(price__range=(min_price, max_price))
+    if taste != all: wines = wines.filter(taste__contains=taste)
+    if dry != -1: wines = wines.filter(dry__range=(dry_min, dry_max))
+    if soft != -1: wines = wines.filter(soft__range=(soft_min, soft_max))
+    if light != -1: wines = wines.filter(light__range=(light_min, light_max))
+    if smooth != -1: wines = wines.filter(smooth__range=(smooth_min, smooth_max))
+
+    #wines = Wine.objects.filter(country=country).filter(grapes__in=grapes).filter(price__gte=min_price).filter(price__lte=max_price).filter(taste__in=taste).filter(dry__lte=dry_max).filter(dry__gte=dry_min).filter(soft__lte=soft_max).filter(soft__gte=soft_min).filter(light__lte=light_max).filter(light__gte=light_min).filter(smooth__lte=smooth_max).filter(smooth__gte=smooth_min)
     wineserializers = WineSerializer(wines, many=True)
-    return Response(wineserializers, status=status.HTTP_200_OK)
+    return Response(wineserializers.data, status=status.HTTP_200_OK)
+
