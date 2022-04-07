@@ -121,8 +121,10 @@
       style="
         border-radius: 30px;
         margin-left: 10px;
-        background-color: #ffdead;
+        background-color: #EEE8AA;
         text-align: center;
+        position: relative; 
+        left: 5%
       "
     >
       <v-btn value="red" @click="typered">
@@ -217,6 +219,7 @@
         :total-visible="10"
       ></v-pagination>
     </v-row>
+    <br />
   </div>
 </template>
 

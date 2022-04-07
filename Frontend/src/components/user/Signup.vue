@@ -156,6 +156,9 @@ export default {
             // text: "Welcome 와인어떄!",
             icon: "success",
             confirmButtonText: "확인",
+            background: "#232320",
+            confirmButtonColor: "#FF7F50",
+              
           });
           // console.log(res);
           this.$router.push({ name: "Home" });

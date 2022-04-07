@@ -9,7 +9,7 @@
         <a style="text-decoration: none" href="/home">
           <h1
             class="font-weight-light mt-5"
-            style="margin-right: 200px; color: wheat"
+            style="margin-right: 200px; color: #EEE8AA"
           >
             와인어때?
           </h1></a
@@ -171,6 +171,8 @@ export default {
           // text: "",
           icon: "success",
           confirmButtonText: "확인",
+          background: "#232320",
+          confirmButtonColor: "#FF7F50",
         });
         this.$router.push({ name: "Home" }).catch((err) => err);
       }

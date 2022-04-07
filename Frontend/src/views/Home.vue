@@ -48,7 +48,7 @@
           style="
             border-radius: 30px;
             margin-left: 10px;
-            background-color: #ffdead;
+            background-color: #EEE8AA;
             text-align: center;
           "
         >
@@ -157,7 +157,7 @@
         style="
           border-radius: 30px;
           margin-left: 10px;
-          background-color: #ffdead;
+          background-color: #EEE8AA;
           text-align: center;
         "
       >

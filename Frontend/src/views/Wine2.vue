@@ -209,7 +209,7 @@
         style="
           border-radius: 30px;
           margin-left: 110px;
-          background-color: #ffdead;
+          background-color: #EEE8AA;
           text-align: center;
         "
       >
@@ -765,13 +765,13 @@ button {
   height: 45px;
   margin-right: 1em;
   margin-left: 20px;
-  background-color: wheat;
+  background-color: #EEE8AA;
 }
 
 #searchWine {
   border-radius: 2em;
   color: white;
-  background-color: wheat;
+  background-color: #EEE8AA;
   height: 48px;
 }
 
