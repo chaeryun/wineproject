@@ -40,8 +40,6 @@
 
 ## ⛑ 배포 시 특이사항
 
-
-
 - Frontend 빌드 가이드
 
 - Backend 빌드 가이드
@@ -57,7 +55,5 @@
     
     python manage.py runserver 백엔드 환경 실행
     ```
-
-  - 
 
 - 기타 특이사항
