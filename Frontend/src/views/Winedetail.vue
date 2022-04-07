@@ -503,6 +503,7 @@ export default {
       })
         .then((res) => {
           this.userwinelist();
+
           console.log(res);
         })
         .catch((err) => {

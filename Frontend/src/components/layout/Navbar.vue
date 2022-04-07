@@ -105,6 +105,8 @@
 </template>
 
 <script>
+import Swal from "sweetalert2";
+
 export default {
   name: "Navbar",
   data() {
@@ -164,8 +166,13 @@ export default {
         this.$store.commit("userstate", false);
         sessionStorage.clear();
         // location.reload();
-        alert("로그아웃");
-        this.$router.push({ name: "Home" });
+        Swal.fire({
+          title: "로그아웃 성공!",
+          // text: "",
+          icon: "success",
+          confirmButtonText: "확인",
+        });
+        this.$router.push({ name: "Home" }).catch((err) => err);
       }
     },
 

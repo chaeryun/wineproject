@@ -50,6 +50,8 @@
 import http from "@/util/http-common";
 import jwt_decode from "jwt-decode";
 import Vintage from "../../views/Vintage.vue";
+import Swal from "sweetalert2";
+
 // import { mapActions } from "vuex";
 
 export default {
@@ -60,7 +62,9 @@ export default {
     // name rule
     idRules: [
       (v) => !!v || "ID is required",
-      (v) => (v && v.length <= 16) || "ID must be less than 16 characters",
+      (v) =>
+        (v && v.length <= 16 && v.length >= 4) ||
+        "ID must be least 4 characters ~ 12 characters ",
     ],
     // password rule
     show1: false,
@@ -111,7 +115,13 @@ export default {
           //store에 저장
           this.$store.commit("userstate", true);
           if (this.userstate.islogin) {
-            alert("로그인 성공");
+            Swal.fire({
+              title: "로그인 성공!",
+              // text: "Welcome 와인어떄!",
+              icon: "success",
+              confirmButtonText: "확인",
+            });
+
             this.saveuser(token);
             // 유저 리스트 state 저장
             this.userwinelist();

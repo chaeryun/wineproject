@@ -9,29 +9,35 @@
       </v-row>
 
       <!-- 텅빌때, 수정하세여!!-->
-      <template v-if = " winelistIsEmpty" >
-        <div class="justify-center mt-15" style="display:flex;">
-      <img src="../assets/no_wine.png" style="width:70px; height:65px;" alt="empty" />
-      <h2 class="ml-5 mt-4 mb-15 pb-15">찜한 와인이 없습니다. 마음에 드는 와인을 찜해주세요.</h2>
-      </div >
+      <template v-if="winelistIsEmpty">
+        <div class="justify-center mt-15" style="display: flex">
+          <img
+            src="../assets/no_wine.png"
+            style="width: 70px; height: 65px"
+            alt="empty"
+          />
+          <h2 class="ml-5 mt-4 mb-15 pb-15">
+            찜한 와인이 없습니다. 마음에 드는 와인을 찜해주세요.
+          </h2>
+        </div>
       </template>
 
-     <v-row v-else justify="center" class="mb-5">
-                <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
-                  <v-card
-                    style="
-                      height: 240px;
-                      margin: auto;
-                      border-radius: 160px;
-                      color: gainsboro;
-                      background-color: #232320;
-                      box-shadow: 0 0 10px grey;
-                    "
-                    hover
-                    outlined
-                  >
-                    <v-btn
-                      class="mt-4 ml-15 pl-8"
+      <v-row v-else justify="center" class="mb-5">
+        <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
+          <v-card
+            style="
+              height: 240px;
+              margin: auto;
+              border-radius: 160px;
+              color: gainsboro;
+              background-color: #232320;
+              box-shadow: 0 0 10px grey;
+            "
+            hover
+            outlined
+          >
+            <v-btn
+              class="mt-4 ml-15 pl-8"
               text
               icon
               large
@@ -57,7 +63,7 @@
               @click="winedetail(wine.wine_id)"
             /><v-img />
             <hr
-              style="border-width: 2px; border-color: pink; margin-bottom: 2px;"
+              style="border-width: 2px; border-color: pink; margin-bottom: 2px"
             />
             <v-card-text class="text-center fs-5" style="color: gainsboro"
               >{{ wine.wine }}<br />
@@ -154,10 +160,10 @@ export default {
     userInfo() {
       return this.$store.state.userInfo;
     },
-    winelistIsEmpty(){
+    winelistIsEmpty() {
       console.log(this.wishlist.length);
-      return this.wishlist.length==0;
-    }
+      return this.wishlist.length == 0;
+    },
   },
 
   created() {
