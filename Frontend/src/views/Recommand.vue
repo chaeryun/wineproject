@@ -7,7 +7,16 @@
           | {{ userInfo.nickname }}님이 최근 찜한 와인
         </h2>
       </v-row>
-     <v-row justify="center" class="mb-5">
+
+      <!-- 텅빌때, 수정하세여!!-->
+      <template v-if = " winelistIsEmpty" >
+        <div class="justify-center mt-15" style="display:flex;">
+      <img src="../assets/no_wine.png" style="width:70px; height:65px;" alt="empty" />
+      <h2 class="ml-5 mt-4 mb-15 pb-15">찜한 와인이 없습니다. 마음에 드는 와인을 찜해주세요.</h2>
+      </div >
+      </template>
+
+     <v-row v-else justify="center" class="mb-5">
                 <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
                   <v-card
                     style="
@@ -145,6 +154,10 @@ export default {
     userInfo() {
       return this.$store.state.userInfo;
     },
+    winelistIsEmpty(){
+      console.log(this.recentlist.length);
+      return this.recentlist.length==0;
+    }
   },
 
   created() {
