@@ -131,7 +131,7 @@ export default {
             alert("아이디나 비밀번호 확인");
           }
 
-          console.log(res);
+          // console.log(res);
         })
         .catch((err) => {
           console.log(err);
@@ -140,7 +140,7 @@ export default {
 
     async saveuser(token) {
       let decode_token = jwt_decode(token);
-      console.log("decode_token", decode_token);
+      // console.log("decode_token", decode_token);
 
       await http({
         method: "get",
@@ -165,10 +165,10 @@ export default {
         url: "wine/latest_wine_totallist/" + this.user.id + "/",
       })
         .then((res) => {
-          console.log("userwinelist", res);
+          // console.log("userwinelist", res);
           const userlistdata = res.data;
           this.$store.commit("userlist", userlistdata);
-          console.log("store state", this.$store.state.userlist);
+          // console.log("store state", this.$store.state.userlist);
         })
         .catch((err) => {
           console.log(err);

@@ -1,20 +1,20 @@
 <template>
   <div class="food mt-13">
     <h1 class="mb-10">
-        <span
-          style="
-            text-align: center;
-            border-radius: 15px 15px 15px 0;
-            border: 3px solid #ffad5b;
-            padding: 0.5em 0.6em;
-            color: bullywood;
-          "
-          >음식과 어울리는 와인 추천</span
-        >
-      </h1>
+      <span
+        style="
+          text-align: center;
+          border-radius: 15px 15px 15px 0;
+          border: 3px solid #ffad5b;
+          padding: 0.5em 0.6em;
+          color: bullywood;
+        "
+        >음식과 어울리는 와인 추천</span
+      >
+    </h1>
     <!-- <h1 style="margin-bottom: 20px">음식과 어울리는 와인 추천</h1> -->
     <div class="text-center">
-    <hr style="border-color: grey"/>
+      <hr style="border-color: grey" />
       <button class="food-button" @click="clickfood($event)" value="shellfish">
         <img src="../assets/food/shellfish.png" class="food-img" /> Shellfish
       </button>
@@ -77,11 +77,11 @@
       <button class="food-button" @click="clickfood($event)" value="bluecheese">
         <img src="../assets/food/bluecheese.png" class="food-img" /> Blue Cheese
       </button>
-      
+
       <button class="food-button" @click="clickfood($event)" value="spicyfood">
         <img src="../assets/food/spicyfood.png" class="food-img" /> Spicy Food
       </button>
-      
+
       <button
         class="food-button"
         @click="clickfood($event)"
@@ -97,48 +97,54 @@
         <img src="../assets/food/leanfish.png" class="food-img" /> Lean Fish
       </button>
     </div>
-    <hr style="border-color: grey"/>
+    <hr style="border-color: grey" />
     <!-- 와인타입 선택바 -->
     <!-- 텅빌때, 수정하세여!!-->
-      <template v-if = " winelistIsEmpty" >
-        <div class="justify-center mt-15" style="display:flex;">
-      <img src="../assets/no_wine.png" style="width:70px; height:65px;" alt="empty" />
-      <h2 class="ml-5 mt-4 mb-15 pb-15">조회하신 와인이 없습니다. 다른 와인을 선택해주세요.</h2>
-      </div >
-      </template>
+    <template v-if="winelistIsEmpty">
+      <div class="justify-center mt-15" style="display: flex">
+        <img
+          src="../assets/no_wine.png"
+          style="width: 70px; height: 65px"
+          alt="empty"
+        />
+        <h2 class="ml-5 mt-4 mb-15 pb-15">
+          조회하신 와인이 없습니다. 다른 와인을 선택해주세요.
+        </h2>
+      </div>
+    </template>
     <!-- <div style="position: relative; left: 2%; padding-top: 30px"> -->
-      <!-- <div> -->
-      <v-bottom-navigation
-        v-else
-        color="#CD5C5C"
-        width="450px"
-        style="
-          border-radius: 30px;
-          margin-left: 10px;
-          background-color: #FFDEAD;
-          text-align: center;
-        "
-      >
-        <v-btn value="red" @click="typered">
-          <span class="fs-6">Red</span>
-        </v-btn>
+    <!-- <div> -->
+    <v-bottom-navigation
+      v-else
+      color="#CD5C5C"
+      width="450px"
+      style="
+        border-radius: 30px;
+        margin-left: 10px;
+        background-color: #ffdead;
+        text-align: center;
+      "
+    >
+      <v-btn value="red" @click="typered">
+        <span class="fs-6">Red</span>
+      </v-btn>
 
-        <v-btn value="white" @click="typewhite">
-          <span class="fs-6">White</span>
-        </v-btn>
+      <v-btn value="white" @click="typewhite">
+        <span class="fs-6">White</span>
+      </v-btn>
 
-        <v-btn value="rose" @click="typerose">
-          <span class="fs-6">Rose</span>
-        </v-btn>
+      <v-btn value="rose" @click="typerose">
+        <span class="fs-6">Rose</span>
+      </v-btn>
 
-        <v-btn value="sparkling" @click="typesparkling">
-          <span class="fs-6">Sparkling</span>
-        </v-btn>
+      <v-btn value="sparkling" @click="typesparkling">
+        <span class="fs-6">Sparkling</span>
+      </v-btn>
 
-        <v-btn value="port" @click="typeport">
-          <span class="fs-6">Port</span>
-        </v-btn>
-      </v-bottom-navigation>
+      <v-btn value="port" @click="typeport">
+        <span class="fs-6">Port</span>
+      </v-btn>
+    </v-bottom-navigation>
     <!-- </div> -->
 
     <!-- 와인 카드 -->
@@ -211,7 +217,7 @@
         :total-visible="10"
       ></v-pagination>
     </v-row>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -253,8 +259,6 @@ export default {
     this.getWineList();
   },
 
-
-
   computed: {
     startOffset() {
       return (this.currentPage - 1) * this.perPage;
@@ -268,10 +272,10 @@ export default {
     calData() {
       return this.recentlist.slice(this.startOffset, this.endOffset);
     },
-    winelistIsEmpty(){
-      console.log(this.recentlist.length);
-      return this.recentlist.length==0;
-    }
+    winelistIsEmpty() {
+      // console.log(this.recentlist.length);
+      return this.recentlist.length == 0;
+    },
   },
 
   methods: {
@@ -293,7 +297,6 @@ export default {
           console.log(err);
         });
     },
-    
 
     winedetail(wine) {
       this.$router.push({ path: "/detail", qeury: { wine: wine } });
@@ -301,11 +304,10 @@ export default {
 
     // food button 클릭시 추천와인리스트 가져오기
     clickfood(e) {
-      
-      this.food = e.target.value===undefined? e.currentTarget.value:e.target.value;
-      console.log("food", this.food);
-      
-      
+      this.food =
+        e.target.value === undefined ? e.currentTarget.value : e.target.value;
+      // console.log("food", this.food);
+
       this.recommandfood();
     },
 
@@ -315,7 +317,7 @@ export default {
         url: "wine/recommand/onlyfood/" + this.food + "/",
       })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           this.foodlist = res.data;
           this.recentlist = res.data;
           this.typewine(res.data);
@@ -326,7 +328,7 @@ export default {
     },
 
     typewine(wine) {
-      console.log("wine", wine[0]);
+      // console.log("wine", wine[0]);
       // 배열초기화
       this.redwinelist = [];
       this.whitewinelist = [];

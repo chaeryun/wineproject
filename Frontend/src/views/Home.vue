@@ -131,8 +131,8 @@
           </v-card-text>
           <div class="d-flex justify-content-between align-items-center"></div>
         </v-card>
-      </div>
-    </v-row><br /><br /><br />
+      </div> </v-row
+    ><br /><br /><br />
 
     <v-row class="pt-15 mt-15 text-h7" style="justify-content: center">
       <!-- <h1 class="mt-10 mb-10">만족도 높은 와인</h1> -->
@@ -343,7 +343,7 @@ export default {
         url: "wine/recommand/color_score/" + this.scorecolor + "/",
       })
         .then((res) => {
-          console.log("scoretype", res.data);
+          // console.log("scoretype", res.data);
           this.scorelist = res.data;
         })
         .catch((err) => {
@@ -382,7 +382,7 @@ export default {
         url: "wine/recommand/reviews/" + this.reviewcolor + "/",
       })
         .then((res) => {
-          console.log("reviewtype", res.data);
+          // console.log("reviewtype", res.data);
           this.reviewlist = res.data;
         })
         .catch((err) => {

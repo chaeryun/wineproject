@@ -343,7 +343,7 @@ export default {
       })
         .then((res) => {
           this.winedetail = res.data;
-          console.log("와인상세정보 :", this.winedetail);
+          // console.log("와인상세정보 :", this.winedetail);
 
           this.statelist();
           // console.log("winenumber", this.winenumber);
@@ -504,7 +504,7 @@ export default {
         .then((res) => {
           this.userwinelist();
 
-          console.log(res);
+          // console.log(res);
         })
         .catch((err) => {
           console.log(err);
@@ -517,10 +517,10 @@ export default {
         url: "wine/latest_wine_totallist/" + this.userInfo.username + "/",
       })
         .then((res) => {
-          console.log("userwinelist", res);
+          // console.log("userwinelist", res);
           const userlistdata = res.data;
           this.$store.commit("userlist", userlistdata);
-          console.log("store state", this.$store.state.userlist);
+          // console.log("store state", this.$store.state.userlist);
           location.reload();
         })
         .catch((err) => {

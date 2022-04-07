@@ -13,7 +13,7 @@
           >와인 조회</span
         >
       </h1>
-      <hr style="border-color:grey;" />
+      <hr style="border-color: grey" />
 
       <label for="productCategory" class="ml-15 mb-5"> | Wine Search </label>
       <div class="form-group px-15 mx-15">
@@ -186,14 +186,20 @@
         </v-btn>
       </div>
 
-      <hr style="border-color:grey;" />
+      <hr style="border-color: grey" />
       <!-- 와인타입 선택바 -->
       <!-- 텅빌때, 수정하세여!!-->
-      <template v-if = " winelistIsEmpty" >
-        <div class="justify-center mt-15" style="display:flex;">
-      <img src="../assets/no_wine.png" style="width:70px; height:65px;" alt="empty" />
-      <h2 class="ml-5 mt-3 mb-15 pb-15">조회하신 와인이 없습니다. 다른 와인을 검색해주세요.</h2>
-      </div >
+      <template v-if="winelistIsEmpty">
+        <div class="justify-center mt-15" style="display: flex">
+          <img
+            src="../assets/no_wine.png"
+            style="width: 70px; height: 65px"
+            alt="empty"
+          />
+          <h2 class="ml-5 mt-3 mb-15 pb-15">
+            조회하신 와인이 없습니다. 다른 와인을 검색해주세요.
+          </h2>
+        </div>
       </template>
 
       <v-bottom-navigation
@@ -296,7 +302,7 @@
           v-model="currentPage"
           :length="numOfPages"
           :total-visible="10"
-          style="margin-top: 10px; margin-bottom:10px;"
+          style="margin-top: 10px; margin-bottom: 10px"
         ></v-pagination>
       </v-row>
     </v-container>
@@ -375,25 +381,25 @@ export default {
 
     tastes: [
       { name: "향", value: "all" },
-      { name: "Citrus", value: "Citrus" },
-      { name: "Oak", value: "Oak" },
-      { name: "Strawberry", value: "Strawberry" },
-      { name: "Leather", value: "Leather" },
-      { name: "Brioche", value: "Brioche" },
-      { name: "Blackberry", value: "Blackberry" },
-      { name: "Apple", value: "Apple" },
-      { name: "Honey", value: "Honey" },
-      { name: "Minerals", value: "Minerals" },
-      { name: "Chocolate", value: "Chocolate" },
-      { name: "Peach", value: "Peach" },
-      { name: "Raisin", value: "Raisin" },
-      { name: "Plum", value: "Plum" },
-      { name: "Caramel", value: "Caramel" },
-      { name: "Vanilla", value: "Vanilla" },
-      { name: "Butter", value: "Butter" },
-      { name: "Tobacco", value: "Tobacco" },
-      { name: "Cherry", value: "Cherry" },
-      { name: "Earthy", value: "Earthy" },
+      { name: "Citrus", value: "citrus" },
+      { name: "Oak", value: "oak" },
+      { name: "Strawberry", value: "strawberry" },
+      { name: "Leather", value: "leather" },
+      { name: "Brioche", value: "brioche" },
+      { name: "Blackberry", value: "blackberry" },
+      { name: "Apple", value: "apple" },
+      { name: "Honey", value: "honey" },
+      { name: "Minerals", value: "minerals" },
+      { name: "Chocolate", value: "chocolate" },
+      { name: "Peach", value: "peach" },
+      { name: "Raisin", value: "raisin" },
+      { name: "Plum", value: "plum" },
+      { name: "Caramel", value: "caramel" },
+      { name: "Vanilla", value: "vanilla" },
+      { name: "Butter", value: "butter" },
+      { name: "Tobacco", value: "tobacco" },
+      { name: "Cherry", value: "cherry" },
+      { name: "Earthy", value: "earthy" },
     ],
     taste: "all",
 
@@ -488,15 +494,13 @@ export default {
     userinfo() {
       return this.$store.state.userInfo;
     },
-    winelistIsEmpty(){
-      console.log(this.recentlist.length);
-      return this.recentlist.length==0;
-    }
+    winelistIsEmpty() {
+      // console.log(this.recentlist.length);
+      return this.recentlist.length == 0;
+    },
   },
-  
 
   methods: {
-
     // 전체 와인 불러와서 winelist에 넣기
     async getWineList() {
       await http({
@@ -520,7 +524,7 @@ export default {
     },
 
     typewine(wine) {
-      console.log("wine", wine[0]);
+      // console.log("wine", wine[0]);
       this.redwinelist = [];
       this.whitewinelist = [];
       this.rosewinelist = [];
@@ -628,15 +632,15 @@ export default {
         this.maxprice = 100000000;
       }
 
-      // console.log("국가 :", this.country);
-      // console.log("포도품종 :", this.grape);
-      // console.log("최소가격 :", this.minprice);
-      // console.log("최대가격 :", this.maxprice);
-      // console.log("향 :", this.taste);
-      // console.log("당도 :", this.dryscore);
-      // console.log("산도 :", this.softscore);
-      // console.log("바디 :", this.lightscore);
-      // console.log("타닌 :", this.smoothscore);
+      console.log("국가 :", this.country);
+      console.log("포도품종 :", this.grape);
+      console.log("최소가격 :", this.minprice);
+      console.log("최대가격 :", this.maxprice);
+      console.log("향 :", this.taste);
+      console.log("당도 :", this.dryscore);
+      console.log("산도 :", this.softscore);
+      console.log("바디 :", this.lightscore);
+      console.log("타닌 :", this.smoothscore);
       // console.log("키워드 :", this.keyword);
 
       if (this.keyword == "") {

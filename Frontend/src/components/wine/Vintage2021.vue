@@ -160,7 +160,7 @@ export default {
         url: "wine/recommand/vintage/" + this.year + "/",
       })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           this.vintagelist = res.data;
         })
         .catch((err) => {

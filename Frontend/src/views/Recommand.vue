@@ -161,7 +161,7 @@ export default {
       return this.$store.state.userInfo;
     },
     winelistIsEmpty() {
-      console.log(this.wishlist.length);
+      // console.log(this.wishlist.length);
       return this.wishlist.length == 0;
     },
   },
@@ -216,9 +216,9 @@ export default {
         url: "wine/recommand/latest_wishlist/" + this.userInfo.username + "/",
       })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           this.recommandlist = res.data;
-          console.log("reco :", this.recommandlist);
+          // console.log("reco :", this.recommandlist);
         })
         .catch((err) => {
           console.log(err);
