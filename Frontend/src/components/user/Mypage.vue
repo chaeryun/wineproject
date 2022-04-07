@@ -20,7 +20,7 @@
       <!-- 텅빌때, 수정하세여!!-->
       <template v-if = " winelistIsEmpty" >
         <div class="justify-center mt-15" style="display:flex;">
-      <img src="../assets/error.png" style="width:80px; height:80px;" alt="empty" />
+      <img src="../../assets/error.png" style="width:80px; height:80px;" alt="empty" />
       <h2 class="ml-5 mt-4 mb-15 pb-15">찜한 와인이 없습니다. 마음에 드는 와인을 찜해주세요.</h2>
       </div >
       </template>

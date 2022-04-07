@@ -774,7 +774,7 @@ hr {
   border-style: dashed;
   border-color: orange;
   margin: 30px;
-  border-width: 2px;
+  border-width: 1px;
 }
 
 #wine-card {
