@@ -56,4 +56,7 @@ def weather(vintage=2021):
         if (df4['grapes'][i]) == list1:
             a = df4.loc[i,'wine_id']
             list2.append(a)
-    return list2[:3]
+    if vintage == 2019:
+        return list2[4:6]
+    else:
+        return list2[:3]
