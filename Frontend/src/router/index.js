@@ -8,6 +8,10 @@ import Home from "@/views/Home.vue";
 import Winedetail from "@/views/Winedetail.vue";
 import Wine2 from "@/views/Wine2.vue";
 import Vintage from "@/views/Vintage.vue";
+import Vintage2019 from "@/components/wine/Vintage2019";
+import Vintage2020 from "@/components/wine/Vintage2020";
+import Vintage2021 from "@/components/wine/Vintage2021";
+
 import Recommand from "@/views/Recommand.vue";
 import Food from "@/views/Food.vue";
 
@@ -62,6 +66,25 @@ const routes = [
     path: "/vintage",
     name: "Vintage",
     component: Vintage,
+    redirect: "vintage/2019",
+
+    children: [
+      {
+        path: "2019",
+        name: "Vintage2019",
+        component: Vintage2019,
+      },
+      {
+        path: "2020",
+        name: "Vintage2020",
+        component: Vintage2020,
+      },
+      {
+        path: "2021",
+        name: "Vintage2021",
+        component: Vintage2021,
+      },
+    ],
   },
   {
     path: "/about",
