@@ -3,7 +3,7 @@
     <v-container class="signup-page">
       <v-layout row wrap>
         <v-flex col-7></v-flex>
-        <v-flex col-5 >
+        <v-flex col-5>
           <h1 style="color: tomato">Signup</h1>
           <br />
 
@@ -58,16 +58,16 @@
               required
             ></v-checkbox>
             <div class="text-center">
-            <v-btn
-              :disabled="!valid"
-              color="success"
-              class="mr-4"
-              @click="validate"
-            >
-              Signup
-            </v-btn>
+              <v-btn
+                :disabled="!valid"
+                color="success"
+                class="mr-4"
+                @click="validate"
+              >
+                Signup
+              </v-btn>
 
-            <v-btn color="error" class="mr-4" @click="reset"> Cancel </v-btn>
+              <v-btn color="error" class="mr-4" @click="reset"> Cancel </v-btn>
             </div>
           </v-form>
         </v-flex>
@@ -77,6 +77,7 @@
 </template>
 <script>
 import http from "@/util/http-common";
+import Swal from "sweetalert2";
 // import axios from "axios";
 
 export default {
@@ -127,10 +128,10 @@ export default {
 
   methods: {
     validate() {
-      console.log("id : ", this.user.id);
-      console.log("password : ", this.user.password);
-      console.log("nickname : ", this.user.nickname);
-      console.log("email : ", this.user.email);
+      // console.log("id : ", this.user.id);
+      // console.log("password : ", this.user.password);
+      // console.log("nickname : ", this.user.nickname);
+      // console.log("email : ", this.user.email);
       this.$refs.form.validate();
 
       if (this.$refs.form.validate() == true) {
@@ -150,8 +151,13 @@ export default {
         },
       })
         .then((res) => {
-          alert("회원가입 성공");
-          console.log(res);
+          Swal.fire({
+            title: "회원가입 성공!",
+            // text: "Welcome 와인어떄!",
+            icon: "success",
+            confirmButtonText: "확인",
+          });
+          // console.log(res);
           this.$router.push({ name: "Home" });
         })
         .catch((err) => {
@@ -172,7 +178,7 @@ export default {
   height: 90px;
 }
 
-.signup-page{
+.signup-page {
   background-image: url("../../assets/signup2.jpg");
   background-repeat: no-repeat;
   background-position: center;
