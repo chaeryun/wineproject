@@ -73,7 +73,6 @@ def weather(vintage=2021):
     global df3
     global df4
     grape = str(df3[vintage].idxmax())
-    print(grape)
     list1=[]
     list1.append(grape)
     list2 = []
@@ -81,10 +80,10 @@ def weather(vintage=2021):
         if (df4['grapes'][i]) == list1:
             a = df4.loc[i,'wine_id']
             list2.append(a)
-    return list2
-#print(weather(2019))
-#print(weather(2020))
-#print(weather(2021))
+    return list2[:3]
+# print(weather(2019))
+# print(weather(2020))
+# print(weather(2021))
 
 
 
