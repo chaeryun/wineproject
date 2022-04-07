@@ -65,9 +65,11 @@
       <button class="food-button" @click="clickfood($event)" value="bluecheese">
         <img src="../assets/food/bluecheese.png" class="food-img" /> Blue Cheese
       </button>
+      
       <button class="food-button" @click="clickfood($event)" value="spicyfood">
         <img src="../assets/food/spicyfood.png" class="food-img" /> Spicy Food
       </button>
+      
       <button
         class="food-button"
         @click="clickfood($event)"
@@ -229,6 +231,8 @@ export default {
     this.getWineList();
   },
 
+
+
   computed: {
     startOffset() {
       return (this.currentPage - 1) * this.perPage;
@@ -263,6 +267,7 @@ export default {
           console.log(err);
         });
     },
+    
 
     winedetail(wine) {
       this.$router.push({ path: "/detail", qeury: { wine: wine } });
@@ -270,8 +275,11 @@ export default {
 
     // food button 클릭시 추천와인리스트 가져오기
     clickfood(e) {
-      console.log("food btn", e.target.value);
-      this.food = e.target.value;
+      
+      this.food = e.target.value===undefined? e.currentTarget.value:e.target.value;
+      console.log("food", this.food);
+      
+      
       this.recommandfood();
     },
 
