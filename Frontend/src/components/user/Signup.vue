@@ -77,6 +77,7 @@
 </template>
 <script>
 import http from "@/util/http-common";
+import Swal from "sweetalert2";
 // import axios from "axios";
 
 export default {
@@ -150,7 +151,12 @@ export default {
         },
       })
         .then((res) => {
-          alert("회원가입 성공");
+          Swal.fire({
+            title: "회원가입 성공!",
+            // text: "Welcome 와인어떄!",
+            icon: "success",
+            confirmButtonText: "확인",
+          });
           // console.log(res);
           this.$router.push({ name: "Home" });
         })
