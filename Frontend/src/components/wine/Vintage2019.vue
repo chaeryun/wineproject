@@ -7,7 +7,7 @@
         <div class="row hero-area-slide">
           <div class="col-lg-6 col-md-5">
             <div class="hero-area-content" v-if="vintagelist[0].image">
-              <img :src="this.vintagelist[0].image" height="400" contain />
+              <img :src="this.vintagelist[0].image" height="700" contain />
             </div>
           </div>
           <div class="col-lg-6 col-md-7">

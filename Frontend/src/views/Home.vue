@@ -34,7 +34,7 @@
             border-radius: 15px 15px 15px 0;
             border: 3px solid #ffad5b;
             padding: 0.5em 0.6em;
-            color: #ff8000;
+            color: rgb(255, 128, 0);
           "
           >인기 폭발 와인</span
         >
@@ -132,7 +132,7 @@
           <div class="d-flex justify-content-between align-items-center"></div>
         </v-card>
       </div>
-    </v-row>
+    </v-row><br /><br /><br />
 
     <v-row class="pt-15 mt-15 text-h7" style="justify-content: center">
       <!-- <h1 class="mt-10 mb-10">만족도 높은 와인</h1> -->
@@ -143,7 +143,7 @@
             border-radius: 15px 15px 15px 0;
             border: 3px solid #ffad5b;
             padding: 0.5em 0.6em;
-            color: #ff8000;
+            color: rgb(255, 128, 0);
           "
           >만족도 높은 와인</span
         >

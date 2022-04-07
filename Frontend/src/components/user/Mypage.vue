@@ -1,11 +1,31 @@
 <template>
   <div class="wine mt-13">
     <v-container>
-      <h1>My page</h1>
+      <h1 class="mb-10">
+        <span
+          style="
+            text-align: center;
+            border-radius: 15px 15px 15px 0;
+            border: 3px solid #ffad5b;
+            padding: 0.5em 0.6em;
+            color: bullywood;
+          "
+          >My page</span
+        >
+      </h1>
       <v-row class="text-h7" justify="center">
         <h2 class="ml-10 pb-5">| {{ userInfo.nickname }}님이 찜한 목록</h2>
       </v-row>
-      <v-row justify="center" class="mb-5">
+
+      <!-- 텅빌때, 수정하세여!!-->
+      <template v-if = " winelistIsEmpty" >
+        <div class="justify-center mt-15" style="display:flex;">
+      <img src="../../assets/no_wine.png" style="width:70px; height:65px;" alt="empty" />
+      <h2 class="ml-5 mt-4 mb-15 pb-15">찜한 와인이 없습니다. 마음에 드는 와인을 찜해주세요.</h2>
+      </div >
+      </template>
+
+      <v-row v-else justify="center" class="mb-5">
         <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
           <v-card
             class="mt-10"
@@ -79,6 +99,10 @@ export default {
     userInfo() {
       return this.$store.state.userInfo;
     },
+    winelistIsEmpty(){
+      console.log(this.wishlist.length);
+      return this.wishlist.length==0;
+    }
   },
 
   created() {
