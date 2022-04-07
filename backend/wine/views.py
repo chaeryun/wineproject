@@ -109,14 +109,20 @@ def add_wine_wishlist(request, wine_id, username):
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def latest_wine_list(request, user_id):
+def latest_wine_list(request, username):
+    user = User.objects.get(username=username)
+    user_id = user.id
+
     wines = Userlikewine.objects.filter(user_id = user_id).order_by('-created_at')[:5]
     serializer = UserlikewineSerializer(wines, many=True)
     return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def latest_wine_totallist(request, user_id):
+def latest_wine_totallist(request, username):
+    user = User.objects.get(username=username)
+    user_id = user.id
+
     wines = Userlikewine.objects.filter(user_id = user_id).order_by('-created_at')
     serializer = UserlikewineSerializer(wines, many=True)
     return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
