@@ -132,7 +132,7 @@
           <div class="d-flex justify-content-between align-items-center"></div>
         </v-card>
       </div>
-    </v-row>
+    </v-row><br /><br />
 
     <v-row class="pt-15 mt-15 text-h7" style="justify-content: center">
       <!-- <h1 class="mt-10 mb-10">만족도 높은 와인</h1> -->

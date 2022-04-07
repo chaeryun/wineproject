@@ -179,10 +179,10 @@
       <!-- 와인타입 선택바 -->
       <!-- 텅빌때, 수정하세여!!-->
       <template v-if = " winelistIsEmpty" >
-      <img src="../assets/empty.png" alt="empty"/>
-      <p>
-      비어있음.
-      </p>
+        <div class="justify-center mt-15" style="display:flex;">
+      <img src="../assets/error.png" style="width:80px; height:80px;" alt="empty" />
+      <h2 class="ml-5 mt-4 mb-15 pb-15">조회하신 와인이 없습니다. 다른 와인을 검색해주세요.</h2>
+      </div >
       </template>
 
       <v-bottom-navigation
