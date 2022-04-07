@@ -2,10 +2,24 @@
   <div class="vintage">
     <!-- <Navbar /> -->
     <!-- <h1 class="fw-bold mb-5">Vintage</h1> -->
-    <h1 class="text-center pt-13">
+    <!-- <h1 class="text-center pt-13">
       날씨 기반 빅데이터로 추천하는<br />
       2019 / 2020 / 2021해의 Good Vintage Wine Top3
-    </h1>
+    </h1> -->
+    <h1 class="mb-8">
+    <h1 class="pt-13 pb-3 fs-2" style="font-color: cornsilk;">날씨 기반 빅데이터로 추천하는</h1>
+    <span
+          style="
+            text-align: center;
+            border-radius: 15px 15px 15px 0;
+            border: 3px solid #ffad5b;
+            padding: 0.5em 0.6em;
+            color: bullywood;
+          "
+          >Good Vintage Wine Top3</span
+        >
+      </h1>
+
     <div class="form-group justify-center mt-3 mb-3">
       <button class="food-button" style="height: 50px" @click="year2019">
         2019

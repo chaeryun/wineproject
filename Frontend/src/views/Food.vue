@@ -1,6 +1,18 @@
 <template>
   <div class="food mt-13">
-    <h1 style="margin-bottom: 20px">음식과 어울리는 와인 추천</h1>
+    <h1 class="mb-10">
+        <span
+          style="
+            text-align: center;
+            border-radius: 15px 15px 15px 0;
+            border: 3px solid #ffad5b;
+            padding: 0.5em 0.6em;
+            color: bullywood;
+          "
+          >음식과 어울리는 와인 추천</span
+        >
+      </h1>
+    <!-- <h1 style="margin-bottom: 20px">음식과 어울리는 와인 추천</h1> -->
     <div class="text-center">
     <hr style="border-color: grey"/>
       <button class="food-button" @click="clickfood($event)" value="shellfish">
@@ -87,8 +99,17 @@
     </div>
     <hr style="border-color: grey"/>
     <!-- 와인타입 선택바 -->
-    <div style="position: relative; left: 2%; padding-top: 30px">
+    <!-- 텅빌때, 수정하세여!!-->
+      <template v-if = " winelistIsEmpty" >
+        <div class="justify-center mt-15" style="display:flex;">
+      <img src="../assets/error.png" style="width:80px; height:80px;" alt="empty" />
+      <h2 class="ml-5 mt-4 mb-15 pb-15">조회하신 와인이 없습니다. 다른 와인을 선택해주세요.</h2>
+      </div >
+      </template>
+    <!-- <div style="position: relative; left: 2%; padding-top: 30px"> -->
+      <!-- <div> -->
       <v-bottom-navigation
+        v-else
         color="#CD5C5C"
         width="450px"
         style="
@@ -118,7 +139,9 @@
           <span class="fs-6">Port</span>
         </v-btn>
       </v-bottom-navigation>
-    </div>
+    <!-- </div> -->
+
+    <!-- 와인 카드 -->
 
     <v-row>
       <div
@@ -188,8 +211,7 @@
         :total-visible="10"
       ></v-pagination>
     </v-row>
-    <br />
-  </div>
+    </div>
 </template>
 
 <script>
@@ -246,6 +268,10 @@ export default {
     calData() {
       return this.recentlist.slice(this.startOffset, this.endOffset);
     },
+    winelistIsEmpty(){
+      console.log(this.recentlist.length);
+      return this.recentlist.length==0;
+    }
   },
 
   methods: {

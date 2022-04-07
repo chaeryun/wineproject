@@ -1,8 +1,19 @@
 <template>
   <div class="wine mt-13">
     <v-container>
-      <h1>와인 조회</h1>
-      <hr />
+      <h1 class="mb-13">
+        <span
+          style="
+            text-align: center;
+            border-radius: 15px 15px 15px 0;
+            border: 3px solid #ffad5b;
+            padding: 0.5em 0.6em;
+            color: bullywood;
+          "
+          >와인 조회</span
+        >
+      </h1>
+      <hr style="border-color:grey;" />
 
       <label for="productCategory" class="ml-15 mb-5"> | Wine Search </label>
       <div class="form-group px-15 mx-15">
@@ -175,13 +186,13 @@
         </v-btn>
       </div>
 
-      <hr />
+      <hr style="border-color:grey;" />
       <!-- 와인타입 선택바 -->
       <!-- 텅빌때, 수정하세여!!-->
       <template v-if = " winelistIsEmpty" >
         <div class="justify-center mt-15" style="display:flex;">
-      <img src="../assets/error.png" style="width:80px; height:80px;" alt="empty" />
-      <h2 class="ml-5 mt-4 mb-15 pb-15">조회하신 와인이 없습니다. 다른 와인을 검색해주세요.</h2>
+      <img src="../assets/error.png" style="width:70px; height:70px;" alt="empty" />
+      <h2 class="ml-5 mt-3 mb-15 pb-15">조회하신 와인이 없습니다. 다른 와인을 검색해주세요.</h2>
       </div >
       </template>
 
