@@ -7,22 +7,22 @@
           | {{ userInfo.nickname }}님이 최근 찜한 와인
         </h2>
       </v-row>
-     <v-row justify="center" class="mb-5">
-                <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
-                  <v-card
-                    style="
-                      height: 240px;
-                      margin: auto;
-                      border-radius: 160px;
-                      color: gainsboro;
-                      background-color: #232320;
-                      box-shadow: 0 0 10px grey;
-                    "
-                    hover
-                    outlined
-                  >
-                    <v-btn
-                      class="mt-4 ml-15 pl-8"
+      <v-row justify="center" class="mb-5">
+        <v-col cols="2" v-for="wine in userwishlist" :key="wine.wine_id">
+          <v-card
+            style="
+              height: 240px;
+              margin: auto;
+              border-radius: 160px;
+              color: gainsboro;
+              background-color: #232320;
+              box-shadow: 0 0 10px grey;
+            "
+            hover
+            outlined
+          >
+            <v-btn
+              class="mt-4 ml-15 pl-8"
               text
               icon
               large
@@ -48,7 +48,7 @@
               @click="winedetail(wine.wine_id)"
             /><v-img />
             <hr
-              style="border-width: 2px; border-color: pink; margin-bottom: 2px;"
+              style="border-width: 2px; border-color: pink; margin-bottom: 2px"
             />
             <v-card-text class="text-center fs-5" style="color: gainsboro"
               >{{ wine.wine }}<br />
