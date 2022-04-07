@@ -191,7 +191,7 @@
       <!-- 텅빌때, 수정하세여!!-->
       <template v-if = " winelistIsEmpty" >
         <div class="justify-center mt-15" style="display:flex;">
-      <img src="../assets/error.png" style="width:70px; height:70px;" alt="empty" />
+      <img src="../assets/no_wine.png" style="width:70px; height:65px;" alt="empty" />
       <h2 class="ml-5 mt-3 mb-15 pb-15">조회하신 와인이 없습니다. 다른 와인을 검색해주세요.</h2>
       </div >
       </template>
@@ -296,6 +296,7 @@
           v-model="currentPage"
           :length="numOfPages"
           :total-visible="10"
+          style="margin-top: 10px; margin-bottom:10px;"
         ></v-pagination>
       </v-row>
     </v-container>
