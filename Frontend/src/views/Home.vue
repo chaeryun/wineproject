@@ -378,7 +378,11 @@ export default {
 </script>
 <style>
 video {
-  min-width: 100%;
+  /* min-width: 100%;
   width: auto; height: auto;
+  object-fit: cover;  */
+  width: 100%;
+  height: 780px;
+  object-fit: fill;
 }
 </style>
