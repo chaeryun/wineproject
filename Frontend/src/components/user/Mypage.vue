@@ -100,8 +100,8 @@ export default {
       return this.$store.state.userInfo;
     },
     winelistIsEmpty(){
-      console.log(this.recentlist.length);
-      return this.recentlist.length==0;
+      console.log(this.wishlist.length);
+      return this.wishlist.length==0;
     }
   },
 

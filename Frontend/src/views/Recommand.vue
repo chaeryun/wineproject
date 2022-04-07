@@ -11,7 +11,7 @@
       <!-- 텅빌때, 수정하세여!!-->
       <template v-if = " winelistIsEmpty" >
         <div class="justify-center mt-15" style="display:flex;">
-      <img src="../assets/no_wine.png" style="width:70px; height:65px;" alt="empty" />
+      <img src="../../assets/no_wine.png" style="width:70px; height:65px;" alt="empty" />
       <h2 class="ml-5 mt-4 mb-15 pb-15">찜한 와인이 없습니다. 마음에 드는 와인을 찜해주세요.</h2>
       </div >
       </template>
@@ -155,8 +155,8 @@ export default {
       return this.$store.state.userInfo;
     },
     winelistIsEmpty(){
-      console.log(this.recentlist.length);
-      return this.recentlist.length==0;
+      console.log(this.wishlist.length);
+      return this.wishlist.length==0;
     }
   },
 
