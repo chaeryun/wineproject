@@ -40,6 +40,9 @@ def get_wine_list(request):
 @api_view(["POST"])
 @permission_classes([AllowAny])#후에 권한설정 변경 필요
 def update_wine_data(request):
+    wines = Wine.objects.all()
+    wines.delete()
+
     f = open('../dataset/wine.json', 'r', encoding='UTF-8')
     data = json.load(f)
 
@@ -67,7 +70,7 @@ def update_wine_data(request):
         wine.soft = data["soft"][index_str]
 
         wine.gentle = data["gentle"][index_str]
-        wine.taste = data["taste"][index_str]
+        wine.taste = ", ".join(data["taste"][index_str])
         wine.food = ", ".join(data["food"][index_str])
         wine.grapes = ", ".join(data["grapes"][index_str])
         wine.alcohol = data["alcohol"][index_str]
@@ -235,9 +238,10 @@ def reco_categorize(request, country, grapes, min_price, max_price, taste, dry, 
     if smooth: smooth_min, smooth_max = get_min_max(smooth)
 
     wines = Wine.objects.all()
+    wines = wines.filter(price__range=(min_price, max_price))
+
     if country != 'all': wines = wines.filter(country=country)
     if grapes != 'all': wines = wines.filter(grapes__contains=grapes)
-    wines = wines.filter(price__range=(min_price, max_price))
     if taste != 'all': wines = wines.filter(taste__contains=taste)
     if dry: wines = wines.filter(dry__range=(dry_min, dry_max))
     if soft: wines = wines.filter(soft__range=(soft_min, soft_max))
@@ -245,6 +249,7 @@ def reco_categorize(request, country, grapes, min_price, max_price, taste, dry, 
     if smooth: wines = wines.filter(smooth__range=(smooth_min, smooth_max))
 
     #wines = Wine.objects.filter(country=country).filter(grapes__in=grapes).filter(price__gte=min_price).filter(price__lte=max_price).filter(taste__in=taste).filter(dry__lte=dry_max).filter(dry__gte=dry_min).filter(soft__lte=soft_max).filter(soft__gte=soft_min).filter(light__lte=light_max).filter(light__gte=light_min).filter(smooth__lte=smooth_max).filter(smooth__gte=smooth_min)
+    print(len(wines))
     wineserializers = WineSerializer(wines, many=True)
     return Response(wineserializers.data, status=status.HTTP_200_OK)
 
