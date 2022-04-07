@@ -177,7 +177,16 @@
 
       <hr />
       <!-- 와인타입 선택바 -->
+      <!-- 텅빌때, 수정하세여!!-->
+      <template v-if = " winelistIsEmpty" >
+      <img src="../assets/empty.png" alt="empty"/>
+      <p>
+      비어있음.
+      </p>
+      </template>
+
       <v-bottom-navigation
+        v-else
         color="#CD5C5C"
         width="450px"
         style="
@@ -467,9 +476,15 @@ export default {
     userinfo() {
       return this.$store.state.userInfo;
     },
+    winelistIsEmpty(){
+      console.log(this.recentlist.length);
+      return this.recentlist.length==0;
+    }
   },
+  
 
   methods: {
+
     // 전체 와인 불러와서 winelist에 넣기
     async getWineList() {
       await http({
