@@ -16,19 +16,29 @@
         </v-carousel-item>
       </v-carousel>
     </v-row> -->
-    
+
     <video autoplay loop muted>
-      <source src="../assets/video/wine.mp4" type="video/mp4">
+      <source src="../assets/video/wine.mp4" type="video/mp4" />
     </video>
     <br />
     <br />
 
     <v-row class="text-h7 text-center" justify="center">
       <!-- <h1 class="mt-10 mb-10">요즘 인기 많은 와인</h1> -->
-<!--       
+      <!--       
 <h1><span style="border-bottom: 12px solid #dcf1fb; padding: 0 0 0 0.2em;" class="mb-10 mt-10">인기 와인</span></h1> -->
- <h1 class="mb-10 mt-15"><span  style="text-align: center; border-radius: 15px 15px 15px 0; border: 3px solid #FFAD5B; padding: 0.5em 0.6em; color: #FF8000;">인기 폭발 와인</span></h1>
- 
+      <h1 class="mb-10 mt-15">
+        <span
+          style="
+            text-align: center;
+            border-radius: 15px 15px 15px 0;
+            border: 3px solid #ffad5b;
+            padding: 0.5em 0.6em;
+            color: #ff8000;
+          "
+          >인기 폭발 와인</span
+        >
+      </h1>
 
       <!-- 와인타입 선택바 -->
       <div style="position: relative; left: 9%; padding-top: 30px">
@@ -124,9 +134,20 @@
       </div>
     </v-row>
 
-    <v-row class="pt-15 mt-15  text-h7" style="justify-content: center">
+    <v-row class="pt-15 mt-15 text-h7" style="justify-content: center">
       <!-- <h1 class="mt-10 mb-10">만족도 높은 와인</h1> -->
-      <h1 class="mb-10 mt-15"><span  style="text-align: center; border-radius: 15px 15px 15px 0; border: 3px solid #FFAD5B; padding: 0.5em 0.6em; color: #FF8000;">만족도 높은 와인</span></h1>
+      <h1 class="mb-10 mt-15">
+        <span
+          style="
+            text-align: center;
+            border-radius: 15px 15px 15px 0;
+            border: 3px solid #ffad5b;
+            padding: 0.5em 0.6em;
+            color: #ff8000;
+          "
+          >만족도 높은 와인</span
+        >
+      </h1>
     </v-row>
     <!-- 와인타입 선택바 -->
     <div style="position: relative; left: 9%; padding-top: 30px">
@@ -263,7 +284,7 @@ export default {
         url: "wine/recommand/color_score/" + this.scorecolor + "/",
       })
         .then((res) => {
-          console.log("recoScore", res.data);
+          // console.log("recoScore", res.data);
           this.scorelist = res.data;
         })
         .catch((err) => {
@@ -278,7 +299,7 @@ export default {
         url: "wine/recommand/reviews/" + this.reviewcolor + "/",
       })
         .then((res) => {
-          console.log("recoReview", res.data);
+          // console.log("recoReview", res.data);
           this.reviewlist = res.data;
         })
         .catch((err) => {

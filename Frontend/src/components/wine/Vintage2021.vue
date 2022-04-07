@@ -7,7 +7,7 @@
         <div class="row hero-area-slide">
           <div class="col-lg-6 col-md-5">
             <div class="hero-area-content">
-              <v-img :src="this.vintagelist[0].image" height="700" contain />
+              <img :src="this.vintagelist[0].image" height="700" contain />
             </div>
           </div>
           <div class="col-lg-6 col-md-7">
@@ -38,7 +38,7 @@
                   >￦ {{ vintagelist[0].price }}</span
                 >
               </p>
-              <button class="btn btn-warning" id="go-to-detail">
+              <button class="btn btn-warning" id="go-to-detail" @click="rank1">
                 Details..
               </button>
               <br />
@@ -51,7 +51,7 @@
         <div class="row hero-area-slide" id="second-vintage">
           <div class="col-lg-5 col-md-4">
             <div class="hero-area-content">
-              <v-img :src="this.vintagelist[1].image" height="700" contain />
+              <img :src="this.vintagelist[1].image" height="700" contain />
             </div>
           </div>
           <div class="col-lg-6 col-md-7">
@@ -82,7 +82,7 @@
                   >￦ {{ vintagelist[1].price }}</span
                 >
               </p>
-              <button class="btn btn-warning" id="go-to-detail">
+              <button class="btn btn-warning" id="go-to-detail" @click="rank2">
                 Details..
               </button>
               <br />
@@ -94,7 +94,7 @@
       <div class="row hero-area-slide" id="third-vintage">
         <div class="col-lg-5 col-md-4">
           <div class="hero-area-content">
-            <v-img :src="this.vintagelist[2].image" height="700" contain />
+            <img :src="this.vintagelist[2].image" height="700" contain />
           </div>
         </div>
         <div class="col-lg-6 col-md-7">
@@ -123,7 +123,9 @@
               Price /
               <span class="fs-6 fw-normal">￦ {{ vintagelist[2].price }}</span>
             </p>
-            <button class="btn btn-warning" id="go-to-detail">Details..</button>
+            <button class="btn btn-warning" id="go-to-detail" @click="rank3">
+              Details..
+            </button>
             <br />
           </div>
         </div>
@@ -137,7 +139,7 @@
 import http from "@/util/http-common";
 
 export default {
-  name: "Vintage2021",
+  name: "Vintage2020",
 
   data() {
     return {
@@ -147,12 +149,12 @@ export default {
   },
 
   created() {
-    // 2020년 vintage wine list 호출
-    this.getVintage2020();
+    // 2021년 vintage wine list 호출
+    this.getVintage2021();
   },
 
   methods: {
-    async getVintage2020() {
+    async getVintage2021() {
       await http({
         method: "get",
         url: "wine/recommand/vintage/" + this.year + "/",
@@ -164,6 +166,27 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+
+    rank1() {
+      this.$router.push({
+        path: "/detail",
+        query: { wine_id: this.vintagelist[0].wine_id },
+      });
+    },
+
+    rank2() {
+      this.$router.push({
+        path: "/detail",
+        query: { wine_id: this.vintagelist[1].wine_id },
+      });
+    },
+
+    rank3() {
+      this.$router.push({
+        path: "/detail",
+        query: { wine_id: this.vintagelist[2].wine_id },
+      });
     },
   },
 };

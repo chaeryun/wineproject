@@ -20,6 +20,8 @@ export default new Vuex.Store({
       nickname: null,
       email: null,
     },
+
+    userlist: [],
   },
   mutations: {
     userstate(state, data) {
@@ -33,6 +35,10 @@ export default new Vuex.Store({
     SET_USER_INFO: (state, userInfo) => {
       state.userstate.isLogin = true;
       state.userInfo = userInfo;
+    },
+
+    userlist(state, data) {
+      state.userlist = data;
     },
   },
   actions: {

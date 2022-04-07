@@ -38,7 +38,7 @@
                   >￦ {{ vintagelist[0].price }}</span
                 >
               </p>
-              <button class="btn btn-warning" id="go-to-detail">
+              <button class="btn btn-warning" id="go-to-detail" @click="rank1">
                 Details..
               </button>
               <br />
@@ -82,7 +82,7 @@
                   >￦ {{ vintagelist[1].price }}</span
                 >
               </p>
-              <button class="btn btn-warning" id="go-to-detail">
+              <button class="btn btn-warning" id="go-to-detail" @click="rank2">
                 Details..
               </button>
               <br />
@@ -123,7 +123,9 @@
               Price /
               <span class="fs-6 fw-normal">￦ {{ vintagelist[2].price }}</span>
             </p>
-            <button class="btn btn-warning" id="go-to-detail">Details..</button>
+            <button class="btn btn-warning" id="go-to-detail" @click="rank3">
+              Details..
+            </button>
             <br />
           </div>
         </div>
@@ -164,6 +166,27 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+
+    rank1() {
+      this.$router.push({
+        path: "/detail",
+        query: { wine_id: this.vintagelist[0].wine_id },
+      });
+    },
+
+    rank2() {
+      this.$router.push({
+        path: "/detail",
+        query: { wine_id: this.vintagelist[1].wine_id },
+      });
+    },
+
+    rank3() {
+      this.$router.push({
+        path: "/detail",
+        query: { wine_id: this.vintagelist[2].wine_id },
+      });
     },
   },
 };

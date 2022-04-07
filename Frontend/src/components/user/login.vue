@@ -3,7 +3,7 @@
     <v-container class="login-page">
       <v-layout class="row wrap">
         <v-flex col-7></v-flex>
-        <v-flex col-5 >
+        <v-flex col-5>
           <h1 style="color: tomato">Login</h1>
           <br />
 
@@ -28,16 +28,16 @@
               @click:append="show1 = !show1"
             ></v-text-field>
             <div class="text-center">
-            <v-btn
-              :disabled="!valid"
-              color="success"
-              class="mr-4"
-              @click="validate"
-            >
-              Login
-            </v-btn>
+              <v-btn
+                :disabled="!valid"
+                color="success"
+                class="mr-4"
+                @click="validate"
+              >
+                Login
+              </v-btn>
 
-            <v-btn color="error" class="mr-4" @click="signup"> Signup </v-btn>
+              <v-btn color="error" class="mr-4" @click="signup"> Signup </v-btn>
             </div>
           </v-form>
         </v-flex>
@@ -49,7 +49,7 @@
 <script>
 import http from "@/util/http-common";
 import jwt_decode from "jwt-decode";
-import Vintage from '../../views/Vintage.vue';
+import Vintage from "../../views/Vintage.vue";
 // import { mapActions } from "vuex";
 
 export default {
@@ -113,6 +113,9 @@ export default {
           if (this.userstate.islogin) {
             alert("로그인 성공");
             this.saveuser(token);
+            // 유저 리스트 state 저장
+            this.userwinelist();
+
             this.$router.push({ name: "Home" });
           } else {
             alert("아이디나 비밀번호 확인");
@@ -146,6 +149,22 @@ export default {
         });
     },
 
+    async userwinelist() {
+      await http({
+        methods: "get",
+        url: "wine/latest_wine_totallist/" + this.user.id + "/",
+      })
+        .then((res) => {
+          console.log("userwinelist", res);
+          const userlistdata = res.data;
+          this.$store.commit("userlist", userlistdata);
+          console.log("store state", this.$store.state.userlist);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
     signup() {
       this.$router.push({ name: "Signup" });
     },
@@ -158,7 +177,7 @@ export default {
   width: 600px;
   height: 90px;
 }
-.login-page{
+.login-page {
   background-image: url("../../assets/wine_login.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -168,5 +187,4 @@ export default {
   margin: auto !important;
   opacity: 0.9;
 }
-
 </style>

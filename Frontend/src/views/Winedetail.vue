@@ -15,7 +15,11 @@
                   text
                   icon
                   large
-                  color="red lighten-3"
+                  :color="
+                    this.winenumber.includes(this.winedetail.wine_id)
+                      ? 'red lighten-3'
+                      : 'grey lighten-3'
+                  "
                   @click="wishlist"
                 >
                   <v-icon>mdi-heart</v-icon>
@@ -301,6 +305,10 @@ export default {
 
       // 유사추천와인 담을 list
       similarlist: [],
+
+      // state user list
+      winewishlist: [],
+      winenumber: [],
     };
   },
 
@@ -318,6 +326,10 @@ export default {
     userInfo() {
       return this.$store.state.userInfo;
     },
+
+    userlist() {
+      return this.$store.state.userlist;
+    },
   },
 
   methods: {
@@ -332,6 +344,15 @@ export default {
         .then((res) => {
           this.winedetail = res.data;
           console.log("와인상세정보 :", this.winedetail);
+
+          this.statelist();
+          // console.log("winenumber", this.winenumber);
+          // console.log("winedetail", this.winedetail);
+          // console.log("winedetail 0번쨰", this.winedetail.wine_id);
+          // console.log(
+          //   "color :",
+          //   this.winenumber.includes(this.winedetail.wine_id)
+          // );
 
           // wine 값 설정
           this.winevalue(this.winedetail);
@@ -376,6 +397,14 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+
+    statelist() {
+      this.winewishlist = this.userlist;
+
+      for (let i = 0; i < this.winewishlist.length; i++) {
+        this.winenumber.push(this.winewishlist[i].wine);
+      }
     },
 
     async getwishlist(wine_id) {
@@ -473,8 +502,25 @@ export default {
           "/",
       })
         .then((res) => {
-          alert("추가완료!");
+          this.userwinelist();
           console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
+    async userwinelist() {
+      await http({
+        methods: "get",
+        url: "wine/latest_wine_totallist/" + this.userInfo.username + "/",
+      })
+        .then((res) => {
+          console.log("userwinelist", res);
+          const userlistdata = res.data;
+          this.$store.commit("userlist", userlistdata);
+          console.log("store state", this.$store.state.userlist);
+          location.reload();
         })
         .catch((err) => {
           console.log(err);
