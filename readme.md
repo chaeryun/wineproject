@@ -44,6 +44,7 @@
 - **Visual Studio Code**
 - **Vue 2.6.11**
 - **Vuetify 2.6.0**
+- **Vuex 3.4.0**
 
 **🖱CI/CD**
 
