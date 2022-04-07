@@ -65,9 +65,6 @@ def reco_likes(wine_id,n=5):
 #print(reco_likes(2,10))
 
 
-
-
-
 # 빈티지 점수 에측 기반 와인 추천
 def weather(vintage=2021):
     global df3

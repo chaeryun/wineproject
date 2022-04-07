@@ -138,7 +138,9 @@ def reco_similar_wine(request, wine_id):
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def reco_wishlist(request, user_id):
+def reco_wishlist(request, username):
+    user = User.objects.get(username=username)
+    user_id = user.id
     wines = Userlikewine.objects.filter(user_id = user_id)[:5]
     reds = []
     port = []
