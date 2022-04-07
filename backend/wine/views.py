@@ -4,6 +4,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view
 
 from .models import Userlikewine, Wine
+from accounts.models import User
 from .serializers import UserlikewineSerializer, WineSerializer
 
 from rest_framework.response import Response
@@ -12,7 +13,7 @@ from django.http import JsonResponse
 import json
 import math
 import random
-from reco.algo1 import reco_color_average, reco_color_reviews, reco_likes
+from reco.algo1 import reco_color_average, reco_color_reviews, reco_likes, weather
 # Create your views here.
 
 #-------------------와인 기본 API---------------------------------
@@ -77,13 +78,16 @@ def update_wine_data(request):
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def add_wine_wishlist(request, wine_id, user_id):
+def add_wine_wishlist(request, wine_id, username):
+    user = User.objects.get(username=username)
+    user_id = user.id
+
     if Userlikewine.objects.filter(wine_id = wine_id).filter(user_id = user_id).exists():
         wine = get_object_or_404(Wine, wine_id=wine_id)
         wine.likes -= 1
         wine.save()
 
-        like = get_object_or_404(Userlikewine, wine_id = wine_id, username = user_id),
+        like = Userlikewine.objects.get(wine_id=wine_id, user_id=user_id)
         like.delete()
         
         return Response({"좋아요 취소 완료"}, status=status.HTTP_202_ACCEPTED)
@@ -231,9 +235,16 @@ def reco_categorize(request, country, grapes, min_price, max_price, taste, dry, 
     if soft: wines = wines.filter(soft__range=(soft_min, soft_max))
     if light: wines = wines.filter(light__range=(light_min, light_max))
     if smooth: wines = wines.filter(smooth__range=(smooth_min, smooth_max))
-    print(len(wines))
 
     #wines = Wine.objects.filter(country=country).filter(grapes__in=grapes).filter(price__gte=min_price).filter(price__lte=max_price).filter(taste__in=taste).filter(dry__lte=dry_max).filter(dry__gte=dry_min).filter(soft__lte=soft_max).filter(soft__gte=soft_min).filter(light__lte=light_max).filter(light__gte=light_min).filter(smooth__lte=smooth_max).filter(smooth__gte=smooth_min)
     wineserializers = WineSerializer(wines, many=True)
     return Response(wineserializers.data, status=status.HTTP_200_OK)
 
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def reco_vintage(request, year):
+    wine_lists = weather(year)
+    wines = Wine.objects.filter(wine_id__in=wine_lists)
+    wineserializers = WineSerializer(wines, many=True)
+    return Response(wineserializers.data, status=status.HTTP_200_OK)
+    

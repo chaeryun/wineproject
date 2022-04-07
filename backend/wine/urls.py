@@ -5,7 +5,7 @@ urlpatterns = [
     path('get_wine_data/<int:wine_id>/', views.get_wine_data),
     path('get_wine_list/', views.get_wine_list),
     path('update_wine_data/', views.update_wine_data),
-    path('add_wine_wishlist/<int:wine_id>/<int:user_id>/', views.add_wine_wishlist),
+    path('add_wine_wishlist/<int:wine_id>/<str:username>/', views.add_wine_wishlist),
     path('latest_wine_list/<int:user_id>/', views.latest_wine_list), #최근에 내가 찜한 와인 리스트
     path('latest_wine_totallist/<int:user_id>/', views.latest_wine_totallist),
 
@@ -16,4 +16,5 @@ urlpatterns = [
 
     path('recommand/onlyfood/<str:food>/', views.reco_onlyfood),
     path('recommand/categorize/<str:country>/<str:grapes>/<int:min_price>/<int:max_price>/<str:taste>/<int:dry>/<int:soft>/<int:light>/<int:smooth>/', views.reco_categorize),
+    path('recommand/vintage/<int:year>/', views.reco_vintage),
 ]
