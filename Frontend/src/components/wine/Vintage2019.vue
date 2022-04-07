@@ -124,7 +124,7 @@
               <span class="fs-6 fw-normal">￦ {{ vintagelist[2].price }}</span>
             </p>
             <button class="btn btn-warning" id="go-to-detail" @click="rank3">
-              상세보기
+              details..
             </button>
             <br />
           </div>
