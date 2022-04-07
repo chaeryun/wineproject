@@ -189,21 +189,9 @@
       <hr style="border-color: grey" />
       <!-- 와인타입 선택바 -->
       <!-- 텅빌때, 수정하세여!!-->
-      <template v-if="winelistIsEmpty">
-        <div class="justify-center mt-15" style="display: flex">
-          <img
-            src="../assets/no_wine.png"
-            style="width: 70px; height: 65px"
-            alt="empty"
-          />
-          <h2 class="ml-5 mt-3 mb-15 pb-15">
-            조회하신 와인이 없습니다. 다른 와인을 검색해주세요.
-          </h2>
-        </div>
-      </template>
+      
 
       <v-bottom-navigation
-        v-else
         color="#CD5C5C"
         width="450px"
         style="
@@ -234,7 +222,19 @@
         </v-btn>
       </v-bottom-navigation>
 
-      <v-row>
+<template v-if="winelistIsEmpty">
+        <div class="justify-center mt-15" style="display: flex">
+          <img
+            src="../assets/no_wine.png"
+            style="width: 70px; height: 65px"
+            alt="empty"
+          />
+          <h2 class="ml-5 mt-3 mb-15 pb-15">
+            조회하신 와인이 없습니다. 다른 와인을 검색해주세요.
+          </h2>
+        </div>
+      </template>
+      <v-row   v-else>
         <div
           class="col-xl-3 col-lg-4 col-md-6"
           :key="i"
