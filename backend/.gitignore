@@ -5,6 +5,9 @@
 #.gitignore 목록
 # venv / python / django / windows / macOS / Linux
 
+### idea###
+.idea/
+
 ### Django ###
 *.log
 *.pot
