@@ -13,6 +13,7 @@ source venv/Scripts/activate
 
 #추가 모듈 설치 및 마이그레이션
 pip install -r requirements.txt
+pip install -U drf-yasg
 
 python manage.py makemigrations
 python manage.py migrate

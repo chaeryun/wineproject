@@ -1,34 +1,35 @@
 <template>
-  <v-main>
-    <v-container>
-      <v-layout row wrap align-center>
-        <v-flex xs12 sm8 offset-sm2 align-center justify-center>
-          <h1>회원가입</h1>
+  <v-main class="pt-10 pb-10">
+    <v-container class="signup-page">
+      <v-layout row wrap>
+        <v-flex col-7></v-flex>
+        <v-flex col-5>
+          <h1 style="color: tomato">Signup</h1>
           <br />
 
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
-              v-model="id"
-              :counter="12"
+              v-model="user.id"
+              :counter="16"
               :rules="idRules"
               label="ID"
               required
             ></v-text-field>
 
             <v-text-field
-              v-model="password"
+              v-model="user.password"
               :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
               :rules="[rules.required, rules.min]"
               :type="show1 ? 'text' : 'password'"
               name="input-10-1"
               label="Password"
-              hint="At least 8 characters"
+              hint="At least 4 characters ~ 12 characters"
               counter
               @click:append="show1 = !show1"
             ></v-text-field>
 
             <v-text-field
-              v-model="nickname"
+              v-model="user.nickname"
               :counter="8"
               :rules="nicknameRules"
               label="Nickname"
@@ -36,7 +37,7 @@
             ></v-text-field>
 
             <v-text-field
-              v-model="email"
+              v-model="user.email"
               :rules="emailRules"
               label="E-mail"
               required
@@ -56,17 +57,18 @@
               label="개인정보 수집 및 이용에 동의합니다."
               required
             ></v-checkbox>
+            <div class="text-center">
+              <v-btn
+                :disabled="!valid"
+                color="success"
+                class="mr-4"
+                @click="validate"
+              >
+                Signup
+              </v-btn>
 
-            <v-btn
-              :disabled="!valid"
-              color="success"
-              class="mr-4"
-              @click="validate"
-            >
-              Signup
-            </v-btn>
-
-            <v-btn color="error" class="mr-4" @click="reset"> Cancel </v-btn>
+              <v-btn color="error" class="mr-4" @click="reset"> Cancel </v-btn>
+            </div>
           </v-form>
         </v-flex>
       </v-layout>
@@ -74,6 +76,10 @@
   </v-main>
 </template>
 <script>
+import http from "@/util/http-common";
+import Swal from "sweetalert2";
+// import axios from "axios";
+
 export default {
   name: "Signup",
   data: () => ({
@@ -82,7 +88,7 @@ export default {
     id: "",
     idRules: [
       (v) => !!v || "ID is required",
-      (v) => (v && v.length <= 12) || "ID must be less than 12 characters",
+      (v) => (v && v.length <= 16) || "ID must be less than 16 characters",
     ],
 
     // password rule
@@ -90,7 +96,7 @@ export default {
     password: "",
     rules: {
       required: (value) => !!value || "Password is Required.",
-      min: (v) => v.length <= 8 || "Max 8 characters",
+      min: (v) => (v.length <= 12 && v.length >= 4) || "Max 12 characters",
       emailMatch: () => `The email and password you entered don't match`,
     },
 
@@ -98,7 +104,8 @@ export default {
     nickname: "",
     nicknameRules: [
       (v) => !!v || "Nickname is required",
-      (v) => (v && v.length <= 8) || "Nickname must be less than 8 characters",
+      (v) =>
+        (v && v.length <= 16) || "Nickname must be less than 16 characters",
     ],
 
     // email rule
@@ -110,19 +117,57 @@ export default {
     // select: null,
     // items: ["Item 1", "Item 2", "Item 3", "Item 4"],
     checkbox: false,
+
+    user: {
+      id: "",
+      password: "",
+      nickname: "",
+      email: "",
+    },
   }),
+
   methods: {
     validate() {
-      console.log("id : ", this.id);
-      console.log("password : ", this.password);
-      console.log("nickname : ", this.nickname);
-      console.log("email : ", this.email);
+      // console.log("id : ", this.user.id);
+      // console.log("password : ", this.user.password);
+      // console.log("nickname : ", this.user.nickname);
+      // console.log("email : ", this.user.email);
       this.$refs.form.validate();
 
       if (this.$refs.form.validate() == true) {
-        alert("회원가입성공");
+        this.regist();
       }
     },
+
+    async regist() {
+      await http({
+        method: "POST",
+        url: "accounts/signup/",
+        data: {
+          username: this.user.id,
+          password: this.user.password,
+          nickname: this.user.nickname,
+          email: this.user.email,
+        },
+      })
+        .then((res) => {
+          Swal.fire({
+            title: "회원가입 성공!",
+            // text: "Welcome 와인어떄!",
+            icon: "success",
+            confirmButtonText: "확인",
+            background: "#232320",
+            confirmButtonColor: "#FF7F50",
+              
+          });
+          // console.log(res);
+          this.$router.push({ name: "Home" });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
     reset() {
       this.$router.push({ name: "Home" });
     },
@@ -134,5 +179,16 @@ export default {
 .v-text-field {
   width: 600px;
   height: 90px;
+}
+
+.signup-page {
+  background-image: url("../../assets/signup2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 130px;
+  margin: auto !important;
+  opacity: 0.9;
 }
 </style>

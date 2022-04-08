@@ -6,10 +6,16 @@
         class="hidden-md-and-up"
       ></v-app-bar-nav-icon>
       <v-app-bar-title class="headline text-uppercase white--text">
-        <span>My </span>
-        <span class="font-weight-light" style="margin-right: 200px">Wine</span>
+        <a style="text-decoration: none" href="/home">
+          <h1
+            class="font-weight-light mt-5"
+            style="margin-right: 200px; color: #EEE8AA"
+          >
+            와인어때?
+          </h1></a
+        >
       </v-app-bar-title>
-      <v-autocomplete
+      <!-- <v-autocomplete
         v-model="model"
         :items="items"
         :loading="isLoading"
@@ -57,7 +63,7 @@
             <v-icon>mdi-bitcoin</v-icon>
           </v-list-item-action>
         </template>
-      </v-autocomplete>
+      </v-autocomplete> -->
       <!-- <v-spacer></v-spacer> -->
 
       <!-- <v-app-bar class="hidden-sm-and-down">
@@ -73,14 +79,24 @@
         <v-btn text to="/signup">SignUp</v-btn>
       </v-app-bar> -->
 
-      <v-tabs dark slider-size:1 right v-if="user == true">
-        <v-tab v-for="link in beforelogin" :key="link.name" :to="link.route">
+      <v-tabs dark slider-size:1 right v-if="userstate.islogin == false">
+        <v-tab
+          v-for="link in beforelogin"
+          :key="link.name"
+          :to="link.route"
+          @click="clicknav(link.name)"
+        >
           {{ link.title }}
         </v-tab>
       </v-tabs>
 
-      <v-tabs dark slider-size:1 right v-if="user == false">
-        <v-tab v-for="link in afterlogin" :key="link.name" :to="link.route">
+      <v-tabs dark slider-size:1 right v-if="userstate.islogin == true">
+        <v-tab
+          v-for="link in afterlogin"
+          :key="link.name"
+          :to="link.route"
+          @click="logout(link.name)"
+        >
           {{ link.title }}
         </v-tab>
       </v-tabs>
@@ -89,6 +105,8 @@
 </template>
 
 <script>
+import Swal from "sweetalert2";
+
 export default {
   name: "Navbar",
   data() {
@@ -101,21 +119,22 @@ export default {
       beforelogin: [
         { title: "Home", name: "Home", route: `/home` },
         { title: "Wine", name: "Wine", route: `/wine` },
-        { title: "Recommend", name: "Recommend", route: `/recommend` },
+        { title: "Recommand", name: "Recommand", route: `/recommand` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
-        { title: "Lounge", name: "Lounge", route: `/lounge` },
+        { title: "Food pairing", name: "Food", route: `/food` },
+        { title: "About Wine", name: "About", route: `/about` },
         { title: "Login", name: "Login", route: `/user/login` },
-        { title: "Signup", name: "Singup", route: `/user/signup` },
       ],
 
       afterlogin: [
         { title: "Home", name: "Home", route: `/home` },
         { title: "Wine", name: "Wine", route: `/wine` },
-        { title: "Recommend", name: "Recommend", route: `/recommend` },
+        { title: "Recommand", name: "Recommand", route: `/recommand` },
         { title: "Vintage", name: "Vintage", route: `/vintage` },
-        { title: "Lounge", name: "Lounge", route: `/lounge` },
+        { title: "Food pairing", name: "Food", route: `/food` },
+        { title: "About Wine", name: "About", route: `/about` },
         { title: "Mypage", name: "Mypage", route: `/user/mypage` },
-        { title: "Logout", name: "Logout", route: `/user/logout` },
+        { title: "Logout", name: "Logout" },
       ],
 
       isLoading: false,
@@ -127,9 +146,50 @@ export default {
     };
   },
 
+  computed: {
+    userstate() {
+      return this.$store.state.userstate;
+    },
+
+    userInfo() {
+      return this.$store.state.userInfo;
+    },
+  },
   methods: {
     signup() {
       this.$router.push({ name: "Signup" });
+    },
+
+    logout(name) {
+      // 임시로그아웃(API 연동시 user정보 초기화 및 세션스토리지 토큰 초기화 해줘야함)
+      if (name === "Logout") {
+        this.$store.commit("userstate", false);
+        sessionStorage.clear();
+        // location.reload();
+        Swal.fire({
+          title: "로그아웃 성공!",
+          // text: "",
+          icon: "success",
+          confirmButtonText: "확인",
+          background: "#232320",
+          confirmButtonColor: "#FF7F50",
+        });
+        this.$router.push({ name: "Home" }).catch((err) => err);
+      }
+    },
+
+    clicknav(name) {
+      // Recommand 클릭시 로그인 상태 아니면 로그인 페이지로 이동
+      if (name === "Recommand") {
+        if (this.userstate.islogin == false) {
+          alert("로그인 후 사용해주세요");
+          this.$router.push({ name: "login" });
+        }
+      }
+    },
+
+    banner() {
+      this.$router.push({ name: "Home" }).catch((err) => err);
     },
   },
 };

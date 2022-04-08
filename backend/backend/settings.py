@@ -25,14 +25,14 @@ SECRET_KEY = 'django-insecure-th69n_9u&fpd93g%@u@)&jhn7i#+&5*wuvsy^c#rploq#luzp-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["be","localhost","127.0.0.1"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     # project apps
-    'wine',
+    'wine.apps.WineConfig',
     'accounts.apps.AccountsConfig',
 
     # Django nature apps
@@ -45,8 +45,9 @@ INSTALLED_APPS = [
 
     # 3rd-party apps
     'rest_framework',
-    'rest_framework_simplejwt',
+    'rest_framework_jwt',
     'corsheaders',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -88,8 +89,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'CLIENT': {
-            "host":"mongodb+srv://ssafyC102:ssafyC102@c102.avmfr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-            "name":"c102testdb",
+            "host":"mongodb+srv://ssafyC102:ssafyC102@cluster0.g8xew.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+            "name":"C102DB",
             "authMechanism":"SCRAM-SHA-1" #for atlas cloud db
 
         }
@@ -139,19 +140,31 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #JWT 토큰관련 설정
-REST_FRAMEWORK = { 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',  
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
 }
 import datetime
 JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1)
+    'JWT_SECRET_KEY': SECRET_KEY,
+    'JWT_ALGORITHM': 'HS256',
+    'JWT_ALLOW_REFRESH': True,
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=28),
 }
+AUTH_USER_MODEL = 'accounts.User'
 
 # CORS관련 설정 추가, Middleware의 동작 구성
 
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_ALLOW_ALL = True
+
 """
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:8080",
@@ -162,4 +175,5 @@ CORS_ALLOW_METHODS = (
     'GET',
     'PUT',
     'DELETE',
+    'OPTIONS'
 ) #실제 요청에 허용되는 HTTP동사 리스트
